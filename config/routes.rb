@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'homepages/index'
+
+  get 'homepages/show'
+
+  get 'homepages/new'
+
+  get 'homepages/create'
+
+  get 'homepages/edit'
+
+  get 'homepages/update'
+
+  get 'homepages/destroy'
+
   get 'users/index'
 
   get 'users/show'
