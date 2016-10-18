@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'homepages/index'
+##### homepages routes #####
+# why were these generated with index?
+  root to: 'homepages#index'
+  get 'homepages/index', as: 'index'
+
 
   get 'homepages/show'
 
@@ -12,6 +16,8 @@ Rails.application.routes.draw do
   get 'homepages/update'
 
   get 'homepages/destroy'
+
+##### user routes #####
 
   get 'users/index'
 
@@ -27,6 +33,8 @@ Rails.application.routes.draw do
 
   get 'users/destroy'
 
+  ##### products routes #####
+
   get 'products/index'
 
   get 'products/show'
@@ -41,6 +49,8 @@ Rails.application.routes.draw do
 
   get 'products/destroy'
 
+##### sessions routes #####
+
   get 'sessions/index'
 
   get 'sessions/show'
@@ -54,6 +64,8 @@ Rails.application.routes.draw do
   get 'sessions/update'
 
   get 'sessions/destroy'
+
+##### orders routes #####
 
   get 'orders/index'
 
