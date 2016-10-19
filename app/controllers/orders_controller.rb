@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   def show
     @myorder = Order.find(params[:id])
     if @myorder == nil
-      render :file 'public/404.html', :status => :not_found
+      # render :file 'public/404.html', :status => :not_found
     end
   end
 
