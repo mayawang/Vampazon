@@ -1,2 +1,9 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1> @product.name </h1>
+<%= image_tag(@product.url), :class => "class_name" %>
+Price: <%= @product.price %>
+Description: <%= @product.description %>
+Inventory: <%= @product.inventory %>
+Category: <%= @product.category %>
+Seller: <%= @seller.name %>
+Average rating: <%= @product.average_rating %>
+review: <%= @review.description %>

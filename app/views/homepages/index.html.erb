@@ -3,7 +3,7 @@
 <h3>Shop by Category</h3>
 <% @product_categories.each do |product_category| %>
   <!-- insert category photos -->
-  <%= link_to "#{product_category}", show_category_path(product_category.category)%>
+  <%= link_to product_category, show_category_path(product_category.category)%>
 <% end %>
 
 

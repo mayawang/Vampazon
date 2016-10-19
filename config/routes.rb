@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   get 'products/index' => 'products#index_products', as: 'index_products'
 
-  get 'products/show'
+  get 'products/id:/show' => 'products#show_products', as: 'show_products'
 
   get 'products/new'
 
