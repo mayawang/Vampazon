@@ -5,17 +5,17 @@ Rails.application.routes.draw do
   root to: 'homepages#index'
   get 'homepages/index' => 'homepages#index', as: 'index'
 
-  get 'homepages/:category/show' => 'homepages/show_category', as: 'show_category'
+  get 'homepages/show_category' => 'homepages#show_category', as: 'show_category'
 
-  # get 'homepages/new'
+  # get 'homepages/new' => 'homepages#new', as: 'new_homepages'
   #
-  # get 'homepages/create'
+  # post 'homepages/create' => 'homepages#create', as: 'create_homepages'
   #
-  # get 'homepages/edit'
+  # get 'homepages/edit' => 'homepages#edit', as: 'edit_homepages'
   #
-  # get 'homepages/update'
+  # patch 'homepages/update' => 'homepages#update', as: 'update_homepages'
   #
-  # get 'homepages/destroy'
+  # delete 'homepages/destroy' => 'homepages#destroy', as: 'destroy_homepages'
 
   #============== Users ==================
 
