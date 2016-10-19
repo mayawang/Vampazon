@@ -20,6 +20,8 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+betsy_development
+betsy_test
 
 
 # Ignore this annoying MACOS file which is a caching file and keeps thumbnails
@@ -46,7 +48,7 @@ config/initializers/secret_token.rb
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
 
-# Hide the .env becuase of secrets 
+# Hide the .env becuase of secrets
 /.env
 
 ## Environment normalization:
