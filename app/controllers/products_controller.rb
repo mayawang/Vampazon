@@ -6,11 +6,11 @@ class ProductsController < ApplicationController
   def show_products
     @product = Product.find(pramas[:id].to_i)
     @seller = User.find(@product.user_id)
-    @reviews = Review.select(@product.id)
+    @reviews = Review.where(@product.id)
   end
 
   def by_seller_products
-    @products = Product.select(:user_id)
+    @products = Product.where(:user_id)
   end
 
   def new

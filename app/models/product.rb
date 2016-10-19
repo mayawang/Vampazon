@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 
   def average_rating
     product = Product.find(pramas[:id].to_i)
-    reviews = Review.select(product.id)
+    reviews = Review.where(product.id)
     return reviews.average(:rank)
   end
 end

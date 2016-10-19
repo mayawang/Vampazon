@@ -6,7 +6,7 @@ class HomepagesController < ApplicationController
 
   def show_category
     @product_category = params[:category]
-    @products_in_category = Product.select(:category)
+    @products_in_category = Product.where(:category)
   end
 
 end
