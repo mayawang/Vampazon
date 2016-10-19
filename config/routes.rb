@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-##### homepages routes #####
+
 # why were these generated with index?
   root to: 'homepages#index'
   get 'homepages/index'
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 
   #============== Users ==================
 
-##### user routes #####
 
   get 'users/index'
 
