@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
-  get 'homepages/index'
+  root to: 'homepages#index', as: 'root'
 
-  get 'homepages/show'
+  get 'homepages/:category/show' => 'homepages/show_category', as: 'show_category'
 
-  get 'homepages/new'
 
-  get 'homepages/create'
+  # get 'homepages/new'
+  #
+  # get 'homepages/create'
+  #
+  # get 'homepages/edit'
+  #
+  # get 'homepages/update'
+  #
+  # get 'homepages/destroy'
 
-  get 'homepages/edit'
-
-  get 'homepages/update'
-
-  get 'homepages/destroy'
+  #============== Users ==================
 
   get 'users/index'
 
@@ -27,7 +30,9 @@ Rails.application.routes.draw do
 
   get 'users/destroy'
 
-  get 'products/index'
+  #============== Products ==================
+
+  get 'products/index' => 'products#index_products', as: 'index_products'
 
   get 'products/show'
 
@@ -40,6 +45,8 @@ Rails.application.routes.draw do
   get 'products/update'
 
   get 'products/destroy'
+
+  #============== Sessions ==================
 
   get 'sessions/index'
 
@@ -54,6 +61,8 @@ Rails.application.routes.draw do
   get 'sessions/update'
 
   get 'sessions/destroy'
+
+  #============== Orders ==================
 
   get 'orders/index'
 

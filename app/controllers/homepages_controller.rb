@@ -1,22 +1,12 @@
 class HomepagesController < ApplicationController
-  def index
+
+  def root
+    @product_categories = Product.uniq.pluck(:category)
   end
 
-  def show
+  def show_category
+    @product_category = params[:category]
+    @products_in_category = Product.select(:category)
   end
 
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end
