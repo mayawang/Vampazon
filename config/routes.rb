@@ -66,20 +66,20 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
 ##### orders routes #####
+# we chose to make the convention of having the as: be action + plural. 
+  get 'orders/index' => 'orders#index', as: :index_orders
 
-  get 'orders/index'
+  get 'orders/show/:id' => 'orders#show', as: :show_orders
 
-  get 'orders/show'
+  post 'orders/new' => 'orders#new', as: :new_orders
 
-  get 'orders/new'
+  get 'orders/create' => 'orders#create', as: :create_orders
 
-  get 'orders/create'
+  get 'orders/:id/edit' => 'orders#edit', as: :edit_orders
 
-  get 'orders/edit'
+  patch 'orders/:id/update' => 'orders#update', as: :update_orders
 
-  get 'orders/update'
-
-  get 'orders/destroy'
+  delete 'orders/:id/destroy' => 'orders#destroy', as: :destroy_orders
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
