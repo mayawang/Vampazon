@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 # we chose to make the convention of having the as: be action + plural.
 
   root to: 'homepages#index'
-  get 'homepages/index'
+  get 'homepages/index' => 'homepages#index', as: 'index'
 
   get 'homepages/:category/show' => 'homepages/show_category', as: 'show_category'
 
