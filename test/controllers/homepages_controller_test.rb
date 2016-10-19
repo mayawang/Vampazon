@@ -1,3 +1,4 @@
+
 require 'test_helper'
 
 class HomepagesControllerTest < ActionController::TestCase
@@ -6,34 +7,15 @@ class HomepagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get show" do
-    get :show
+  test "assigns the @product_categories" do
+    expect(assigns(:product_categories).not_to be_nil
+  end
+
+  test "should get show product categories" do
+    get :show, id: items(:album_sample).id
     assert_response :success
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
-  test "should get create" do
-    get :create
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit
-    assert_response :success
-  end
-
-  test "should get update" do
-    get :update
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
-  end
 
 end

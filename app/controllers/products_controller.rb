@@ -1,8 +1,16 @@
 class ProductsController < ApplicationController
-  def index
+  def index_products
+    @products = Product.all.order("name")
   end
 
-  def show
+  def show_products
+    @product = Product.find(pramas[:id].to_i)
+    @seller = User.find(@product.user_id)
+    @reviews = Review.where(@product.id)
+  end
+
+  def by_seller_products
+    @products = Product.where(:user_id)
   end
 
   def new

@@ -1,23 +1,24 @@
 Rails.application.routes.draw do
-##### homepages routes #####
+
 # why were these generated with index?
   root to: 'homepages#index'
-  get 'homepages/index', as: 'index'
+  get 'homepages/index'
+
+  get 'homepages/:category/show' => 'homepages/show_category', as: 'show_category'
 
 
-  get 'homepages/show'
+  # get 'homepages/new'
+  #
+  # get 'homepages/create'
+  #
+  # get 'homepages/edit'
+  #
+  # get 'homepages/update'
+  #
+  # get 'homepages/destroy'
 
-  get 'homepages/new'
+  #============== Users ==================
 
-  get 'homepages/create'
-
-  get 'homepages/edit'
-
-  get 'homepages/update'
-
-  get 'homepages/destroy'
-
-##### user routes #####
 
   get 'users/index'
 
@@ -33,11 +34,14 @@ Rails.application.routes.draw do
 
   get 'users/destroy'
 
-  ##### products routes #####
+  #============== Products ==================
 
-  get 'products/index'
+  get 'products/index' => 'products#index_products', as: 'index_products'
 
-  get 'products/show'
+  get 'products/by_seller' => 'products#by_seller_products', as: 'by_seller_products'
+
+
+  get 'products/id:/show' => 'products#show_products', as: 'show_products'
 
   get 'products/new'
 
@@ -49,7 +53,8 @@ Rails.application.routes.draw do
 
   get 'products/destroy'
 
-##### sessions routes #####
+
+  #============== Sessions ==================
 
   get 'sessions/index'
 
@@ -65,7 +70,9 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-##### orders routes #####
+
+  #============== Orders ==================
+
 
   get 'orders/index'
 
