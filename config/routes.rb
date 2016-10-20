@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'homepages#index'
   get 'homepages/index' => 'homepages#index', as: 'index'
 
-  get 'homepages/show_category' => 'homepages#show_category', as: 'show_category'
+  get 'homepages/:category/show_category' => 'homepages#show_category', as: 'show_category'
 
   # get 'homepages/new' => 'homepages#new', as: 'new_homepages'
   #
