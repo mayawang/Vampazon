@@ -9,6 +9,15 @@ class ProductsController < ApplicationController
     @reviews = Review.where(@product.id)
   end
 
+  def show_products
+    @product = Product.find(params[:id].to_i)
+
+  end
+
+
+
+
+
   def by_seller_products
     @products = Product.where(:user_id)
   end
