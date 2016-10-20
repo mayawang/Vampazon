@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 20161020052344) do
     t.boolean  "merchant"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "provider"
+    t.boolean  "status"
   end
 
 end
