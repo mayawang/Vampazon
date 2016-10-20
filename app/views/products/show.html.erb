@@ -6,4 +6,7 @@ Inventory: <%= @product.inventory %>
 Category: <%= @product.category %>
 Seller: <%#link_to @seller.name, by_seller_products_path %>
 Average rating: <%= @product.average_rating %>
-review: <%# @review.description %>
+
+review: <% @reviews.each do |review| %>
+          <%= review.description %>
+        <% end %>
