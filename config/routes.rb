@@ -84,4 +84,6 @@ Rails.application.routes.draw do
 
   delete 'orders/:id/destroy' => 'orders#destroy', as: 'destroy_orders'
 
+  patch "products/:id/add_order" => "products#add_order", as: :products_add_order
+
 end

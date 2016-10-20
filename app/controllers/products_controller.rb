@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all.order("name")
+    @order_item = current_order.order_items.new
   end
 
   def show
@@ -27,4 +28,15 @@ class ProductsController < ApplicationController
 
   def destroy
   end
+  def add_order
+    @myproduct = Product.find(params[:id])
+    @myproduct.quantity += 1
+    @myproduct += @order
+    @order.save
+    @myproduct.save
+    redirect_to :back
+  end
+
+
+
 end
