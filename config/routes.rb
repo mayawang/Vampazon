@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 
   get 'products/by_seller' => 'products#by_seller_products', as: 'by_seller_products'
 
-  get 'products/show/id:' => 'products#show_products', as: 'show_products'
+  get 'products/show/:id' => 'products#show_products', as: 'show_products'
 
   get 'products/new' => 'products#new', as: 'new_products'
 
