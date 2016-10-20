@@ -2,6 +2,16 @@ class UsersController < ApplicationController
   
   # before_action :find_user only [:show, :edit, :update, :destroy]
 
+#AN IDEA FOR HOW TO LIMIT PRODUCT EDITING?
+   # app/controllers/users_controller
+    # before_action :require_login
+    # ...
+    # private
+    # def require_login
+    #   # do stuff to check if user is logged in
+    # end
+
+
   def index
     return User.all
   end
