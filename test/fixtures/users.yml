@@ -1,23 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  street_address: MyString
-  city: MyString
-  state: MyString
-  zip: 1
-  phone: 1
+rbg:
+  first_name: Ruth
+  last_name: Ginsburg
+  email: notorious@thesupremes.io
+  street_address: 1 First Street NE
+  city: Washington
+  state: DC
+  zip: 20543
+  phone: 2024793000
   merchant: false
+  provider: github
+  status: true
 
-two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  street_address: MyString
-  city: MyString
+ss:
+  first_name: Sonia
+  last_name: Sotomeyer
+  email: not-red-sonia@thesupremes.io
+  street_address: 1 First Street NE
+  city: Washington
   state: MyString
-  zip: 1
-  phone: 1
-  merchant: false
+  zip: DC
+  phone: 2024793000
+  merchant: true
+  provider: github
+  status: true
