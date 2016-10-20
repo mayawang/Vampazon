@@ -4,4 +4,7 @@
   <p><%= link_to image_tag("product.photo_url"), show_products_path(product.id), { :class => "product_img" } %></p>
   <p><%= link_to product.name, show_products_path(product.id) %></p>
   <p><%= product.price %></p>
+  <!-- <P><%=product.description %></P> -->
+  <%=button_to "+", class: "buton"%>
+  <%=button_to "-", class: "buton"%>
 <% end %>
