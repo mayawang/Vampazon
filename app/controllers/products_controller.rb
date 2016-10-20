@@ -4,19 +4,10 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(pramas[:id].to_i)
-    @seller = User.find(@product.user_id)
-    @reviews = Review.where(@product.id)
-  end
-
-  def show_products
     @product = Product.find(params[:id].to_i)
-
+    # @seller = User.find(@product.user_id)
+    # @reviews = Review.where(@product.id)
   end
-
-
-
-
 
   def by_seller_products
     @products = Product.where(:user_id)
