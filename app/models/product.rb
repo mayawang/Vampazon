@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
-  belongs_to :user_id
-  has_many :order_id
-  has_many :order_item
+  belongs_to :user
+  has_many :orders
+  has_many :order_items, through: :orders
 
   def average_rating
     reviews = Review.where(:product_id => self.id)
