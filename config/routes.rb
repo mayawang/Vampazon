@@ -51,7 +51,7 @@ Rails.application.routes.draw do
 
 #   get 'sessions/new' => 'sessions#new', as: 'new_sessions'
 
-#   get "/auth/:provider/callback" =>  "sessions#create"
+  get "/auth/:provider/callback" =>  "sessions#create"
 # #the below route was not right.  we used the above route in class.
 #   # post 'sessions/create' => 'sessions#create', as: 'create_sessions'
 
@@ -59,7 +59,7 @@ Rails.application.routes.draw do
 
 #   patch 'sessions/:id/update' => 'sessions#update', as: 'update_sessions'
 
-  delete 'sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_sessions'
+  # delete 'sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_sessions'
 
   resources :sessions
 
