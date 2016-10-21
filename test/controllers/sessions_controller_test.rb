@@ -16,10 +16,7 @@ class SessionsControllerTest < ActionController::TestCase
   #   assert_response :success
   # end
 
-  # test "should get create" do
-  #   get :create
-  #   assert_response :success
-  # end
+
 
   # test "should get edit" do
   #   get :edit
@@ -31,10 +28,10 @@ class SessionsControllerTest < ActionController::TestCase
   #   assert_response :success
   # end
 
-  # test "should get destroy" do
-  #   get :destroy
-  #   assert_response :success
-  # end
+  test "should get destroy" do
+    get :destroy
+    assert_response :redirect
+  end
 
   def login_a_user
     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
@@ -53,11 +50,16 @@ class SessionsControllerTest < ActionController::TestCase
     assert_difference("User.count", 1) do
       login_a_user
     end
-    assert_no_difference('User.count') do
+    assert_no_difference("User.count") do
       login_a_user
       assert_response :redirect
       assert_redirected_to root_path
     end
   end
+
+  #   test "should get create" do
+  #   get :create
+  #   assert_response :success
+  # end
 
 end
