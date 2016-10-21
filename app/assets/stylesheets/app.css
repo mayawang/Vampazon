@@ -42,6 +42,22 @@ header h1 a:visited {
   padding-right: 2%;
 }*/
 
+.row ul {
+  list-style: none;
+}
+
+.row ul img {
+  max-height: 10em;
+}
+
+.row ul a {
+  color: black;
+}
+
+.row ul a:hover {
+  color: #680604;
+}
+
 .columns {
   column-count: 3;
   /*column-gap: 8vw;*/
@@ -60,12 +76,6 @@ img.photo {
   margin-left: 8%;
 }
 
-img.product_photo {
-/*  width: auto;
-  height: auto;
-  max-width: 35%;
-  max-height: 35%;*/
-}
 
 
 
@@ -76,7 +86,7 @@ img.product_photo {
   padding-left: 3.5%;
   background-color: white;
   /*color: white;*/
-  border: solid black;
+  /*border: solid black;*/
   min-height: 10rem;
 }
 
@@ -104,5 +114,5 @@ img.product_photo {
 }
 
 .product-info ul a:hover {
-  color: red;
+  color: #680604;
 }
