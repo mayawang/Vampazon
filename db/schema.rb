@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20161021181152) do
-
 
   create_table "order_items", force: :cascade do |t|
     t.decimal  "unit_price"
