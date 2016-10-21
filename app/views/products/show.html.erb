@@ -8,7 +8,7 @@
   <p>Price: $<%= @product.price %></p>
   <p>In-stock: <%= @product.inventory %></p>
   <p>Category: <%= @product.category %></p>
-  <p>Seller: <%= link_to @seller.name, show_seller_products_path %></p>
+  <p>Seller: <%= link_to "#{@seller.first_name} #{@seller.last_name}", show_seller_products_path %></p>
   <p>Average rating: <%= @product.average_rating %></p>
 
   <p>Review:
