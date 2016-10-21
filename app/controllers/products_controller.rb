@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
 
   def show_seller_products
     @product = Product.find(params[:id].to_i)
-    @products = Product.where(:user_id_id => @product.user_id)
+    @products = Product.where(:user_id => @product.user_id)
   end
 
   def new
