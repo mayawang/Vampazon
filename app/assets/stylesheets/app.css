@@ -1,0 +1,49 @@
+body {
+  min-width: 100%;
+  font-size: 16pt;
+  /*font-family:*/
+}
+
+header {
+  background-color: #680604;
+  height: 18%;
+  margin-bottom: 2%;
+}
+
+header h1 {
+  color: white;
+  padding-top: 1.75%;
+  font-size: 3.75rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+header h1 a:visited {
+  color: white !important;
+}
+
+.test {
+  margin: 5% 12%;
+}
+
+.test h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+  /*text-align: center;*/
+  /*width: 50%;*/
+}
+
+.test p {
+  padding: 1%;
+  margin-left: 3%;
+}
+
+img.photo {
+  width: auto;
+  height: auto;
+  max-width: 40%;
+  max-height: 40%;
+  float: right;
+  margin-left: 8%;
+}

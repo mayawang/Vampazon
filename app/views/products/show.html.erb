@@ -1,12 +1,19 @@
-<h1> <%= @product.name  %> </h1>
-<%= image_tag(@product.photo_url, :class => "class_name") %>
-<p>Price: <%= @product.price %></p>
-<p>Description: <%= @product.description %></p>
-<p>Inventory: <%= @product.inventory %></p>
-<p>Category: <%= @product.category %></p>
-<p>Seller: <%#link_to @seller.name, by_seller_products_path %></p>
-<p>Average rating: <%= @product.average_rating %></p>
+<div class = "test">
 
-<p>review: <% @reviews.each do |review| %></p>
-          <p><%= review.description %></p>
-        <% end %>
+  <h2> <%= @product.name %> </h2>
+
+  <%= image_tag(@product.photo_url, :class => 'photo') %>
+
+  <p><%= @product.description %></p>
+  <p>Price: $<%= @product.price %></p>
+  <p>In-stock: <%= @product.inventory %></p>
+  <p>Category: <%= @product.category %></p>
+  <p>Seller: <%#link_to @seller.name, by_seller_products_path %></p>
+  <p>Average rating: <%= @product.average_rating %></p>
+
+  <p>Review:
+    <% @reviews.each do |review| %></p>
+      <p><%= review.description %></p>
+    <% end %>
+
+</div>
