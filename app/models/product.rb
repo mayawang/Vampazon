@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
-  belongs_to :user_id
-  has_many :order_id
+  belongs_to :user
+  has_many :order
   has_many :order_item
 
   def average_rating

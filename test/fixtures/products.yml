@@ -7,7 +7,7 @@ product1:
   photo_url: https://unsplash.it/200
   inventory: 20
   category: personal_care
-  user_id: 1
+  user: rbg
 
 product2:
   name: coffin
@@ -16,7 +16,7 @@ product2:
   photo_url: https://unsplash.it/200
   inventory: 2
   category: Houseware
-  user_id: 2
+  user: rbg
 
 product3:
   name: cape
@@ -25,7 +25,7 @@ product3:
   photo_url: https://unsplash.it/200
   inventory: 1
   category: clothing
-  user_id: 3
+  user: ss
 
 product4:
   name:
@@ -34,4 +34,4 @@ product4:
   photo_url: https://unsplash.it/200
   inventory: 1000
   category:  minion
-  user_id: 4
+  user: ss
