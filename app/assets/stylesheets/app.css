@@ -22,21 +22,33 @@ header h1 a:visited {
   color: white !important;
 }
 
-.test {
+.basic {
   margin: 5% 12%;
 }
 
-.test h2 {
+.basic h2 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2%;
-  /*text-align: center;*/
-  /*width: 50%;*/
 }
 
-.test p {
+.basic p {
   padding: 1%;
   margin-left: 3%;
+}
+
+/*.column {
+  padding-left: 2%;
+  padding-right: 2%;
+}*/
+
+.columns {
+  column-count: 3;
+  /*column-gap: 8vw;*/
+}
+
+.card p {
+  float: center;
 }
 
 img.photo {
@@ -46,4 +58,11 @@ img.photo {
   max-height: 40%;
   float: right;
   margin-left: 8%;
+}
+
+img.product_photo {
+  width: auto;
+  height: auto;
+  max-width: 35%;
+  max-height: 35%;
 }

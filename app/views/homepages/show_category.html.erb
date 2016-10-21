@@ -1,7 +1,23 @@
-<h1><%= @product_category %></h1>
+<div class="basic">
 
-<% @products_in_category.each do |product| %>
-  <p><%# link_to image_tag(@product.photo_url, :class => "product_photo"), show_products_path(product.id) %></p>
-  <p><%= link_to product.name, show_products_path(product.id) %></p>
-  <p><%= product.price %></p>
-<% end %>
+  <h2><%= @product_category %></h2>
+
+  <div class="row">
+
+    <div class="columns">
+
+      <% @products_in_category.each do |product| %>
+      <div class="card">
+
+        <%= link_to image_tag(product.photo_url, :class => "product_photo"), show_products_path(product.id) %>
+        <p><%= link_to product.name, show_products_path(product.id) %><br>
+        <%= product.price %></p>
+      </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>
