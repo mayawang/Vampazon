@@ -4,8 +4,7 @@ class Product < ActiveRecord::Base
   has_many :order_item
 
   def average_rating
-    product = Product.find(pramas[:id].to_i)
-    reviews = Review.where(product.id)
+    reviews = Review.where(:product_id => self.id)
     return reviews.average(:rank)
   end
 end

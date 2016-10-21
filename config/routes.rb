@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'homepages#index'
   get 'homepages/index' => 'homepages#index', as: 'index'
 
-  get 'homepages/show_category' => 'homepages#show_category', as: 'show_category'
+  get 'homepages/:category/show_category' => 'homepages#show_category', as: 'show_category'
 
   # get 'homepages/new' => 'homepages#new', as: 'new_homepages'
   #
@@ -39,7 +39,8 @@ Rails.application.routes.draw do
 
   get 'products/by_seller' => 'products#by_seller_products', as: 'by_seller_products'
 
-  get 'products/show/id:' => 'products#show', as: 'show_products'
+  get 'products/show/:id' => 'products#show', as: 'show_products'
+
 
   get 'products/new' => 'products#new', as: 'new_products'
 
