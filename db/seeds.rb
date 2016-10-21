@@ -8,6 +8,22 @@
 
 require 'csv'
 
-  CSV.foreach ('seed_csvs/products.csv') do |csv_obj|
-    Product.create(name: csv_obj[1], description: csv_obj[2], price: csv_obj[3], photo_url: csv_obj[4], inventory: csv_obj[5], category: csv_obj[6])
-  end
+CSV.foreach ('seed_csvs/products.csv') do |csv_obj|
+  Product.create(name: csv_obj[1], description: csv_obj[2], price: csv_obj[3], photo_url: csv_obj[4], inventory: csv_obj[5], category: csv_obj[6])
+end
+
+require 'faker'
+
+24.times do
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    street_address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    state: Faker::Address.state,
+    zip: Faker::Address.zip,
+    phone: Faker::PhoneNumber.phone_number,
+    provider: 'github'
+  )
+end
