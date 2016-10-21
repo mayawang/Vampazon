@@ -16,4 +16,6 @@
       <p><%= review.description %></p>
     <% end %>
 
+  <%=button_to("Add", add_orders_path(@product.id), method: :post)%>
+
 </div>

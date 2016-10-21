@@ -65,13 +65,19 @@ Rails.application.routes.draw do
 
   #============== Orders ==================
 
+
+  post 'orders/:id/add_orders' => 'orders#add_orders', as: 'add_orders'
+
+  post 'orders/:id/create' => 'orders#create', as: 'create_orders'
+
+
+
   get 'orders/index' => 'orders#index', as: 'index_orders'
 
   get 'orders/show/:id' => 'orders#show', as: 'show_orders'
 
   get 'orders/new' => 'orders#new', as: 'new_orders'
 
-  post 'orders/create' => 'orders#create', as: 'create_orders'
 
   get 'orders/:id/edit' => 'orders#edit', as: 'edit_orders'
 
