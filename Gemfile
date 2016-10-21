@@ -9,7 +9,7 @@ gem 'omniauth-github'
 #make it easier to read
 gem 'awesome_print'
 
-
+gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
