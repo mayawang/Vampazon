@@ -1,4 +1,4 @@
-<h1>Products by this Seller</h1>
+<h1>Collections by this Seller:</h1>
 <% @products.each do |product| %>
   <p><%= link_to image_tag("product.photo_url"), show_products_path(product.id), { :class => "product_img" } %></p>
   <p><%= link_to product.name, show_products_path(product.id) %></p>
