@@ -7,7 +7,7 @@ body {
 header {
   background-color: #680604;
   height: 18%;
-  margin-bottom: 2%;
+  display: inline-block;
 }
 
 header h1 {
@@ -25,6 +25,7 @@ header h1 a:visited {
 nav {
   float: right;
   display: inline-block;
+  /*margin-bottom: 3%;*/
 }
 
 nav a {
@@ -33,7 +34,7 @@ nav a {
 }
 
 .basic {
-  margin: 5% 12%;
+  margin: 3% 12% 5% 12%;
 }
 
 .basic h2 {
@@ -45,6 +46,10 @@ nav a {
 .basic h3 {
   font-size: 2rem;
   font-weight: bold
+}
+
+.basic h3 a {
+  font-weight: bold;
 }
 
 .basic p {
