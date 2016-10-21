@@ -22,6 +22,16 @@ header h1 a:visited {
   color: white !important;
 }
 
+nav {
+  float: right;
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
 .basic {
   margin: 5% 12%;
 }
@@ -30,6 +40,11 @@ header h1 a:visited {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2%;
+}
+
+.basic h3 {
+  font-size: 2rem;
+  font-weight: bold
 }
 
 .basic p {

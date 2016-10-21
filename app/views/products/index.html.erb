@@ -1,7 +1,13 @@
-<h1>Browse All Collections</h1>
+<div class = "basic">
 
-<% @products.each do |product| %>
-  <p><%= link_to image_tag("product.photo_url"), show_products_path(product.id), { :class => "product_img" } %></p>
-  <p><%= link_to product.name, show_products_path(product.id) %></p>
-  <p><%= product.price %></p>
-<% end %>
+  <h2>Browse All Collections</h2>
+
+  <div class="columns">
+    <% @products.each do |product| %>
+      <%= link_to image_tag(product.photo_url), show_products_path(product.id), class: "product_photo" %>
+      <p><%= link_to product.name, show_products_path(product.id) %><br>
+      <%= "$#{product.price}" %></p>
+    <% end %>
+  </div>
+
+</div>

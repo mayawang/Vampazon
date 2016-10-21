@@ -11,7 +11,7 @@
 
         <%= link_to image_tag(product.photo_url, :class => "product_photo"), show_products_path(product.id) %>
         <p><%= link_to product.name, show_products_path(product.id) %><br>
-        <%= product.price %></p>
+        <%= "$#{product.price}" %></p>
       </div>
 
       <% end %>
