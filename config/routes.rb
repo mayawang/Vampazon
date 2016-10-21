@@ -19,19 +19,7 @@ Rails.application.routes.draw do
 
   #============== Users ==================
 
-  get 'users/index' => 'users#index', as: 'index_users'
-
-  get 'users/show/:id' => 'users#show', as: 'show_users'
-
-  get 'users/new' => 'users#new', as: 'new_users'
-
-  post 'users/create' => 'users#create', as: 'create_users'
-
-  get 'users/:id/edit' => 'users#edit', as: 'edit_users'
-
-  patch 'users/:id/update' => 'users#update', as: 'update_users'
-
-  delete 'users/:id/destroy' => 'users#destroy', as: 'destroy_users'
+  resources :users
 
   #============== Products ==================
 
@@ -54,21 +42,26 @@ Rails.application.routes.draw do
 
   #============== Sessions ==================
 
-  get 'sessions/index' => 'sessions#index', as: 'index_sessions'
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
 
-  get 'sessions/show/:id' => 'sessions#show', as: 'show_sessions'
+#   get 'sessions/index' => 'sessions#index', as: 'index_sessions'
 
-  get 'sessions/new' => 'sessions#new', as: 'new_sessions'
+#   get 'sessions/show/:id' => 'sessions#show', as: 'show_sessions'
 
-  get "/auth/:provider/callback" =>  "sessions#create"
-#the below route was not right.  we used the above route in class.
-  # post 'sessions/create' => 'sessions#create', as: 'create_sessions'
+#   get 'sessions/new' => 'sessions#new', as: 'new_sessions'
 
-  get 'sessions/:id/edit' => 'sessions#edit', as: 'edit_sessions'
+#   get "/auth/:provider/callback" =>  "sessions#create"
+# #the below route was not right.  we used the above route in class.
+#   # post 'sessions/create' => 'sessions#create', as: 'create_sessions'
 
-  patch 'sessions/:id/update' => 'sessions#update', as: 'update_sessions'
+#   get 'sessions/:id/edit' => 'sessions#edit', as: 'edit_sessions'
+
+#   patch 'sessions/:id/update' => 'sessions#update', as: 'update_sessions'
 
   delete 'sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_sessions'
+
+  resources :sessions
 
   #============== Orders ==================
 
