@@ -5,6 +5,8 @@ class HomepagesController < ApplicationController
   end
 
   def show_category
+    # @product = Product.find(params[:id])
+
     @product_category = params[:category]
     @products_in_category = Product.where(:category => @product_category)
   end
