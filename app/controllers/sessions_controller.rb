@@ -26,15 +26,12 @@ class SessionsController < ApplicationController
 
     #GITHUB AUTHENTICATION START
     auth_hash = request.env['omniauth.auth']
-    #below is us saying we don't know them (unless they have an id)
-    # return redirect to login_failure_path unless auth_hash['id']
-    return redirect to root_path unless auth_hash['id']
+    
+    return redirect_to root_path unless auth_hash['uid']
 
-    @user = User.find_by(id: auth_hash[:id], provider: 'github')
-    #github knows them, but do we?  if not, let's make them an account
+    @user = User.find_by(uid: auth_hash[:uid], provider: 'github')
+
     if @user.nil?
-      # User doesn't match anything in the DB.
-      # Attempt to create a new user.
       @user = User.build_from_github(auth_hash)
       flash[:notice] = "Unable to Save the User"
 #using method below to save time
