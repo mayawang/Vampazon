@@ -1,5 +1,9 @@
+<div class = "test">
+
 <h1> <%= @product.name  %> </h1>
-<%= image_tag(@product.photo_url, :class => "class_name") %>
+
+<%= image_tag(@product.photo_url, :class => "photo") %>
+
 <p>Price: <%= @product.price %></p>
 <p>Description: <%= @product.description %></p>
 <p>Inventory: <%= @product.inventory %></p>
@@ -7,6 +11,9 @@
 <p>Seller: <%#link_to @seller.name, by_seller_products_path %></p>
 <p>Average rating: <%= @product.average_rating %></p>
 
-<p>review: <% @reviews.each do |review| %></p>
-          <p><%= review.description %></p>
-        <% end %>
+<p>review:
+  <% @reviews.each do |review| %></p>
+    <p><%= review.description %></p>
+  <% end %>
+
+</div>
