@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :products
 
 
-  validates :email, :id, :provider, presence: true
+  validates :email, :provider, presence: true
 
   def self.build_from_github(auth_hash)
     user       = User.new
