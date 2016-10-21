@@ -10,10 +10,11 @@ class SessionsController < ApplicationController
 
   def create
     auth_hash = request.env['omniauth.auth']
-    #below is us saying we don't know them (unless they have a uid)
-    return redirect to login_failure_path unless auth_hash['uid']
+    #below is us saying we don't know them (unless they have an id)
+    # return redirect to login_failure_path unless auth_hash['id']
+    return redirect to root_path unless auth_hash['id']
 
-    @user = User.find_by(uid: auth_hash[:uid], provider: 'github')
+    @user = User.find_by(id: auth_hash[:id], provider: 'github')
     #github knows them, but do we?  if not, let's make them an account
     if @user.nil?
       # User doesn't match anything in the DB.

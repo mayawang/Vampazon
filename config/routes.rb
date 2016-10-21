@@ -60,7 +60,9 @@ Rails.application.routes.draw do
 
   get 'sessions/new' => 'sessions#new', as: 'new_sessions'
 
-  post 'sessions/create' => 'sessions#create', as: 'create_sessions'
+  get "/auth/:provider/callback" =>  "sessions#create"
+#the below route was not right.  we used the above route in class.
+  # post 'sessions/create' => 'sessions#create', as: 'create_sessions'
 
   get 'sessions/:id/edit' => 'sessions#edit', as: 'edit_sessions'
 
