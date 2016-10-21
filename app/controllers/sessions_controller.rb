@@ -6,19 +6,32 @@ class SessionsController < ApplicationController
   end
 
   def new
+
   end
 
   def create
-    auth_hash = request.env['omniauth.auth']
-    #below is us saying we don't know them (unless they have an id)
-    # return redirect to login_failure_path unless auth_hash['id']
-    return redirect to root_path unless auth_hash['id']
 
-    @user = User.find_by(id: auth_hash[:id], provider: 'github')
-    #github knows them, but do we?  if not, let's make them an account
+    #AUTHENTICATION FROM SCRATCH START
+    # user = User.find_by email: params[:login][:email]
+
+    # if user && user.authenticate(params[:login][:password])
+    #   session[:user_id] = user.id
+    #   redirect_to root_path, notice: 'Successfully logged in.'
+    # else
+    #   flash.now.alert = 'Invalid email or password.'
+    #   render :new
+    # end
+  #AUTHENTICATION FROM SCRATCH END
+
+
+    #GITHUB AUTHENTICATION START
+    auth_hash = request.env['omniauth.auth']
+    
+    return redirect_to root_path unless auth_hash['uid']
+
+    @user = User.find_by(uid: auth_hash[:uid], provider: 'github')
+
     if @user.nil?
-      # User doesn't match anything in the DB.
-      # Attempt to create a new user.
       @user = User.build_from_github(auth_hash)
       flash[:notice] = "Unable to Save the User"
 #using method below to save time
@@ -35,6 +48,7 @@ class SessionsController < ApplicationController
     flash[:notice] = "Successfully Logged in!"
     redirect_to root_path
 
+#GITHUB AUTHENTICATION END
   end
 
   def edit
@@ -45,5 +59,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil 
+    redirect_to root_path, notice: 'Successfully logged out.'
   end
 end

@@ -17,16 +17,21 @@ class UsersController < ApplicationController
   end
 
   def show
-    @my_user = User.find{ params[:id].to_i } 
+    # @my_user = User.find{ params[:id].to_i } 
   end
 
   def new
-    @my_user = User.new
-    @path = 'new_path'
+    # @my_user = User.new params[:user]
   end
 
   def create
+  #   @my_user = User.new user_params
+  #   if @my_user.save 
+  #     redirect_to root_path, notice: 'Successfully created user.'
+  #   else render :new
+  #   end
   end
+  
 
   def edit
     @my_user = User.find{ params[:id].to_i } 
@@ -55,10 +60,16 @@ class UsersController < ApplicationController
     @my_user.status = false
     @my_user.save
   end
-end
+
 
 private
 
   def find_user
-    @my_user = User.find{ params[:id] }
+    # @my_user = User.find{ params[:id] }
   end
+
+  def user_params
+    # params.require(:user).permit :email, :password, :password_confirmation
+  end
+
+end
