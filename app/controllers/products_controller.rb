@@ -5,15 +5,18 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id].to_i)
-    # @seller = User.find(@product.user_id)
+    @seller = User.find(@product.user_id)
     @reviews = Review.where(:product_id => @product.id)
+
   end
 
-  def by_seller_products
-    @products = Product.where(:user_id)
+  def show_seller_products
+    @product = Product.find(params[:id].to_i)
+    @products = Product.where(:user_id_id => @product.user_id)
   end
 
   def new
+
   end
 
   def create
