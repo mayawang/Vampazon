@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021063530) do
+ActiveRecord::Schema.define(version: 20161021181152) do
 
   create_table "order_items", force: :cascade do |t|
     t.decimal  "unit_price"
@@ -79,12 +79,13 @@ ActiveRecord::Schema.define(version: 20161021063530) do
     t.integer  "zip"
     t.integer  "phone"
     t.boolean  "merchant"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "provider"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "provider",              default: "false"
     t.boolean  "status"
     t.string   "password_digest"
     t.string   "password_confirmation"
+    t.integer  "uid",                   default: 0
   end
 
 end
