@@ -5,7 +5,13 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id].to_i)
-    @seller = User.find(@product.user_id)
+
+    if @product.user_id
+      @seller = User.find(@product.user_id)
+    else
+      @seller = User.new
+    end
+
     @reviews = Review.where(:product_id => @product.id)
 
   end
