@@ -42,6 +42,9 @@ class OrderTest < ActiveSupport::TestCase
   test "add and remove product from order" do
 
     sunscreen = orders(:product1)
+    coffin = orders(:product2)
+
+    sunscreen.add
 
 
 
