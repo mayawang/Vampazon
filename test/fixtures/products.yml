@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-product1:
+sunscreen:
   name: sunscreen
   description: SPF10000
   price: 99.99

@@ -32,23 +32,52 @@ class OrderTest < ActiveSupport::TestCase
   # end
   test "Order 1 must have first_name of Ruth" do
       assert_equal "Ruth",
-       orders(:order1).first_name
+       orders(:one).first_name
   end
 
   # test "Can create a new order" do
   #
   # end
 
-  test "add and remove product from order" do
+  # test "add and remove product from order" do
+  #
+  #   sunscreen = orders(:product1)
+  #   coffin = orders(:product2)
+  #
+  #   sunscreen.add_to_cart()
+  #
+  #   coffin.remove_cart()
+  #
+  #
+  # end
 
-    sunscreen = orders(:product1)
-    coffin = orders(:product2)
+  # test "You can add proudct to order" do
+  #   assert_difference(Order.count, -1)
+  #   # controller here would delete something
+  #
+  # end
 
-    sunscreen.add
+  # test "Orders can have products" do
+  #   assert_includes products(:product1).orders, products(:sunscreen)
+  # end
 
+  test "order one's id equals 1" do
+    assert orders(:one).id == 1
+  end
 
+  # test "order one's order items include product1" do
+  #
+  # end
 
+  test "does not save order without status" do
+    order_one = Order.new
+    assert_not order_one.save
+  end
 
+  test "order belongs to user rbg" do
+    things = Order.find(1)
+    assert_equal things.user_id, 1
+  end
 
 
 
