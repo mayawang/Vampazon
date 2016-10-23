@@ -4,13 +4,13 @@
 # order item seems like it should have less fields. joint table? As in unit price not necesssary?
 
 one:
-  unit_price: 9.99
+  unit_price: 1.00
   quantity: 1
   product_id: 1
   order_id: 1
 
 two:
-  unit_price: 9.99
+  unit_price: 2.00
   quantity: 2
   product_id: 2
   order_id: 2
