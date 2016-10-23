@@ -15,7 +15,8 @@
 # Ignore this annoying MACOS file which is a caching file and keeps thumbnails
 .DS_Store
 
-
+# Hide the .env because it's full of secrets!
+/.env
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
