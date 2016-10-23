@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
-  def index
-  end
+  # def index
+  # end
 
-  def show
-  end
+  # def show
+  # end
 
   def new
 
@@ -51,11 +51,11 @@ class SessionsController < ApplicationController
 #GITHUB AUTHENTICATION END
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-  end
+  # def update
+  # end
 
   def destroy
     session[:user_id] = nil 

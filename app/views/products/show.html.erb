@@ -2,18 +2,22 @@
 
   <h2> <%= @product.name %> </h2>
 
-  <%= image_tag(@product.photo_url, :class => 'photo') %>
+    <%= image_tag(@product.photo_url, :class => 'photo') %>
+  
 
-  <p><%= @product.description %></p>
-  <p>Price: $<%= @product.price %></p>
-  <p>In-stock: <%= @product.inventory %></p>
-  <p>Category: <%= @product.category %></p>
-  <p>Seller: <%#link_to @seller.name, by_seller_products_path %></p>
-  <p>Average rating: <%= @product.average_rating %></p>
+   <div class="card"> 
+    <ul class="product-info">
+      <li><%= @product.description %></li>
+      <li>Price: $<%= @product.price %></li>
+      <li>In-stock: <%= @product.inventory %></li>
+      <li>Category: <%= @product.category %></li>
+      <li>Seller: <%#link_to @seller.name, by_seller_products_path %></li>
+      <li>Average rating: <%= @product.average_rating %></li>
 
-  <p>Review:
-    <% @reviews.each do |review| %></p>
-      <p><%= review.description %></p>
-    <% end %>
-
+      <li>Review:
+        <% @reviews.each do |review| %></li>
+          <li><%= review.description %></li>
+        <% end %>
+    </ul>
+    </div>
 </div>

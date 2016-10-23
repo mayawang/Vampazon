@@ -102,11 +102,16 @@ img.product_photo {
   max-height: 8rem;
 }
 
+ul.product-info {
+  list-style: none;
+}
+
 .product-info ul {
   list-style: none;
   margin-left: 0;
   margin-bottom: .25em;
   font-size: 1rem;
+  text-align: center;
 }
 
 .product-info ul a {
@@ -115,4 +120,8 @@ img.product_photo {
 
 .product-info ul a:hover {
   color: #680604;
+}
+
+.product-info li {
+  float: center;
 }
