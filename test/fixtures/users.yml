@@ -20,7 +20,8 @@ ss:
   street_address: 1 First Street NE
   city: Washington
   state: MyString
-  zip: DC
+  # dont want to break tests but this one isn't a int. Was simply DC, changed it to int
+  zip: 20543
   phone: 2024793000
   merchant: true
   provider: github

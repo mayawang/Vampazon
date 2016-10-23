@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
+
   test "should get index" do
     get :index
     assert_response :success
+    # Tests if expression is not nil
+    assert_not_nil assigns(:product)
   end
 
   test "should get show" do
@@ -21,6 +24,14 @@ class ProductsControllerTest < ActionController::TestCase
     assert_response :redirect
   end
 
+
+
+
+# set your TestCase pre-conditions
+
+# usuually writing a method,
+# then make assertions
+#
   # test "If a user is not logged in they cannot see their task." do
   #   session[:user_id] = nil  # ensure no one is logged in
 

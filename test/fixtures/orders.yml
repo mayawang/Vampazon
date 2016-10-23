@@ -1,27 +1,60 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  product_id: 
-  user_id: 
-  status: false
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  street_address: MyString
-  city: MyString
-  state: MyString
-  zip: 1
-  phone: 1
+# 1. do I use user_id used in products.yml or should I leave them blank?
+  # decided to until otherwise determined.
+# 2. should I put example of 1 with status of false, the othter true?
+  # Noticed, users.yml, have status: true, but this is different from status in order, right?
+# 3. To referernce other yml. Should I make product_id = "product1" as seen in product.yml?
 
-two:
-  product_id: 
-  user_id: 
+order1:
+  product_id: product1
+  user_id: rbg
   status: false
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  street_address: MyString
-  city: MyString
-  state: MyString
+  first_name: Ruth
+  last_name: Ginsburg
+  email: notorious@thesupremes.io
+  street_address: 1 First Street NE
+  city: Washington
+  state: DC
+  zip: 20543
+  phone: 2024793000
+
+order2:
+  product_id: product2
+  user_id: 2
+  status: false
+  first_name: Sonia
+  last_name: Sotomeyer
+  email: not-red-sonia@thesupremes.io
+  street_address: 1 First Street NE
+  city: Washington
+  state: DC
   zip: 1
-  phone: 1
+  phone: 2024793000
+
+
+minimal_order:
+    product_id: product3
+    user_id: 3
+    status: false
+    first_name: Sonia
+    last_name: Sotomeyer
+    email: not-red-sonia@thesupremes.io
+    street_address: 1 First Street NE
+    city: Washington
+    state: DC
+    zip: 1
+    phone: 2024793000
+
+
+missing_name:
+    product_id: product3
+    user_id: 3
+    status: false
+    last_name: Sotomeyer
+    email: not-red-sonia@thesupremes.io
+    street_address: 1 First Street NE
+    city: Washington
+    state: DC
+    zip: 1
+    phone: 2024793000
