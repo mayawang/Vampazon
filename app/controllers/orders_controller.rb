@@ -1,10 +1,11 @@
 class OrdersController < ApplicationController
 
-  def add_orders
-    @product = Product.find(params[:id])
+  def add_to_cart
+    @product = Product.find(params[:product_id])
     @order_item = OrderItem.new
     # @order_item_method = :post
 
+    add_orders_path(@product.id), method: :post
   end
 
   def index

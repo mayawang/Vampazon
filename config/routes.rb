@@ -65,7 +65,7 @@ Rails.application.routes.draw do
   #============== Orders ==================
 
 
-  post 'orders/:id/add_orders' => 'orders#add_orders', as: 'add_orders'
+  post 'cart/add_to_cart' => 'orders#add_to_cart', as: 'add_to_cart'
 
   post 'orders/:id/create' => 'orders#create', as: 'create_orders'
 

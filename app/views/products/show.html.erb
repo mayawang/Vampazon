@@ -16,6 +16,13 @@
       <p><%= review.description %></p>
     <% end %>
 
-  <%=button_to("Add", add_orders_path(@product.id), method: :post)%>
+
+  <%= form_tag(add_to_cart_path, method: :post) do %>
+    <%= label_tag :quantity %>
+    <%= select_tag :quantity, options_for_select((1..@product.inventory), 1) %>
+    <%= hidden_field_tag(:product_id, @product.id) %>
+
+    <%= submit_tag "Add to Cart" %>
+  <% end  %>
 
 </div>
