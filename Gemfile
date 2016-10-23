@@ -9,7 +9,6 @@ gem 'omniauth-github'
 #make it easier to read
 gem 'awesome_print'
 
-
 #simpler forms?
 gem 'simple_form'
 #make it possible to authenticate from scratch
@@ -57,7 +56,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
+# Rails ERD runs on all Rails 3 platforms: Ruby 1.8/1.9, Rubinius, or JRuby all work fine. Add Rails ERD as a plugin to your Ruby on Rails 3 application. In your Gemfile
+  gem 'rails-erd', '~> 1.4', '>= 1.4.7'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'better_errors'
