@@ -7,6 +7,15 @@
 <% end %>
 
 
-<h3><%= link_to "Browse All collections", index_products_path%></h3>
+<h3><%= link_to "Browse All Collections", index_products_path%></h3>
 
 <%= render partial: 'layouts/navigation_links' %>
+
+<% if @uid.present? %>
+  <%= button_to "Create New Product", new_products_path(type: "guest"), method: :get, :class => 'homepage_button', id: 'guest' %>
+<% end %>
+
+<%# if current_user.present? %>
+  <%# button_to "Create New Product", new_products_path, method: :get, :class => 'button', uid: auth_hash[:uid] %>
+  <%# render :partial => "home/statusbar" %>
+<%# end %>
