@@ -1,2 +1,6 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<div class="basic">
+  <% if session[:user_id] != nil %>
+    <h2>Post a New Product</h2>
+    <%= render partial: "form", locals: {action_name: "create"}%>
+  <% end %>
+</div>

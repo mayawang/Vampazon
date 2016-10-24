@@ -11,8 +11,8 @@
 
 <%= render partial: 'layouts/navigation_links' %>
 
-<% if @uid.present? %>
-  <%= button_to "Create New Product", new_products_path(type: "guest"), method: :get, :class => 'homepage_button', id: 'guest' %>
+<% if session[:user_id] != nil %>
+  <%= button_to "Create New Product", new_products_path, method: :get, :class => 'button' %>
 <% end %>
 
 <%# if current_user.present? %>
