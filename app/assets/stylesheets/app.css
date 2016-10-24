@@ -18,9 +18,23 @@ header h1 {
   text-align: center;
 }
 
+header h1 a {
+  padding-top: 2.5%;
+}
+
 header h1 a:visited {
   color: white !important;
 }
+
+
+#login-logout a {
+  color: white;
+  display: inline-block;
+  float: right;
+  min-width: 20%;
+}
+
+
 
 .basic {
   margin: 2% 12% 5% 12%;
@@ -41,6 +55,25 @@ header h1 a:visited {
   padding-left: 2%;
   padding-right: 2%;
 }*/
+
+
+
+.row ul {
+  list-style: none;
+}
+
+.row ul img {
+  max-height: 10em;
+}
+
+.row ul a {
+  color: black;
+}
+
+.row ul a:hover {
+  color: #680604;
+}
+
 
 .columns {
   column-count: 3;
@@ -97,6 +130,7 @@ img.product_photo {
   margin-left: 0;
   margin-bottom: .25em;
   font-size: 1rem;
+  text-align: center;
 }
 
 .product-info ul a {
@@ -105,4 +139,9 @@ img.product_photo {
 
 .product-info ul a:hover {
   color: red;
+}
+
+
+.product-info li {
+  float: center;
 }
