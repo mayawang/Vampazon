@@ -18,3 +18,7 @@ better than fixtures.
 How Factory Girl helps avoid mystery guests
 
 Let's look at a specific example. Fixtures often lead to Mystery Guests, an antipattern where we are performing some assertions in our tests but it's not at all obvious at a glance what the data we're asserting against is:
+
+
++ https://robots.thoughtbot.com/aint-no-calla-back-girl
+Discussing associations
