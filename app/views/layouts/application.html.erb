@@ -1,16 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Vampazon</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
-    <h1><%= link_to "Vampazon", root_path %></h1>
-  </header>
-  <p><%= link_to "My Cart", show_cart_path  %></p>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vampazon</title>
+    <link rel="stylesheet" href="assets/foundation.css">
+    <link rel="stylesheet" href="assets/app.css">
+  </head>
+  <body>
+
+  <!-- DESKTOP NAVIATION -->
+
+  <nav class="top-bar">
+
+
+
+    <div class="top-bar-left">
+     <h1>Vampazon</h1>
+    </div>
+
+    <div class="top-bar-right">
+  <!-- <ul class="menu-centered"> -->
+      <ul class="menu centered">
+
+      <!-- products each do here? -->
+        <li><a href="#">Fashion</a></li>
+        <li><a href="#">Home Decor</a></li>
+        <li><a href="#">Minions</a></li>
+        <li><a href="#">Personal Care</a></li>
+        <li><%= link_to "My Cart", show_cart_path  %></li>
+        <li><% if current_user %>
+              <%= link_to 'Logout', logout_path %>
+            <% else %>
+              <%= link_to 'Login', login_path %>
+            <% end %></li>
+      </ul>    
+      <ul class="menu">
+
+      </ul>
+    <!-- </div> for menu-centered-->
+  </div>
+  </nav>
 
   <!-- <h1>Va</h1><a href="index.html" img src="../../assets/images/MLogo.png"><h1>pazon</h1> -->
 
@@ -22,4 +53,30 @@
 <%= yield %>
 
 </body>
+
+
+  <!-- FOOTER -->
+
+
+  <footer> 
+    
+  </footer>
+
+
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
 </html>
