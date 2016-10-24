@@ -33,7 +33,7 @@
         <li><% if current_user %>
               <%= link_to 'Logout', logout_path %>
             <% else %>
-              <%= link_to 'Login', login_path %>
+              <%= link_to 'Login', "/auth/:provider/callback" %>
             <% end %></li>
       </ul>    
       <ul class="menu">

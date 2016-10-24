@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 
   #============== Sessions ==================
 
-  get 'login' => 'sessions#new'
+  # get 'login' => 'sessions#new'
   get 'logout' => 'sessions#destroy'
 
 #   get 'sessions/index' => 'sessions#index', as: 'index_sessions'
