@@ -6,18 +6,20 @@ class OrderTest < ActiveSupport::TestCase
   # end
 ########### test relationship with user #########
 
-  test "orders must belong to a user" do
-    order = build(:order, user: nil)
-    refute order.valid?
-    assert_not_nil order.errors[:user], "orders must belong to a user!"
-  end
+  # test "Order cannot be created without an associated user." do
+  #   order = build(:order_without_user)
+  #   assert_not_nil order.errors[:user], "orders must belong to a user!"
+  # end
 
-  test "orders should have correct user" do
+  test "Valid order" do
     order = create(:order)
-    user = create(:user)
-
-    assert_equal(order, user)
+    assert order.valid?
   end
+
+  # test "Invalid order when you do not include credit card number" do
+  #   order = create(:order, credit_card: nil)
+  #   assert_not order.valid?
+  # end
 
 
 end
