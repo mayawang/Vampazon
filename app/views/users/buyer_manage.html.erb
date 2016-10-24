@@ -5,4 +5,7 @@
 
 <h3>Buyer Managment</h3>
 
-<p>Under Construction</p1>
+<h5>My Orders:</h5>
+<%= link_to "all", buyer_manage_path, :class => "button" %>
+<%= link_to "pending", pending_order_path, :class => "button" %>
+<%= link_to "paid", paid_orders_path, :class => "button" %>

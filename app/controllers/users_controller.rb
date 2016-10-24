@@ -23,6 +23,12 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def pending_orders
+  end
+
+  def paid_orders
+  end
+
   def index
     return User.all
   end
