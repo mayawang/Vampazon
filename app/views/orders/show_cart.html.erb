@@ -5,6 +5,6 @@
   <p><%= order_item.unit_price %></p>
   <p><%= order_item.quantity %></p>
 <% end %>
-
+  <p>cart subtotal:<%= @order.total_price %></p>
 <%= button_to "continue shopping", root_path, :method => :get %>
 <%= button_to "checkout", checkout_path, :method => :get %>
