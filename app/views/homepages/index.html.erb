@@ -1,24 +1,34 @@
-<h1>Welcome to Vampazon!</h1>
 
-<!-- <h1>Welcome to Vampazon!</h1> -->
-<div class="basic">
+<!-- HERO SECTION -->
+
+<section class="hero"> 
+<!-- welcome to foundation logic?  oauth dependent? -->
+<!-- <h1> </h1> -->
 	<%= render partial: 'layouts/greeting' %>
 
-<!-- 	<div class="columns small-up-2 medium-up-4"> -->
-	<h3>Shop by Category</h3>
+</section>
 
-<span class="columns small-12 small-12">
-	<% @product_categories.each do |product_category| %>
+<!-- MAIN SECTION -->
 
-	<%= render partial: 'random_photo', locals: {wanted_category: product_category } %>
 
-	<% end %>
+<section class="main"> 
+  
+	<div class="basic">
 
-	<div class="product-info">
-		<h3><%= link_to "Browse All Collections", index_products_path%></h3>
+	<!-- 	<div class="columns small-up-2 medium-up-4"> -->
+		<h3>Shop by Category</h3>
+
+		<span class="columns small-12 small-12">
+			<% @product_categories.each do |product_category| %>
+
+				<%= render partial: 'random_photo', locals: {wanted_category: product_category } %>
+
+			<% end %>
+
+			<div class="product-info">
+				<h3><%= link_to "Browse All Collections", index_products_path%></h3>
+			</div>
+		</span>
 	</div>
-</span>
 
-
-
-</div>
+</section>

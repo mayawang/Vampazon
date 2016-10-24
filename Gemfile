@@ -9,6 +9,9 @@ gem 'omniauth-github'
 #make it easier to read
 gem 'awesome_print'
 
+#add Zurb Foundation
+gem 'foundation-rails'
+
 
 #simpler forms?
 gem 'simple_form'
