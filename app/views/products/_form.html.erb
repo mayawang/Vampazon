@@ -13,13 +13,13 @@
 
     <div class="field">
       <%= f.label "Price" %>
-      <%= f.text_field :price, "Price" => nil, :required => true %>
+      <%= f.number_field :price, "Price" => nil, :required => true %>
     </div>
 
-    <!-- <div class="field">
-      <%# f.label "Select the appropriate category" %>
-      <%# f.collection_select :category, "Home Decor", "Personal Care", "Fashion", "Minions", "Select the appropriate category" => nil, :required => true %>
-    </div> -->
+    <div class="field">
+      <%= f.label "Inventory" %>
+      <%= f.number_field :inventory, "Inventory" => nil, :required => true %>
+    </div>
 
     <div class="field">
       <%= f.label "Category" %>
