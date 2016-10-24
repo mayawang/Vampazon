@@ -30,11 +30,11 @@
         <li><a href="#">Minions</a></li>
         <li><a href="#">Personal Care</a></li>
         <li><%= link_to "My Cart", show_cart_path  %></li>
-        <li><% if current_user %>
-              <%= link_to 'Logout', logout_path %>
-            <% else %>
-              <%= link_to 'Login', "/auth/:provider/callback" %>
-            <% end %></li>
+        <li>  <% if current_user %>
+                <%= link_to 'Logout', logout_path %>
+              <% else %>
+                <%= link_to 'Login', "/auth/github/" %>
+              <% end %></li>
       </ul>    
       <ul class="menu">
 
