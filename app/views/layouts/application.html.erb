@@ -17,7 +17,7 @@
 
 
     <div class="top-bar-left">
-     <h1>Vampazon</h1>
+     <%= link_to 'Vampazon', root_path %>
     </div>
 
     <div class="top-bar-right">
@@ -25,10 +25,9 @@
       <ul class="menu centered">
 
       <!-- products each do here? -->
-        <li><a href="#">Fashion</a></li>
-        <li><a href="#">Home Decor</a></li>
-        <li><a href="#">Minions</a></li>
-        <li><a href="#">Personal Care</a></li>
+        <% @product_categories.each do |product_category| %>
+            <li><%= link_to product_category, show_category_path(product_category) %></li>
+            <% end %> 
         <li><%= link_to "My Cart", show_cart_path  %></li>
         <li>  <% if current_user %>
                 <%= link_to 'Logout', logout_path %>
