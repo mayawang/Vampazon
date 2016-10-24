@@ -1,11 +1,13 @@
 <div class="basic">
 	<%= render partial: 'layouts/greeting' %>
 
+
 <!-- 	<div class="columns small-up-2 medium-up-4"> -->
 	<h3>Shop by Category</h3>
 
 <span class="columns small-12 small-12">
 	<% @product_categories.each do |product_category| %>
+
 
 
 	<%= render partial: 'random_photo', locals: {wanted_category: product_category } %>
@@ -16,6 +18,11 @@
 		<h3><%= link_to "Browse All Collections", index_products_path%></h3>
 	</div>
 </span>
+
+<%= form_tag(search_products_path(), :method => "get") do %>
+  <%= search_field_tag("query", nil, :placeholder => "search")%>
+  <%= submit_tag "Submit", :name => nil %>
+<% end %>
 
 <% if session[:user_id] != nil %>
   <%= button_to "Create New Product", new_products_path, method: :get, :class => 'button' %>
