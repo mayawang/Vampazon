@@ -27,7 +27,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(name: params[:product][:name], description: params[:product][:description], price: params[:product][:price], inventory: params[:product][:inventory], category: params[:product][:category], user_id: session[:user_id])
-
     @product.save
 
     redirect_to show_seller_products_path(@product.id)
