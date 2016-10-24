@@ -1,5 +1,5 @@
 module ApplicationHelper
 	def get_product_categories
-    product_categories = Product.uniq.pluck(:category)
+    Product.uniq.pluck(:category)
   end
 end
