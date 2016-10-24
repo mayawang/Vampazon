@@ -22,19 +22,7 @@
 
     <div class="top-bar-right">
   <!-- <ul class="menu-centered"> -->
-      <ul class="menu centered">
-
-      <!-- products each do here? -->
-        <% @product_categories.each do |product_category| %>
-            <li><%= link_to product_category, show_category_path(product_category) %></li>
-            <% end %> 
-        <li><%= link_to "My Cart", show_cart_path  %></li>
-        <li>  <% if current_user %>
-                <%= link_to 'Logout', logout_path %>
-              <% else %>
-                <%= link_to 'Login', "/auth/github/" %>
-              <% end %></li>
-      </ul>    
+   <%= render partial: '/homepages/navigation_links', locals: {controller: 'homepages'} %>
       <ul class="menu">
 
       </ul>
