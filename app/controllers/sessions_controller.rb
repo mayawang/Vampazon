@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def index
+    @user = User.find(session[:user_id]) # < recalls the value set in a previous request
   end
 
   def show
