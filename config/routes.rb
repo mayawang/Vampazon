@@ -67,8 +67,8 @@ Rails.application.routes.draw do
 
   post 'cart/add_to_cart' => 'orders#add_to_cart', as: 'add_to_cart'
 
-  post 'orders/:id/create' => 'orders#create', as: 'create_orders'
-
+  get 'cart' => 'orders#show_cart', as: 'show_cart'
+  get 'checkout' => 'orders#checkout', as: 'checkout'
 
 
   get 'orders/index' => 'orders#index', as: 'index_orders'

@@ -1,0 +1,10 @@
+<h1>Cart Details:</h1>
+<% @order_items.each do |order_item| %>
+  <!-- because order_item model belongs to product model, so I can use order_item.product, which works as attr_reader-->
+  <p><%= order_item.product.name %></p>
+  <p><%= order_item.unit_price %></p>
+  <p><%= order_item.quantity %></p>
+<% end %>
+
+<%= button_to "continue shopping", root_path, :method => :get %>
+<%= button_to "checkout", checkout_path, :method => :get %>
