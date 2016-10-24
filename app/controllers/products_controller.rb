@@ -26,11 +26,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(name: params[:product][:name], description: params[:product][:description], price: params[:product][:price], inventory: params[:product][:inventory], category: params[:product][:category], user_id: params[:user_id])
+    @product = Product.new(name: params[:product][:name], description: params[:product][:description], price: params[:product][:price], inventory: params[:product][:inventory], category: params[:product][:category], user_id: session[:user_id])
 
     @product.save
 
-    redirect_to show_seller_products_path
+    redirect_to show_seller_products_path(@product.id)
     # does rails think I mean to redirect to the method instead of the path? why doesn't it need an id for this route?
   end
 
