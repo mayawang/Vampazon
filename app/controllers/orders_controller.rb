@@ -22,7 +22,6 @@ class OrdersController < ApplicationController
     # no idea if we need to link via foreignkey or primary
     @myorder.status = params[:order][:status]
     @myorder.first_name = params[:order][:first_name]
-    @myorder.last_name = params[:order][:last_name]
     @myorder.email = params[:order][:email]
     @myorder.street_address = params[:order][:street_address]
     @myorder.city = params[:order][:city]

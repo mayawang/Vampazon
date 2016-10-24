@@ -10,10 +10,9 @@ class User < ActiveRecord::Base
     user       = User.new
     user.uid   = auth_hash[:uid]
     user.provider = 'github'
-    user.first_name  = auth_hash['info']['first_name']
-    user.last_name  = auth_hash['info']['last_name']
+    user.name  = auth_hash['raw']['name']
     user.email = auth_hash['info']['email']
-
+    #raise to get info for auth hash
     return user
   end
 end

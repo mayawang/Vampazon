@@ -25,9 +25,8 @@ class SessionsController < ApplicationController
 
 
     #GITHUB AUTHENTICATION START
-    env_hash = request.env()
     auth_hash = request.env['omniauth.auth']
-
+    #raise can go here too to get auth hash
     return redirect_to root_path unless auth_hash['uid']
 
     @user = User.find_by(uid: auth_hash[:uid], provider: 'github')

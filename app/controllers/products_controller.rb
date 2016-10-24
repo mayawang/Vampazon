@@ -7,7 +7,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id].to_i)
 
     if @product.user_id
-      @seller = User.find(@product.user_id)
+      @seller = @product.user
+      # @seller = User.find(@product.user_id)
     else
       @seller = User.new
     end
