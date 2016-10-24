@@ -14,15 +14,13 @@
 
   <nav class="top-bar">
 
-
-
     <div class="top-bar-left">
      <%= link_to 'Vampazon', root_path %>
     </div>
 
     <div class="top-bar-right">
   <!-- <ul class="menu-centered"> -->
-   <%= render partial: '/homepages/navigation_links', locals: {controller: 'homepages'} %>
+   <%= render partial: '/homepages/navigation_links', locals: {product_categories: @product_categories } %>
       <ul class="menu">
 
       </ul>
