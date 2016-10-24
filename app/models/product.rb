@@ -7,4 +7,9 @@ class Product < ActiveRecord::Base
     reviews = Review.where(:product_id => self.id)
     return reviews.average(:rank)
   end
+
+  def self.search(query)
+    where("name LIKE ? OR description LIKE ?", "%#{query}%", "%#{query}%")
+  end
+
 end

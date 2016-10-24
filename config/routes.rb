@@ -39,6 +39,11 @@ Rails.application.routes.draw do
 
   delete 'products/:id/destroy' => 'products#destroy', as: 'destroy_products'
 
+  get 'products/search' => 'products#search', as: 'search_products'
+
+
+
+
   #============== Sessions ==================
 
   get 'login' => 'sessions#new'
