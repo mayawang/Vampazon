@@ -69,7 +69,7 @@ Rails.application.routes.draw do
 
   get 'cart' => 'orders#show_cart', as: 'show_cart'
   get 'checkout' => 'orders#checkout', as: 'checkout'
-
+  post 'order_item/change_quantity' => 'orders#change_quantity', as: 'change_quantity'
 
   get 'orders/index' => 'orders#index', as: 'index_orders'
 

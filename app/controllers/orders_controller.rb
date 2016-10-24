@@ -29,8 +29,6 @@ class OrdersController < ApplicationController
       @order_item.quantity += params[:quantity].to_i
       @order_item.save!
     else
-
-
       @order_item = OrderItem.new
       @order_item.order_id = session[:cart_id]
       @order_item.quantity = params[:quantity].to_i
@@ -50,6 +48,20 @@ class OrdersController < ApplicationController
     end
 
     @order = Order.find_by(:id => session[:cart_id]) || Order.new
+  end
+
+  def change_quantity
+    order_item_id = params[:order_item_id]
+    order_item = OrderItem.find_by(:id => order_item_id)
+    if !order_item
+      redirect_to action: 'show_cart'
+    end
+
+    order_item.quantity = params[:quantity].to_i
+
+    order_item.save!
+
+    redirect_to action: 'show_cart'
   end
 
   def checkout
