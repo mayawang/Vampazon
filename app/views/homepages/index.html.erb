@@ -1,12 +1,24 @@
 <h1>Welcome to Vampazon!</h1>
 
-<h3>Shop by Category</h3>
-<% @product_categories.each do |product_category| %>
-  <!-- insert category photos -->
-  <p><%= link_to product_category, show_category_path(product_category)%></p>
-<% end %>
+<!-- <h1>Welcome to Vampazon!</h1> -->
+<div class="basic">
+	<%= render partial: 'layouts/greeting' %>
+
+<!-- 	<div class="columns small-up-2 medium-up-4"> -->
+	<h3>Shop by Category</h3>
+
+<span class="columns small-12 small-12">
+	<% @product_categories.each do |product_category| %>
+
+	<%= render partial: 'random_photo', locals: {wanted_category: product_category } %>
+
+	<% end %>
+
+	<div class="product-info">
+		<h3><%= link_to "Browse All Collections", index_products_path%></h3>
+	</div>
+</span>
 
 
-<h3><%= link_to "Browse All collections", index_products_path%></h3>
 
-<%= render partial: 'layouts/navigation_links' %>
+</div>
