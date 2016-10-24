@@ -21,6 +21,15 @@ class ProductsController < ApplicationController
     @products = Product.where(:user_id => @product.user_id)
   end
 
+  def search
+     @products = Product.search(params[:query])
+     # if product query matches a product(s)
+     # render those image(s), if any match.
+     render :index 
+  end
+
+
+
   def new
 
   end

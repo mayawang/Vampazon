@@ -3,10 +3,15 @@
 <h3>Shop by Category</h3>
 <% @product_categories.each do |product_category| %>
   <!-- insert category photos -->
-  <p><%= link_to product_category, show_category_path(product_category)%></p>
+  <p><%= link_to(product_category, show_category_path(product_category))%></p>
 <% end %>
 
 
 <h3><%= link_to "Browse All collections", index_products_path%></h3>
 
 <%= render partial: 'layouts/navigation_links' %>
+
+<%= form_tag(search_products_path(), :method => "get") do %>
+  <%= search_field_tag("query", nil, :placeholder => "search")%>
+  <%= submit_tag "Submit", :name => nil %>
+<% end %>
