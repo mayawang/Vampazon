@@ -7,12 +7,6 @@ class ApplicationController < ActionController::Base
 private
 
 	 def current_user
-	 	#AUTHENTICATION FROM SCRATCH METHOD START
-	 	# @current_user ||= User.find(session[:user_id]) if session[:user_id]
-	 	#AUTHENTICATION FROM SCRATCH METHOD END
-
 		@current_user = User.find_by(id: session[:user_id] )
-
-    # current_user = User.find_by(id: auth_hash[:id], provider: 'github') if session[:user_id]
 	 end
 end
