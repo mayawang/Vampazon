@@ -6,21 +6,34 @@ body {
 
 header {
   background-color: #680604;
-  height: 16%;
+  min-height: 16%;
   margin-bottom: 2%;
 }
 
 header h1 {
   color: white;
-  padding-top: 1.5%;
+  padding-top: 2.5%;
   font-size: 3.25rem;
   font-weight: bold;
   text-align: center;
 }
 
+header h1 a {
+  padding-top: 2.5%;
+}
+
 header h1 a:visited {
   color: white !important;
 }
+
+#login-logout a {
+  color: white;
+  display: inline-block;
+  float: right;
+  min-width: 20%;
+}
+
+
 
 .basic {
   margin: 2% 12% 5% 12%;
@@ -114,6 +127,10 @@ ul.product-info {
   text-align: center;
 }
 
+ul.product-info li a {
+  color: black;
+}
+
 .product-info ul a {
   color: black;
 }
@@ -124,4 +141,5 @@ ul.product-info {
 
 .product-info li {
   float: center;
+  color: black;
 }

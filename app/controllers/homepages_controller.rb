@@ -11,4 +11,8 @@ class HomepagesController < ApplicationController
     @products_in_category = Product.where(:category => @product_category)
   end
 
+ def show_random_photo(category)
+ 	@category_photo = Product.where(category: category).sample.photo_url
+ end
+
 end
