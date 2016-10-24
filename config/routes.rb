@@ -75,6 +75,8 @@ Rails.application.routes.draw do
 
   get 'checkout' => 'orders#checkout', as: 'checkout'
 
+  get 'orders/create' => 'orders#create_orders', as: 'create_orders'
+
 
 
   get 'orders/index' => 'orders#index', as: 'index_orders'

@@ -69,6 +69,18 @@ class OrdersController < ApplicationController
   end
 
   def checkout
+    if session[:cart_id]
+      @order_items = OrderItem.where(:order_id => session[:cart_id])
+    else
+      @order_items = []
+    end
+    @order = Order.find_by(:id => session[:cart_id]) || Order.new
+
+  end
+
+  def create_orders
+    @order = Order.find_by(:id => session[:cart_id]) || Order.new
+
 
   end
 
@@ -84,15 +96,7 @@ class OrdersController < ApplicationController
 
   end
 
-  def create
-    @product = Product.find(params[:id])
-    @order_item = OrderItem.new
-    @order_item.id = @product.id
-    @order_item.unit_price = @product.price
-    @order_item.quantity = params[:quantity]
-    @order_item.save
 
-  end
 
   def edit
 
