@@ -24,7 +24,7 @@
   <%= submit_tag "Submit", :name => nil %>
 <% end %>
 
-<% if session[:user_id] != nil %>
+<% if current_user %>
   <%= button_to "Create New Product", new_products_path, method: :get, :class => 'button' %>
 <% end %>
 
