@@ -15,17 +15,17 @@
   <nav class="top-bar">
 
     <div class="top-bar-left">
+    
      <%= link_to 'Vampazon', root_path %>
+    
     </div>
 
     <div class="top-bar-right">
-  <!-- <ul class="menu-centered"> -->
-   <%= render partial: '/homepages/navigation_links', locals: {product_categories: @product_categories } %>
-      <ul class="menu">
 
-      </ul>
-    <!-- </div> for menu-centered-->
-  </div>
+      <%= render partial: '/homepages/navigation_links' %>
+
+    </div>
+
   </nav>
 
   <!-- <h1>Va</h1><a href="index.html" img src="../../assets/images/MLogo.png"><h1>pazon</h1> -->
