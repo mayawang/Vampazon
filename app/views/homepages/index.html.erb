@@ -2,7 +2,7 @@
 <div class="basic">
 	<%= render partial: 'layouts/greeting' %>
 
-	<%= render partial: 'random_photo', action: show_random_photo %>
+	<%= render partial: 'random_photo', locals: {wanted_category: "Fashion"} %>
 <!-- 	<div class="columns small-up-2 medium-up-4"> -->
 	<h3>Shop by Category</h3>
 
