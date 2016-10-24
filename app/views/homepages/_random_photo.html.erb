@@ -1,2 +1,4 @@
-<h3>Minions</h3>
-<p><% image_tag(Product.where(category: @minions).sample.photo_url) %></p>
+<h3><%= wanted_category %></h3>
+<div class='product_photo'>
+<p><%= image_tag (Product.random_photo(wanted_category)) %></p>
+</div>
