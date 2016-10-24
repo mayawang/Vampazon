@@ -5,45 +5,17 @@
 <!-- 	<div class="columns small-up-2 medium-up-4"> -->
 	<h3>Shop by Category</h3>
 
-
+<span class="columns small-12 small-12">
 	<% @product_categories.each do |product_category| %>
 
-					<h3><%= link_to product_category, show_category_path(product_category)%></h3>
-					<ul class="product-info">
-					<li><%= link_to(image_tag(Product.random_photo(product_category), alt: 'photo of "#{product_category}"'), image_path(show_category_path(product_category))) %></li>
-					</ul>
-
-
-
-
-  <ul class="orbit-container">
-    <% num = 0 %>
-    <% @product_categories.each do |product_category| %>
-      <li class="orbit-slide <%= 'is-active' if product_category == @product_categories[0] %>">
-        <%= image_tag Product.random_photo(product_category), alt: 'photo of "#{product_category}"',  %>
-
-        <figcaption class="orbit-caption"> <%= product_category.capitalize %></figcaption>
-      </li>
-    <% end %>
-
-
-  <ul class="orbit-container">
-    <% num = 0 %>
-    <% @orbits.each do |quote| %>
-      <li class="orbit-slide <%= 'is-active' if quote == @orbits[0] %>">
-        <%= image_tag "Orbit#{num}.jpg", alt: "Space" %>
-
-        <figcaption class="orbit-caption"> <%= quote %></figcaption>
-      </li>
-      <% num += 1 %>
-    <% end %>
-
+	<%= render partial: 'random_photo', locals: {wanted_category: product_category } %>
 
 	<% end %>
 
 	<div class="product-info">
 		<h3><%= link_to "Browse All Collections", index_products_path%></h3>
-
+	</div>
+</span>
 
 
 
