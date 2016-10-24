@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161023232919) do
+ActiveRecord::Schema.define(version: 20161024090318) do
 
   create_table "order_items", force: :cascade do |t|
     t.decimal  "unit_price"
@@ -34,11 +34,15 @@ ActiveRecord::Schema.define(version: 20161023232919) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.integer  "phone"
+    t.integer  "phone",          limit: 10
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "user_id"
     t.integer  "product_id"
+    t.integer  "cc_number"
+    t.integer  "exp_month"
+    t.integer  "exp_year"
+    t.integer  "cvc"
   end
 
   add_index "orders", ["product_id"], name: "index_orders_on_product_id"
