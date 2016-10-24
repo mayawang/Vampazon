@@ -25,8 +25,9 @@ class SessionsController < ApplicationController
 
 
     #GITHUB AUTHENTICATION START
+    env_hash = request.env()
     auth_hash = request.env['omniauth.auth']
-    
+
     return redirect_to root_path unless auth_hash['uid']
 
     @user = User.find_by(uid: auth_hash[:uid], provider: 'github')
@@ -35,7 +36,7 @@ class SessionsController < ApplicationController
       @user = User.build_from_github(auth_hash)
       flash[:notice] = "Unable to Save the User"
 #using method below to save time
-      return redirect_to root_path unless @user.save
+      return redirect_to root_path unless @user.save!
       # render :creation_failure unless @user.save
     end
 
@@ -58,7 +59,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil 
+    session[:user_id] = nil
     redirect_to root_path, notice: 'Successfully logged out.'
   end
 end
