@@ -23,6 +23,10 @@ Rails.application.routes.draw do
 
   get 'user_account' => 'users#user_account', as: 'user_account'
 
+  get 'buyer_manage' => 'users#buyer_manage', as: 'buyer_manage'
+
+  get 'seller_manage' => 'users#seller_manage', as: 'seller_manage'
+
 
   #============== Products ==================
 

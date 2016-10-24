@@ -13,7 +13,14 @@ class UsersController < ApplicationController
 
   def user_account
     @user = User.find(session[:user_id])
-    
+  end
+
+  def buyer_manage
+    @user = User.find(session[:user_id])
+  end
+
+  def seller_manage
+    @user = User.find(session[:user_id])
   end
 
   def index
