@@ -37,7 +37,6 @@ class OrdersController < ApplicationController
       @order_item.save!
     end
     redirect_to action: 'show_cart'
-
   end
 
   def show_cart
@@ -58,8 +57,13 @@ class OrdersController < ApplicationController
     end
 
     order_item.quantity = params[:quantity].to_i
-
     order_item.save!
+    redirect_to action: 'show_cart'
+  end
+
+  def destroy_order_item
+    order_item_id = params[:order_item_id]
+    OrderItem.destroy(order_item_id)
 
     redirect_to action: 'show_cart'
   end
@@ -98,7 +102,5 @@ class OrdersController < ApplicationController
 
   end
 
-  def destroy
 
-  end
 end

@@ -10,8 +10,14 @@
     <%= hidden_field_tag(:order_item_id, order_item.id) %>
     <%= submit_tag "change quantity" %>
   <% end %>
+
+  <%= form_tag(destroy_order_item_path, method: :delete) do %>
+    <%= hidden_field_tag(:order_item_id, order_item.id) %>
+    <%= submit_tag "Delete" %>
+  <% end %>
+
 <% end %>
 
-  <p>cart subtotal:$<%= @order.total_price %></p>
+<p>cart subtotal:$<%= @order.total_price %></p>
 <%= button_to "continue shopping", root_path, :method => :get %>
 <%= button_to "checkout", checkout_path, :method => :get %>
