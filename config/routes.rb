@@ -64,18 +64,32 @@ Rails.application.routes.draw do
 
   #============== Orders ==================
 
+
+  post 'cart/add_to_cart' => 'orders#add_to_cart', as: 'add_to_cart'
+
+  get 'cart' => 'orders#show_cart', as: 'show_cart'
+
+  post 'order_item/change_quantity' => 'orders#change_quantity', as: 'change_quantity'
+
+  delete 'order_item/delete' => 'orders#destroy_order_item', as: 'destroy_order_item'
+
+  get 'checkout' => 'orders#checkout', as: 'checkout'
+
+  post 'orders/create' => 'orders#create_order', as: 'create_order'
+
+
+
   get 'orders/index' => 'orders#index', as: 'index_orders'
 
   get 'orders/show/:id' => 'orders#show', as: 'show_orders'
 
   get 'orders/new' => 'orders#new', as: 'new_orders'
 
-  post 'orders/create' => 'orders#create', as: 'create_orders'
 
   get 'orders/:id/edit' => 'orders#edit', as: 'edit_orders'
 
   patch 'orders/:id/update' => 'orders#update', as: 'update_orders'
 
-  delete 'orders/:id/destroy' => 'orders#destroy', as: 'destroy_orders'
+
 
 end

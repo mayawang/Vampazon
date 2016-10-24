@@ -50,10 +50,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'factory_girl_rails', "~> 4.0"
   gem 'byebug'
   gem 'sqlite3'
   gem 'dotenv-rails'
   gem 'pry'
+
 end
 
 group :development do

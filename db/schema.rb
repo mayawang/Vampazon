@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20161024205557) do
   add_index "order_items", ["product_id"], name: "index_order_items_on_product_id"
 
   create_table "orders", force: :cascade do |t|
-    t.boolean  "status"
+    t.string   "status",         limit: 80
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
@@ -34,11 +34,15 @@ ActiveRecord::Schema.define(version: 20161024205557) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.integer  "phone"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "phone",          limit: 10
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "user_id"
     t.integer  "product_id"
+    t.integer  "cc_number"
+    t.integer  "exp_month"
+    t.integer  "exp_year"
+    t.integer  "cvc"
   end
 
   add_index "orders", ["product_id"], name: "index_orders_on_product_id"
