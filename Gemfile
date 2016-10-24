@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-#gem for authenticated user actions 
-gem 'devise', '~> 4.2'
+#gem for authenticated user actions
+#gem 'devise', '~> 4.2'
 
 #gem for oAuth github Authentication
 gem 'omniauth'
