@@ -9,14 +9,12 @@
 
 <p>cart subtotal:$<%= @order.total_price %></p>
 
-<h3>Shipping address:</h3>
+<%= form_for @order, url: create_order_path, method: :post do |f| %>
+  <h3>Shipping address:</h3>
+  <%= render partial: "address_form", locals: { :f => f } %>
+  <h3>Payment Information:</h3>
+  <p>Payment Method: VISA only</p>
 
-  <%= render partial: "address_form" %>
-
-
-<h3>Payment Information:</h3>
-<p>Payment Method: VISA only</p>
-<%= form_for @order, url: create_orders_path do |f| %>
   <%= f.label "Credit Card:" %>
   <%= f.text_field :cc_number, :class => "cc_number" %>
 
@@ -28,9 +26,9 @@
 
   <%= f.label "CVC:" %>
   <%= f.text_field :cvc, :class => "cvc" %>
-  <%= f.submit "submit"  %>
+  <%= hidden_field_tag(:order_id, @order.id) %>
+  <%= f.submit "Confirm Payment" %>
 <% end %>
 
 
 <%= button_to "Back to Cart", show_cart_path, :method => :get %>
-<%= button_to "Confirm Payment", create_orders_path, :method => :get %>

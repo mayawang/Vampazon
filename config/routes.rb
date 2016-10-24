@@ -75,7 +75,7 @@ Rails.application.routes.draw do
 
   get 'checkout' => 'orders#checkout', as: 'checkout'
 
-  get 'orders/create' => 'orders#create_orders', as: 'create_orders'
+  post 'orders/create' => 'orders#create_order', as: 'create_order'
 
 
 

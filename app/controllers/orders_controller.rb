@@ -78,9 +78,37 @@ class OrdersController < ApplicationController
 
   end
 
-  def create_orders
-    @order = Order.find_by(:id => session[:cart_id]) || Order.new
+  def create_order
+    @order = Order.find(params[:order_id])
 
+    @order.first_name = params[:order][:first_name]
+    @order.last_name = params[:order][:last_name]
+    @order.email = params[:order][:email]
+    @order.street_address = params[:order][:street_address]
+    @order.city = params[:order][:city]
+    @order.state = params[:order][:state]
+    @order.zip = params[:order][:zip]
+    @order.phone = params[:order][:phone]
+    @order.cc_number = params[:order][:cc_number]
+    @order.exp_month = params[:order][:exp_month]
+    @order.exp_year = params[:order][:exp_year]
+    @order.cvc = params[:order][:cvc]
+    @order.save!
+
+    # check if product inventory is sufficient for purchase quantity
+    @order.order_items.each do |order_item|
+      if order_item.quantity > order_item.product.inventory
+        flash[:notice] = "#{order_item.product.name}'s inventory is not enough to fullfill your order. Please change your Quantity and submit again."
+        redirect_to action: 'cart'
+      else
+        @order.status = "paid"
+        @order.save!
+        session[:cart_id] = nil
+      end
+      # when sold, product's inventory is reduced accordingly.
+      order_item.product.inventory -= order_item.quantity
+      order_item.product.save!
+    end
 
   end
 
