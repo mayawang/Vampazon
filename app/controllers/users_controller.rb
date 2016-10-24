@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     #   # do stuff to check if user is logged in
     # end
 
+  def user_account
+    @user = User.find(session[:user_id])
+    
+  end
 
   def index
     return User.all

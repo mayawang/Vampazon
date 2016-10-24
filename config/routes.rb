@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get 'user_account' => 'users#user_account', as: 'user_account'
+
+
   #============== Products ==================
 
   get 'products/index' => 'products#index', as: 'index_products'
