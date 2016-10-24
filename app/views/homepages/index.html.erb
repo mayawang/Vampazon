@@ -7,7 +7,7 @@
 <% end %>
 
 
-<h3><%= link_to "Browse All collections", index_products_path%></h3>
+<h3><%= link_to "Browse All Collections", index_products_path%></h3>
 
 <%= render partial: 'layouts/navigation_links' %>
 
@@ -15,3 +15,12 @@
   <%= search_field_tag("query", nil, :placeholder => "search")%>
   <%= submit_tag "Submit", :name => nil %>
 <% end %>
+
+<% if session[:user_id] != nil %>
+  <%= button_to "Create New Product", new_products_path, method: :get, :class => 'button' %>
+<% end %>
+
+<%# if current_user.present? %>
+  <%# button_to "Create New Product", new_products_path, method: :get, :class => 'button', uid: auth_hash[:uid] %>
+  <%# render :partial => "home/statusbar" %>
+<%# end %>

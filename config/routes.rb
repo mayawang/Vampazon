@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   get 'products/index' => 'products#index', as: 'index_products'
 
-  get 'products/:id/seller_products' => 'products#show_seller_products', as: 'show_seller_products'
+  get 'products/:id/show_seller_products' => 'products#show_seller_products', as: 'show_seller_products'
 
   get 'products/show/:id' => 'products#show', as: 'show_products'
 

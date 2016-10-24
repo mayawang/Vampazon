@@ -13,5 +13,5 @@ require 'csv'
   end
 
   CSV.foreach ('seed_csvs/users.csv') do |csv_obj|
-    User.create(first_name: csv_obj[1], last_name: csv_obj[2], email: csv_obj[3], street_address: csv_obj[4], city: csv_obj[5], state: csv_obj[6], zip: csv_obj[7], phone: csv_obj[8], merchant: csv_obj[9], provider: csv_obj[10])
+    User.create(name: csv_obj[1], email: csv_obj[2], street_address: csv_obj[3], city: csv_obj[4], state: csv_obj[5], zip: csv_obj[6], phone: csv_obj[7], merchant: csv_obj[8], provider: csv_obj[9])
   end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   # before_action :find_user only [:show, :edit, :update, :destroy]
 
 #AN IDEA FOR HOW TO LIMIT PRODUCT EDITING?
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @my_user = User.find{ params[:id].to_i } 
+    # @my_user = User.find{ params[:id].to_i }
   end
 
   def new
@@ -26,23 +26,22 @@ class UsersController < ApplicationController
 
   def create
   #   @my_user = User.new user_params
-  #   if @my_user.save 
+  #   if @my_user.save
   #     redirect_to root_path, notice: 'Successfully created user.'
   #   else render :new
   #   end
   end
-  
+
 
   def edit
-    @my_user = User.find{ params[:id].to_i } 
+    @my_user = User.find{ params[:id].to_i }
     @path = 'update_path'
   end
 
   def update
     @my_user = User.find{ params[:id].to_i }
     @params = params
-    @my_user.first_name = params[:user][:first_name]
-    @my_user.last_name = params[:user][:last_name] 
+    @my_user.fname = params[:user][:name]
     @my_user.email = params[:user][:email]
     @my_user.street_address = params[:user][:street_address]
     @my_user.city = params[:user][:city]
