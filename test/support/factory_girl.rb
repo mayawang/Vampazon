@@ -1,13 +1,17 @@
-# This will guess the User class
-RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
-end
+FactoryGirl.define do
 
-# RSpec without Rails
-RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
-
-  config.before(:suite) do
-    FactoryGirl.find_definitions
+  # product with a 'belongs_to' user 
+  factory :product do
+    category "fashion"
+    description "A cape like no other, for the undead"
+    inventory 1
+    name "Magic Cape"
+    photo_url "Minions/Ghosts.png"
+    price 10.00
   end
 end
+
+
+belongs_to :user
+has_many :orders
+has_many :order_items, through: :orders
