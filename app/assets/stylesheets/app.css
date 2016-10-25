@@ -1,25 +1,16 @@
-  /**************************************/
-/**GENERAL SECTION **/
- /**************************************/
-
-.main {
-
-}
-
 .headline {
 	font-size: 1.5rem;
 	/*font-weight: bold;*/
 	text-align: center;
 }
 
-
 h4.headline {
 	font-weight: bold;
 	text-align: left;
 }
+
 .headline img {
 	margin: auto;
-
 }
 
 .headline a {
@@ -31,7 +22,6 @@ h3.welcome {
   margin-left: 3%;
   margin-bottom: 2%;
   text-align: center;
-
 }
 
 .front-page {
@@ -52,7 +42,6 @@ h3.welcome {
 /** DESKTOP NAVIATION **/
  /**************************************/
 
-
 .top-bar {
   padding: 3%;
 }
@@ -63,29 +52,9 @@ h3.welcome {
 	/*font-size: 3rem;*/
 }
 
-
-
   /**************************************/
 /**HERO SECTION **/
  /**************************************/
-
-.hero {
-  background-color: gray;
-  padding: 50px 30px 
-  height: 15%;
-}
-
-
-
-  /**************************************/
-/**FOOTER **/
- /**************************************/
-
-
-
-
-
-
 
 body {
   min-width: 100%;
@@ -115,15 +84,12 @@ header h1 a:visited {
   color: white !important;
 }
 
-
 #login-logout a {
   color: white;
   display: inline-block;
   float: right;
   min-width: 20%;
 }
-
-
 
 .basic {
   margin: 2% 12% 5% 12%;
@@ -140,20 +106,9 @@ header h1 a:visited {
   margin-left: 3%;
 }
 
-/*.column {
-  padding-left: 2%;
-  padding-right: 2%;
-}*/
-
-
-
 .row ul {
   list-style: none;
 }
-
-/*.row ul img {
-  max-height: 10em;
-}*/
 
 .row ul a {
   color: black;
@@ -163,7 +118,6 @@ header h1 a:visited {
   color: #680604;
 }
 
-
 .columns {
   column-count: 3;
   /*column-gap: 8vw;*/
@@ -172,9 +126,6 @@ header h1 a:visited {
 .card p {
   float: center;
 }
-
-
-
 
 .card {
   display: inline-block;
@@ -214,7 +165,6 @@ img.product_photo {
 .product-info ul a:hover {
   color: red;
 }
-
 
 .product-info li {
   float: center;
