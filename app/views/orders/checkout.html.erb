@@ -12,9 +12,9 @@
   <%# form_for @order, url: confirmation_path(@order.id), method: :get do |f| %>
   <%# render partial: "address_form", locals: { :f => f } %>
 
-  <%= form_for @order, url: create_order_path do |f| %>
+
   <%= render partial: "checkout_form", locals: {action_name: "patch"} %>
 
-  <% end %>
+
 
 <%= link_to "Back to Cart", show_cart_path, :method => :get, :class => "button" %>

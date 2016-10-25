@@ -101,7 +101,7 @@ class OrdersController < ApplicationController
     @order.order_items.each do |order_item|
       if order_item.quantity > order_item.product.inventory
         flash[:notice] = "#{order_item.product.name}'s inventory is not enough to fullfill your order. Please change your Quantity and submit again."
-        redirect_to action: 'cart'
+        redirect_to action: 'show'
       else
         @order.status = "paid"
         @order.save!
@@ -110,6 +110,8 @@ class OrdersController < ApplicationController
       # when sold, product's inventory is reduced accordingly.
       order_item.product.inventory -= order_item.quantity
       order_item.product.save!
+
+      redirect_to confirmation_path(@order.id)
     end
 
   end
