@@ -4,14 +4,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id].to_i)
 
 
-	    if @product == nil
-	    
-	    	:back
-	    end
-
+    @product = Product.find(params[:id].to_i) 
 
     if @product.user_id
       @seller = @product.user
