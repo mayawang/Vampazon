@@ -1,35 +1,101 @@
 <div class = "basic">
+  <div class="wrapper">
+    <div class='main'>
 
-  <h2> <%= @product.name %> </h2>
 
-  <%= image_tag(@product.photo_url, :class => 'product_photo') %>>
+<!-- THE IMAGE -->
+    <div class="row product_info">
 
-      <p><%= @product.description %></p>
-      <div class="row">
-        <ul>
-          <li>Price: $<%= @product.price %></li>
-          <li>In-stock: <%= @product.inventory %></li>
-          <li>Category: <%= @product.category %></li>
-          <li>Seller: <%= link_to "#{@seller.name}", show_seller_products_path %></li>
-          <li>Average rating: <%= @product.average_rating %></li>
-        </ul>
+
+      <div class="column small-7 small-centered large-uncentered columns">
+
+        <%= image_tag(@product.photo_url, :class => 'product_detail') %>
+
       </div>
 
-        <p>Review:
-            <% @reviews.each do |review| %></p>
+<!-- </div> -->
 
-              <p><%= review.description %></p>
-            <% end %>
+<!-- <div class="wrapper"> -->
+
+<!--THE TEXT  -->
+        
+      <div class="column small-5 small-centered large-uncentered columns">
+
+        <div class="row">
+          <div class="small-12 columns">
+            <h4 class="headline"> <%= @product.name %> </h4>
+          </div>
+        </div>
+
+ <div class="row">
+          <!-- <div class="small-12 columns"> -->
+            <p><%= @product.description %></p>
+           <!-- </div> -->
+        </div>
+        
+        <div class="row">
+          <!-- <div class="small-12 columns"> -->
+            <p>Price: $<%= @product.price %></p>
+          <!-- </div> -->
+        </div>
+
+        <div class="row">   
+          <!-- <div class="small-12 columns"> -->
+            <p>In-stock: <%= @product.inventory %></p>
+          <!-- </div> -->
+        </div>
+        
+        <div class="row">
+          <!-- <div class="small-12 columns"> -->
+            <p>Category: <%= @product.category %></p>
+          <!-- </div> -->
+        </div>
+
+        <div class="row">
+          <!-- <div class="small-12 columns"> -->
+            <p>Seller: <%= link_to "#{@seller.name}", show_seller_products_path %></p>
+          <!-- </div> -->
+        </div>
+
+        <div class="row">
+          <!-- <div class="small-12 columns"> -->
+            <p>Average rating: <%= @product.average_rating %></p>
+          <!-- </div> -->
+        </div>
+
+        <div class="row">
+          <!-- <div class="small-12 columns"> -->
+          <p>Review:
+              <% @reviews.each do |review| %></p>
+
+                <p><%= review.description %></p>
+              <% end %>
+          <!-- </div> -->
+        </div>
+
+        <div class="row">
+          <!-- <div class="small-12 columns"> -->
+            <div class="quantity">
+              <%= form_tag(add_to_cart_path, method: :post) do %>
+                <%= label_tag :quantity %>
+                <%= select_tag :quantity, options_for_select((1..@product.inventory), 1) %>
+                <%= hidden_field_tag(:product_id, @product.id) %>
+
+                <%= submit_tag "Add to Cart" %>
+              <% end  %>
+            </div>
+          <!-- </div> -->
+        </div>       
+      
+<!-- BELOW IS THE END DIV FOR THE PRODUCT TEXT -->
+      </div>
 
 
-
-
-  <%= form_tag(add_to_cart_path, method: :post) do %>
-    <%= label_tag :quantity %>
-    <%= select_tag :quantity, options_for_select((1..@product.inventory), 1) %>
-    <%= hidden_field_tag(:product_id, @product.id) %>
-
-    <%= submit_tag "Add to Cart" %>
-  <% end  %>
+<!-- BELOW IS ROW END DIV -->
+    </div>
 
 </div>
+<!-- BELOW IS WRAPPER END DIV -->
+  </div>
+<!-- BELOW IS BASIC END DIV -->
+</div> 
