@@ -33,9 +33,12 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @post_method = :post
+    @post_path = 'create'
   end
 
   def create
+
     @product = Product.new(name: params[:product][:name], description: params[:product][:description], price: params[:product][:price], inventory: params[:product][:inventory], category: params[:product][:category], user_id: session[:user_id])
     @product.save
 
@@ -44,9 +47,40 @@ class ProductsController < ApplicationController
   end
 
   def edit
+  	@product = Product.find(params[:id])
+  	@post_method = :patch
+  	@post_path = 'update'
+
   end
 
   def update
+  	# @params = params
+
+  	@post_method = :patch
+  	@post_path = 'update'
+
+
+
+  	@product = Product.find(params[:id])
+
+  	if @product == nil
+  		render :file => 'public/404.html'
+  			# :status => :not_found
+  	end
+
+  	@product.name = params[:product][:name]
+  	@product.description = params[:product][:description]
+  	@product.inventory = params[:product][:inventory]
+  	@product.category = params[:product][:category]
+  	if @product.save
+  		redirect_to show_products_path(@product.id)
+  	# else
+  	# 	@error = "Did not save successfully.  Try again!"
+  	end
+
+
+
+
   end
 
   def destroy
