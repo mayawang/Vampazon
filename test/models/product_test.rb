@@ -11,19 +11,12 @@ class ProductTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
-#
 
-  # test "A product must belong to a user. " do
-  #
-  # end
-
-
-#   test "valid product" do
-#     assert create(:product).valid?
-#   end
+  test "valid product" do
+    assert create(:product).valid?
+  end
 # # ############## testing product validations #############
-# # ############## That haven't been written yet. #############
-          # test passes and added validations.
+  # test passes and added validations.
   test "Products must have a name, otherwise invalid." do
     product = build(:product, name: nil)
     assert product.invalid?
@@ -35,7 +28,7 @@ class ProductTest < ActiveSupport::TestCase
   #   product.save
   #   assert(product.valid?)
   # end
-# # #
+
   # test "If a name is removed from product, product will then become invalid " do
   #   product = create(:product)
   #   assert(product.valid?)
@@ -65,16 +58,21 @@ class ProductTest < ActiveSupport::TestCase
     assert product.valid?
   end
 
-# saving until it canbe worked on w/ group.
+# Commented out because to make validations for this one might caught merge conflicts.
   # test "Product prices must be decimals. 2 will be invalid." do
   #   product = build(:product, price: 2)
   #   assert product.invalid?
   # end
-# ############## testing product associations #############
-  # TO WORK ON AFTER LUNCH OR WHENEVER.
+
+############## testing product associations #############
+
   # test "Products must have category" do
   #   product = create(:product, category: "")
   #   assert product.invalid?
+  # end
+
+  # test "A product must belong to a user. " do
+  #
   # end
 
   test "Products must have correct category" do
@@ -84,8 +82,5 @@ class ProductTest < ActiveSupport::TestCase
 
     assert_equal(product.category, fashion.category)
   end
-#
-
-
-
+  
 end
