@@ -6,6 +6,13 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id].to_i)
 
+
+	    if @product == nil
+	    
+	    	:back
+	    end
+
+
     if @product.user_id
       @seller = @product.user
       # @seller = User.find(@product.user_id)
@@ -84,5 +91,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+  	@product = Product.find(params[:id])
+  	@product.destroy 
+
+    redirect_to root_path
   end
+
 end
