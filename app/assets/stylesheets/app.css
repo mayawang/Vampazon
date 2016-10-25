@@ -103,9 +103,9 @@ header h1 a:visited {
   list-style: none;
 }
 
-.row ul img {
+/*.row ul img {
   max-height: 10em;
-}
+}*/
 
 .row ul a {
   color: black;
@@ -148,7 +148,7 @@ div.product-info {
 img.product_photo {
   display: inline-block;
   margin: 2% auto;
-  max-height: 30rem;
+  max-height: 50px;
 }
 
 .product-info ul {
