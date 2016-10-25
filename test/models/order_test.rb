@@ -5,29 +5,35 @@ class OrderTest < ActiveSupport::TestCase
   #   assert true
   # end
 ########### test relationship with user #########
-
-  test "Valid order" do
-    order = create(:order)
-    assert order.valid?
-  end
-
-  test "orders must belong to a user" do
-    order = build(:order, user: nil)
-    refute order.invalid?
-    assert_not_nil order.errors[:user], "orders must belong to a user!"
-  end
-
-  test "orders should have correct user" do
-    order = create(:order)
-    user = create(:user)
-
-    assert_equal(order.name, user.name)
-  end
+  # 
+  # test "Valid order" do
+  #   order = create(:order)
+  #   assert order.valid?
+  # end
+  #
+  # test "orders must belong to a user" do
+  #   order = build(:order, user: nil)
+  #   refute order.invalid?
+  #   assert_not_nil order.errors[:user], "orders must belong to a user!"
+  # end
+  #
+  # test "orders should have correct user" do
+  #   order = create(:order)
+  #   user = create(:user)
+  #
+  #   assert_equal(order.name, user.name)
+  # end
 
   # test "Orders should have a product (only if they have payment information they've entered?)" do
   #
   # end
 
+
+
+# checklist
+# start with validations
+# Check custom methods in the model (dont do private)
+# relatonships
 
   # these are somethings you might have to test.
 
