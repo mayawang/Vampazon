@@ -27,8 +27,8 @@
   <%= f.label "CVC:" %>
   <%= f.text_field :cvc, :class => "cvc" %>
   <%= hidden_field_tag(:order_id, @order.id) %>
-  <%= f.submit "Confirm Payment" %>
+  <%= f.submit "Confirm Payment", :class => "button" %>
 <% end %>
 
 
-<%= button_to "Back to Cart", show_cart_path, :method => :get %>
+<%= link_to "Back to Cart", show_cart_path, :method => :get, :class => "button" %>
