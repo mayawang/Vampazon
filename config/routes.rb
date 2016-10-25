@@ -27,6 +27,13 @@ Rails.application.routes.draw do
 
   get 'seller_manage' => 'users#seller_manage', as: 'seller_manage'
 
+  get 'pending_orders' => 'users#pending_orders', as: 'pending_orders'
+
+  get 'paid_orders' => 'users#paid_orders', as: 'paid_orders'
+
+  get 'completed_orders' => 'users#completed_orders', as: 'completed_orders'
+
+  get 'cancelled_orders' => 'users#cancelled_orders', as: 'cancelled_orders'
 
   #============== Products ==================
 
@@ -84,7 +91,9 @@ Rails.application.routes.draw do
 
   post 'orders/create' => 'orders#create_order', as: 'create_order'
 
-  delete 'orders/cancel' => 'orders#cancel_order', as: 'cancel_order'
+  get 'orders/:order_id/confirmation' => 'orders#confirmation', as: 'confirmation'
+
+  patch 'orders/:order_id/cancel' => 'orders#cancel_order', as: 'cancel_order'
 
 
   get 'orders/index' => 'orders#index', as: 'index_orders'

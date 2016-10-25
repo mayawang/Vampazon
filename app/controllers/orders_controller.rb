@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
     if !@order
       @order = Order.new
       @order.status = "pending"
+      @order.user_id = session[:user_id]
       # save! ensure @order is saved, if not, it will raise an exception and visibly break the program.
       @order.save!
       session[:cart_id] = @order.id
@@ -81,6 +82,7 @@ class OrdersController < ApplicationController
   def create_order
     @order = Order.find(params[:order_id])
 
+    @order.user_id = session[:user_id]
     @order.first_name = params[:order][:first_name]
     @order.last_name = params[:order][:last_name]
     @order.email = params[:order][:email]
@@ -109,14 +111,20 @@ class OrdersController < ApplicationController
       order_item.product.inventory -= order_item.quantity
       order_item.product.save!
     end
+
+  end
+
+  def confirmation
+    @order = Order.find(params[:order_id])
   end
 
   def cancel_order
     order_id = params[:order_id]
     order = Order.find(order_id)
     order.status = "cancelled"
+    order.save!
 
-    redirect_to action: 'buyer_manage'
+    redirect_to buyer_manage_path
   end
 
   def index

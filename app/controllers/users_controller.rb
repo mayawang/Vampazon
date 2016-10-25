@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user!, only: [:user_account, :buyer_manage, :seller_manage]
   # before_action :find_user only [:show, :edit, :update, :destroy]
 
 #AN IDEA FOR HOW TO LIMIT PRODUCT EDITING?
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def buyer_manage
     @user = User.find(session[:user_id])
+    @orders = @user.orders
   end
 
   def seller_manage
@@ -24,9 +25,23 @@ class UsersController < ApplicationController
   end
 
   def pending_orders
+    @user = User.find(session[:user_id])
+    @orders = @user.orders.where(:status => "pending")
   end
 
   def paid_orders
+    @user = User.find(session[:user_id])
+    @orders = @user.orders.where(:status => "paid")
+  end
+
+  def cancelled_orders
+    @user = User.find(session[:user_id])
+    @orders = @user.orders.where(:status => "cancelled")
+  end
+
+  def completed_orders
+    @user = User.find(session[:user_id])
+    @orders = @user.orders.where(:status => "completed")
   end
 
   def index
@@ -88,4 +103,10 @@ private
     # params.require(:user).permit :email, :password, :password_confirmation
   end
 
+  def authenticate_user!
+    if !session[:user_id]
+      flash[:error] = "You must be signed in"
+      return redirect_to root_path
+    end
+  end
 end

@@ -9,7 +9,7 @@
 
 <p>cart subtotal:$<%= @order.total_price %></p>
 
-<%= form_for @order, url: create_order_path, method: :post do |f| %>
+<%= form_for @order, url: confirmation_path, method: :get do |f| %>
   <h3>Shipping address:</h3>
   <%= render partial: "address_form", locals: { :f => f } %>
   <h3>Payment Information:</h3>
@@ -27,7 +27,7 @@
   <%= f.label "CVC:" %>
   <%= f.text_field :cvc, :class => "cvc" %>
   <%= hidden_field_tag(:order_id, @order.id) %>
-  <%= f.submit "Confirm Payment", :class => "button" %>
+  <%= link_to "Confirm Payment", confirmation_path(@order.id), :class => "button" %>
 <% end %>
 
 
