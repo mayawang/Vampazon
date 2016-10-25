@@ -1,9 +1,5 @@
 <div class="form">
 
-<%# form_for @product, url: action_name do |f| %>
-
-<%= form_for @order, url: create_order_path do |f| %>
-
   <h3>Shipping Address:</h3>
 
   <div class="field">
@@ -65,7 +61,5 @@
 
   <%= hidden_field_tag(:order_id, @order.id) %>
   <%= f.submit "Confirm Payment", class: 'button '%>
-
-<% end %>
 
 </div>
