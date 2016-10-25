@@ -9,7 +9,7 @@
 
 <p>cart subtotal:$<%= @order.total_price %></p>
 
-<%= form_for @order, url: confirmation_path, method: :get do |f| %>
+<%= form_for @order, url: confirmation_path(@order.id), method: :get do |f| %>
   <h3>Shipping address:</h3>
   <%= render partial: "address_form", locals: { :f => f } %>
   <h3>Payment Information:</h3>
