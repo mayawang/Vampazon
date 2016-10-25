@@ -1,9 +1,10 @@
-<div class="wrapper">
-  <p class="welcome">
+<div class="basic">
+  <h2 class="welcome">
   	<% if current_user %>
-  		<h2 class="welcome">Welcome back, <%= current_user.name %>!</h2>
+  		<h2>Welcome back, <%= current_user.name %>!</h2>
+      <p><%= link_to "User Account", user_account_path %></p>
   	<% else %>
-  		<h2 class="welcome">Welcome to Vampazon!</h2>
+  		<h2>Welcome to Vampazon!</h2>
   	<% end %>
   </p>
 </div>
