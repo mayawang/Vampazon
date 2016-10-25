@@ -6,7 +6,8 @@
 
 
 <!-- ALL SELLER ITEMS BUTTON -->
-<%= button_to("All the Stuff", show_seller_products_path(@product.id), method: :get) %>
+
+<%= button_to("Other Items by this Seller", show_seller_products_path(@product.id), method: :get) %>
 
 <!-- THE IMAGE -->
     <div class="row product_info">
@@ -92,9 +93,14 @@
         </div>       
       
 <!-- EDIT BUTTON -->
-
+  <% if @product.user_id == session[:user_id] %>
   <%= button_to("Edit: #{@product.name}",edit_products_path(@product.id), action: :edit, method: :get)%>
-      
+
+<!-- DELETE BUTTON -->
+
+<%=button_to "delete", destroy_products_path(@product.id), action: :destroy, method: :delete, class: 'button alert' %>
+<% end %>
+
 <!-- BELOW IS THE END DIV FOR THE PRODUCT TEXT -->
       </div>
 
