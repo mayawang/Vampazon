@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:user_account, :buyer_manage, :seller_manage]
+  before_action :authenticate_user!, only: [:user_account, :buyer_manage, :seller_manage, :pending_orders, :paid_orders, :cancelled_orders, :completed_orders]
   # before_action :find_user only [:show, :edit, :update, :destroy]
 
 #AN IDEA FOR HOW TO LIMIT PRODUCT EDITING?

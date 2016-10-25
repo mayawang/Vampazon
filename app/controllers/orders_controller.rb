@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+    before_action :authenticate_user!, only: [:cancel_order]
 
   def add_to_cart
     # if there is no cart_id in session, or the cart_id can not be found in database, which means this user has no cart at all, we will create a new one.
