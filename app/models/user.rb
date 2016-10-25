@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :reviews
   has_many :products
+  has_many :orders
   # has_secure_password
 
   validates :email, :uid, :provider, presence: true
