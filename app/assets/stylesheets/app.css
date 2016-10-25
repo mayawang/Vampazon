@@ -6,13 +6,61 @@
 
 }
 
+.headline {
+	font-size: 1.5rem;
+	/*font-weight: bold;*/
+	text-align: center;
+}
+
+
+h4.headline {
+	font-weight: bold;
+	text-align: left;
+}
+.headline img {
+	margin: auto;
+
+}
+
+.headline a {
+	color: black;
+}
+
+h3.welcome {
+	padding-top: 0;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  text-align: center;
+
+}
+
+.front-page {
+	margin: 3%;
+}
+
+.quantity {
+	width: 7%;
+	/*font-size: rem;*/
+}
+
+.product-detail {
+	max-height: 9em;
+}
+
   /**************************************/
+
 /** DESKTOP NAVIATION **/
  /**************************************/
 
 
 .top-bar {
   padding: 3%;
+}
+
+.logo a {
+	color: black;
+	font-weight: bold;
+	/*font-size: 3rem;*/
 }
 
 
@@ -103,9 +151,9 @@ header h1 a:visited {
   list-style: none;
 }
 
-.row ul img {
+/*.row ul img {
   max-height: 10em;
-}
+}*/
 
 .row ul a {
   color: black;
@@ -125,33 +173,18 @@ header h1 a:visited {
   float: center;
 }
 
-img.photo {
-  width: auto;
-  height: auto;
-  max-width: 40%;
-  max-height: 40%;
-  float: right;
-  margin-left: 8%;
-}
-
-img.product_photo {
-/*  width: auto;
-  height: auto;
-  max-width: 35%;
-  max-height: 35%;*/
-}
 
 
 
 .card {
-  /*display: block;*/
+  display: inline-block;
   margin: 1%;
   padding: 2%;
-  padding-left: 3.5%;
+  /*padding-left: 3.5%;*/
   background-color: white;
   /*color: white;*/
   border: solid black;
-  min-height: 10rem;
+  min-height: 13em;
 }
 
 div.product-info {
@@ -161,9 +194,9 @@ div.product-info {
 }
 
 img.product_photo {
-  display: block;
+  display: inline-block;
   margin: 2% auto;
-  max-height: 8rem;
+  max-height: 7em;
 }
 
 .product-info ul {
