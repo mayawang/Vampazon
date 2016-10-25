@@ -8,4 +8,15 @@
 <h5>My Orders:</h5>
 <%= link_to "all", buyer_manage_path, :class => "button" %>
 <%= link_to "pending", pending_order_path, :class => "button" %>
-<%= link_to "paid", paid_orders_path, :class => "button" %>
+<%= link_to "paid", completed_orders_path, :class => "button" %>
+<%= link_to "complete", paid_orders_path, :class => "button" %>
+<%= link_to "cancelled", cancelled_orders_path, :class => "button" %>
+
+<% @orders.each do |order| %>
+  <p><%= order.id  %></p>
+  <p><%= order.created_at %></p>
+  <p><%= order.total_price %></p>
+  <p><%= order.status %></p>
+  <p><%= link_to "Cancel", cancel_order_path, :method => delete, :class => "button"%></p>
+  <%= hidden_field_tag(:order_id, order.id) %> 
+<% end %>

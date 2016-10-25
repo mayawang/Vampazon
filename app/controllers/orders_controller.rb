@@ -109,7 +109,14 @@ class OrdersController < ApplicationController
       order_item.product.inventory -= order_item.quantity
       order_item.product.save!
     end
+  end
 
+  def cancel_order
+    order_id = params[:order_id]
+    order = Order.find(order_id)
+    order.status = "cancelled"
+
+    redirect_to action: 'buyer_manage'
   end
 
   def index

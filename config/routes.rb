@@ -84,6 +84,7 @@ Rails.application.routes.draw do
 
   post 'orders/create' => 'orders#create_order', as: 'create_order'
 
+  delete 'orders/cancel' => 'orders#cancel_order', as: 'cancel_order'
 
 
   get 'orders/index' => 'orders#index', as: 'index_orders'
