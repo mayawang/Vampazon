@@ -14,7 +14,7 @@
 							<h3><%= link_to product_category, show_category_path(product_category) %></h3>
 
 								<ul class='product-info'>
-									<li><%= link_to(image_tag(Product.random_photo(product_category)), image_path(show_category_path(product_category))) %></li>
+									<li><%= link_to(image_tag(Product.random_photo(product_category), :class=>'product_photo'), image_path(show_category_path(product_category))) %></li>
 								</ul>
 							</article>
 					</div>

@@ -125,21 +125,6 @@ header h1 a:visited {
   float: center;
 }
 
-img.photo {
-  width: auto;
-  height: auto;
-  max-width: 40%;
-  max-height: 40%;
-  float: right;
-  margin-left: 8%;
-}
-
-img.product_photo {
-/*  width: auto;
-  height: auto;
-  max-width: 35%;
-  max-height: 35%;*/
-}
 
 
 
@@ -161,9 +146,9 @@ div.product-info {
 }
 
 img.product_photo {
-  display: block;
+  display: inline-block;
   margin: 2% auto;
-  max-height: 8rem;
+  max-height: 30rem;
 }
 
 .product-info ul {

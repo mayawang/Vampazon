@@ -10,7 +10,7 @@
           <div class="row" >
             <div class="card">
               <div class="product-info">
-                <%= link_to image_tag(product.photo_url, :class => "product_photo"), show_products_path(product.id) %>
+                <%= link_to image_tag(product.photo_url, :class => 'product_photo'), show_products_path(product.id) %>
                 <ul>
                   <li>
                     <%= link_to product.name, show_products_path(product.id) %>
@@ -24,6 +24,5 @@
           </div>
         <% end %>
         </div>
-      <!-- </div> -->
     </div>
 </div>
