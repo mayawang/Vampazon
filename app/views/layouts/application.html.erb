@@ -1,16 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Vampazon</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
-    <h1><%= link_to "Vampazon", root_path %></h1>
-  </header>
-  <p><%= link_to "My Cart", show_cart_path  %></p>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vampazon</title>
+    <%= stylesheet_link_tag "application.css"%>
+  </head>
+  <body>
+
+  <!-- DESKTOP NAVIATION -->
+
+  <nav class="top-bar">
+
+    <div class="top-bar-left">
+    
+     <h2 class="logo"><%= link_to 'Vampazon', root_path %></h2>
+    
+    </div>
+
+    <div class="top-bar-right">
+
+      <%= render partial: '/homepages/navigation_links' %>
+
+    </div>
+
+  </nav>
 
   <!-- <h1>Va</h1><a href="index.html" img src="../../assets/images/MLogo.png"><h1>pazon</h1> -->
 
@@ -23,4 +38,30 @@
 <%= yield %>
 
 </body>
+
+
+  <!-- FOOTER -->
+
+
+  <footer> 
+    
+  </footer>
+
+
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
 </html>

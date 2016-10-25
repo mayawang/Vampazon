@@ -53,24 +53,18 @@ Rails.application.routes.draw do
 
   delete 'products/:id/destroy' => 'products#destroy', as: 'destroy_products'
 
+  get 'products/search' => 'products#search', as: 'search_products'
+
+
+
+
   #============== Sessions ==================
 
-  get 'login' => 'sessions#new'
+  # get 'login' => 'sessions#new'
   get 'logout' => 'sessions#destroy'
 
-#   get 'sessions/index' => 'sessions#index', as: 'index_sessions'
-
-#   get 'sessions/show/:id' => 'sessions#show', as: 'show_sessions'
-
-#   get 'sessions/new' => 'sessions#new', as: 'new_sessions'
-
   get "/auth/:provider/callback" =>  "sessions#create"
-# #the below route was not right.  we used the above route in class.
-#   # post 'sessions/create' => 'sessions#create', as: 'create_sessions'
 
-#   get 'sessions/:id/edit' => 'sessions#edit', as: 'edit_sessions'
-
-#   patch 'sessions/:id/update' => 'sessions#update', as: 'update_sessions'
 
   # delete 'sessions/:id/destroy' => 'sessions#destroy', as: 'destroy_sessions'
 

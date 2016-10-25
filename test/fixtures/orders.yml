@@ -1,11 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  product_id: 
-  user_id: 
+  product_id:
+  user_id:
   status: false
-  first_name: MyString
-  last_name: MyString
+  name: MyString
   email: MyString
   street_address: MyString
   city: MyString
@@ -14,11 +13,10 @@ one:
   phone: 1
 
 two:
-  product_id: 
-  user_id: 
+  product_id:
+  user_id:
   status: false
-  first_name: MyString
-  last_name: MyString
+  name: MyString
   email: MyString
   street_address: MyString
   city: MyString

@@ -83,8 +83,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:order_id])
 
     @order.user_id = session[:user_id]
-    @order.first_name = params[:order][:first_name]
-    @order.last_name = params[:order][:last_name]
+    @order.name = params[:order][:name]
     @order.email = params[:order][:email]
     @order.street_address = params[:order][:street_address]
     @order.city = params[:order][:city]

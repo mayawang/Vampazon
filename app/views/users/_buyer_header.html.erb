@@ -13,6 +13,7 @@
 <%= link_to "cancelled", cancelled_orders_path, :class => "button" %>
 
 <% @orders.each do |order| %>
+
   <p>Order#: <%= link_to "#{order.id}", confirmation_path(order.id) %></p>
   <p>Creation: <%= order.created_at %></p>
   <p>$<%= order.total_price %></p>

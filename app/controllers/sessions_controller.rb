@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def index
+    @user = User.find(session[:user_id]) # < recalls the value set in a previous request
   end
 
   def show
@@ -10,19 +11,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-
-    #AUTHENTICATION FROM SCRATCH START
-    # user = User.find_by email: params[:login][:email]
-
-    # if user && user.authenticate(params[:login][:password])
-    #   session[:user_id] = user.id
-    #   redirect_to root_path, notice: 'Successfully logged in.'
-    # else
-    #   flash.now.alert = 'Invalid email or password.'
-    #   render :new
-    # end
-  #AUTHENTICATION FROM SCRATCH END
-
 
     #GITHUB AUTHENTICATION START
     auth_hash = request.env['omniauth.auth']
