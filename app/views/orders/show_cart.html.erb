@@ -8,7 +8,8 @@
     <%= label_tag :quantity %>
     <%= select_tag :quantity, options_for_select((1..order_item.product.inventory), order_item.quantity) %>
     <%= hidden_field_tag(:order_item_id, order_item.id) %>
-    <%= submit_tag "change quantity", :class => "button" %>
+    <%= submit_tag "Update quantity", class: 'button' %>
+
   <% end %>
 
   <%= form_tag(destroy_order_item_path, method: :delete) do %>

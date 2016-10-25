@@ -83,7 +83,7 @@ Rails.application.routes.draw do
 
   get 'checkout' => 'orders#checkout', as: 'checkout'
 
-  post 'orders/create' => 'orders#create_order', as: 'create_order'
+  patch 'orders/create' => 'orders#create_order', as: 'create_order'
 
   get 'orders/:order_id/confirmation' => 'orders#confirmation', as: 'confirmation'
 
