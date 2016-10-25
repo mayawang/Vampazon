@@ -37,20 +37,19 @@ FactoryGirl.define do
     end
   end
 
-
-
   factory :order do
     # what does true mean again? and
     # limit 80
     status true
-    name
-    email
-    street_address
-    city
+    name "Michelle Obama"
+    email {"#{name.downcase}@example.com"}
+    street_address "2100 Bad Ass Drive"
+    city "Seattle"
+    zip 98122
     # limit: 10
-    phone
+    phone 6023334455
     # eventually limited to 16
-    cc_number 4444555566667777
+    cc_number 4444
     # should be not out of date
     # limit 2
     exp_month 12
