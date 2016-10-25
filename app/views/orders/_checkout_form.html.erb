@@ -1,5 +1,11 @@
 <div class="form">
 
+<%# form_for @product, url: action_name do |f| %>
+
+<%= form_for @order, url: create_order_path do |f| %>
+
+  <h3>Shipping address:</h3>
+
   <div class="field">
     <%= f.label "Name: " %>
     <%= f.text_field :name, "Name" => nil, :required => true %>
@@ -34,5 +40,32 @@
     <%= f.label "Phone: " %>
     <%= f.text_field :phone, "Phone" => nil, :required => false %>
   </div>
+
+  <h3>Payment Information:</h3>
+
+  <div class="field">
+    <%= f.label "Credit Card: " %>
+    <%= f.text_field :cc_number, "Credit Card" => nil, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Expiration Month: " %>
+    <%= f.text_field :exp_month, "Expiration Month" => nil, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Expiration Year: " %>
+    <%= f.text_field :exp_year, "Expiration Year" => nil, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "CVC: " %>
+    <%= f.text_field :cvc, "CVC" => nil, :required => true %>
+  </div>
+
+  <%= hidden_field_tag(:order_id, @order.id) %>
+  <%= f.submit "Confirm Payment", class: 'button '%>
+
+<% end %>
 
 </div>

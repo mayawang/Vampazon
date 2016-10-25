@@ -7,28 +7,12 @@
 
 <% end %>
 
-<p>cart subtotal:$<%= @order.total_price %></p>
+<p>Cart subtotal:$<%= @order.total_price %></p>
 
-<%= form_for @order, url: create_order_path, method: :post do |f| %>
-  <h3>Shipping address:</h3>
-  <%= render partial: "address_form", locals: { :f => f } %>
-  <h3>Payment Information:</h3>
-  <p>Payment Method: VISA only</p>
+  <%# render partial: "form", locals: {action_name: "create"}%>
 
-  <%= f.label "Credit Card:" %>
-  <%= f.text_field :cc_number, :class => "cc_number" %>
+  <%= render partial: "checkout_form", locals: {action_name: "patch"} %>
 
-  <%= f.label "Expiration Month:" %>
-  <%= f.text_field :exp_month, :class => "exp_month" %>
-
-  <%= f.label "Expiration Year:" %>
-  <%= f.text_field :exp_year, :class => "exp_year" %>
-
-  <%= f.label "CVC:" %>
-  <%= f.text_field :cvc, :class => "cvc" %>
-  <%= hidden_field_tag(:order_id, @order.id) %>
-  <%= f.submit "Confirm Payment" %>
-<% end %>
 
 
 <%= button_to "Back to Cart", show_cart_path, :method => :get %>
