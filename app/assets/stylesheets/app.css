@@ -129,14 +129,14 @@ header h1 a:visited {
 
 
 .card {
-  /*display: block;*/
+  display: inline-block;
   margin: 1%;
   padding: 2%;
-  padding-left: 3.5%;
+  /*padding-left: 3.5%;*/
   background-color: white;
   /*color: white;*/
   border: solid black;
-  min-height: 10rem;
+  min-height: 13em;
 }
 
 div.product-info {
@@ -148,7 +148,7 @@ div.product-info {
 img.product_photo {
   display: inline-block;
   margin: 2% auto;
-  max-height: 50px;
+  max-height: 8em;
 }
 
 .product-info ul {

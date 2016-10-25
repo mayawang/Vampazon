@@ -2,19 +2,26 @@
 
   <h2> <%= @product.name %> </h2>
 
-  <%= image_tag(@product.photo_url, :class => 'product_photo') %>
+  <%= image_tag(@product.photo_url, :class => 'product_photo') %>>
 
-  <p><%= @product.description %></p>
-  <p>Price: $<%= @product.price %></p>
-  <p>In-stock: <%= @product.inventory %></p>
-  <p>Category: <%= @product.category %></p>
-  <p>Seller: <%= link_to "#{@seller.name}", show_seller_products_path %></p>
-  <p>Average rating: <%= @product.average_rating %></p>
+      <p><%= @product.description %></p>
+      <div class="row">
+        <ul>
+          <li>Price: $<%= @product.price %></li>
+          <li>In-stock: <%= @product.inventory %></li>
+          <li>Category: <%= @product.category %></li>
+          <li>Seller: <%= link_to "#{@seller.name}", show_seller_products_path %></li>
+          <li>Average rating: <%= @product.average_rating %></li>
+        </ul>
+      </div>
 
-  <p>Review:
-    <% @reviews.each do |review| %></p>
-      <p><%= review.description %></p>
-    <% end %>
+        <p>Review:
+            <% @reviews.each do |review| %></p>
+
+              <p><%= review.description %></p>
+            <% end %>
+
+
 
 
   <%= form_tag(add_to_cart_path, method: :post) do %>
