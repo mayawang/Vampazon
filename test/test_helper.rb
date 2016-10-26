@@ -7,6 +7,8 @@ require 'minitest/reporters'
 # Things this goes here. should be in spec_helper_ we dont have
 require 'support/factory_girl'
 
+require 'simplecov'
+SimpleCov.start
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
