@@ -44,10 +44,12 @@ class ProductTest < ActiveSupport::TestCase
     refute product.valid?
     assert_not_nil product.errors[:price], "no validation error for the price present. "
   end
+
 # #
   test "product prices should not be a negative number" do
     product = build(:product, price: -1 )
     assert product.invalid?
+
   end
 
   test "product prices should be greater than zero" do

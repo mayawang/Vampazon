@@ -2,11 +2,13 @@ class Product < ActiveRecord::Base
   belongs_to :user
   has_many :orders
   has_many :order_items, through: :orders
-  validates :name, presence: true
-  validates :price, presence: true
-  validates :price, numericality: {greater_than: 0 }
-  #, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }
-  validates :category, presence: true 
+  
+  validates :name, :description, :category, presence: true
+  
+  validates :price, presence: true, numericality: {:greater_than => 0}
+  
+  validates :inventory, presence: true, numericality: {:greater_than_or_equal_to => 0}
+
 
 
   def average_rating
