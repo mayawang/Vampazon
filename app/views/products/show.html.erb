@@ -94,12 +94,19 @@
 
 <!-- Review BUTTON -->
   <%= button_to("Review Product",new_reviews_path(@product.id), action: :new, method: :get)%>
+<%if @product.user_id == session[:user_id]%>
 
+<!-- Review Delete Button -->
+<% if @owner.id == session[:user_id]
+   %>
+<%= button_to "delete review", destroy_reviews_path(@review.id), action: :destroy, method: :delete %>
+<% end %>
 
 
 <!-- EDIT BUTTON -->
   <% if @product.user_id == session[:user_id] %>
   <%= button_to("Edit: #{@product.name}",edit_products_path(@product.id), action: :edit, method: :get)%>
+  <% end %>
 
 
 

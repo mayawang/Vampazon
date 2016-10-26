@@ -33,6 +33,13 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    @product = @review.product_id
+    @owner = @product.user_id
+    @review.destroy
+
+    redirect_to show_products_path(@product.id)
+
   end
 
   private
