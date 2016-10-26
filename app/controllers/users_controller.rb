@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     #   # do stuff to check if user is logged in
     # end
 
+#============User Account: Buyer Manage=============
   def user_account
     @user = User.find(session[:user_id])
   end
@@ -21,7 +22,12 @@ class UsersController < ApplicationController
   end
 
   def seller_manage
-    @user = User.find(session[:user_id])
+    @user_id = session[:user_id]
+    @user = User.find(@user_id)
+    @total_revenue = OrderItem.total_revenue(@user_id)
+    @paid_revenue = OrderItem.paid_revenue(@user_id)
+    @fulfilled_revenue = OrderItem.fulfilled_revenue(@user_id)
+    @cancelled_revenue = OrderItem.cancelled_revenue(@user_id)
   end
 
   def pending_orders
@@ -43,6 +49,10 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
     @orders = @user.orders.where(:status => "completed")
   end
+
+#============User Account: Seller Manage=============
+
+#==============User Authenticate=============
 
   def index
     return User.all
