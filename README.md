@@ -133,7 +133,6 @@ As a signed-in user, I can see:
         - DateTime the order was placed
         - Link to transition the order item to marked as shipped
         - The current status of the order ("pending", "paid", "complete", "cancelled")
---
 
 - View an individual order to see the user's:
     - Name
@@ -142,6 +141,8 @@ As a signed-in user, I can see:
     - Last four digits of their credit card
     - Credit card expiration date
 
+---
+ 
 As a signed-in user, I **cannot**:
 
 - Review my own products
