@@ -17,21 +17,21 @@ class ProductTest < ActiveSupport::TestCase
     assert_not_nil product.errors[:name], "no validation error for name present"
 
   end
-#
-  test "Adding a name to a product that wasn't valid because it lacked name. Will become valid, once assigned one" do
-    product = create(:product, category: "fashion", name: nil)
-    product.name = "Name Acquired"
-    product.save
-    assert(product.valid?)
-  end
-#
-  test "If a name is removed from product, product will then become invalid " do
-    product = create(:product)
-    assert(product.valid?)
+# #
+#   test "Adding a name to a product that wasn't valid because it lacked name. Will become valid, once assigned one" do
+#     product = create(:product, category: "fashion", name: nil)
+#     product.name = "Name Acquired"
+#     product.save
+#     assert(product.valid?)
+#   end
+# #
+#   test "If a name is removed from product, product will then become invalid " do
+#     product = create(:product)
+#     assert(product.valid?)
 
-    product.name = nil
-    assert_not(product.valid?)
-  end
+#     product.name = nil
+#     assert_not(product.valid?)
+#   end
 #
   test "Products must have a price, otherwise invalid" do
     product = build(:product, price: nil)
@@ -47,7 +47,7 @@ class ProductTest < ActiveSupport::TestCase
 ############## testing product associations #############
   test "Products must have category" do
     assert(create(:product).valid?)
-    assert_not(create(:product, category: nil).valid?)
+    assert(create(:product, category: nil).invalid?)
   end
 
   test "Products must have correct category" do
