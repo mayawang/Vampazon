@@ -1,6 +1,7 @@
 <ul class="dropdown menu" data-dropdown-menu>
-  <li><a href="" >Categories</a>
+  <li><a href="" >Shop</a>
     <ul class="menu">
+      <li>Browse All</li> < work on this
       <% get_product_categories.each  do |product_category| %>
         <li><%= link_to product_category, show_category_path(product_category) %></li>
       <% end %>
