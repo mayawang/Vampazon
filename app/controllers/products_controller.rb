@@ -6,13 +6,9 @@ class ProductsController < ApplicationController
   def show
 
 
-    @product = Product.find(params[:id].to_i) 
+    @product = Product.find_by_id(params[:id].to_i) 
 
     if @product.user_id
-
-    	if @product.user_id == nil
-    		redirect_to root_path
-    	end
       @seller = @product.user
       # @seller = User.find(@product.user_id)
     else
