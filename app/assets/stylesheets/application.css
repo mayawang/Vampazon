@@ -18,3 +18,75 @@
   @import url('foundation_and_overrides.css');
 
   @import url('app.css');
+
+
+/*Shopping Cart icon styling */
+  .cart-wrapper {
+  display: block;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  top: 150px;
+}
+
+.cart-body {
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-color: grey;
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
+  right: 20px;
+
+  &:hover {
+    background-color: #20B2AA;
+  }
+}
+
+.cart-handle {
+  display: block;
+  height: 60px;
+  width: 60px;
+  background-color: #fff;
+  border: 6px solid grey;
+  position: relative;
+  bottom: 0px;
+  border-radius: 60px;
+  text-align: center;
+
+  &:hover {
+    border-color: #20B2AA;
+  }
+}
+
+.cart-hole1,
+.cart-hole2 {
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+.cart-hole1 {
+  position: absolute;
+  left: 14px;
+}
+
+.cart-hole2 {
+  position: absolute;
+  right: 14px;
+}
+
+.cart-items {
+  color: #fff;
+  position: relative;
+  top: 28px;
+  font-family: Helvetica;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+/*end of shopping cart styling.*/
