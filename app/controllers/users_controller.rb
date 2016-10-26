@@ -25,9 +25,17 @@ class UsersController < ApplicationController
     @user_id = session[:user_id]
     @user = User.find(@user_id)
     @total_revenue = OrderItem.total_revenue(@user_id)
+    @total_count = OrderItem.total_count(@user_id)
+
     @paid_revenue = OrderItem.paid_revenue(@user_id)
+    @paid_count = OrderItem.paid_count(@user_id)
+
     @fulfilled_revenue = OrderItem.fulfilled_revenue(@user_id)
+    @fulfilled_count = OrderItem.fulfilled_count(@user_id)
+
     @cancelled_revenue = OrderItem.cancelled_revenue(@user_id)
+    @cancelled_count = OrderItem.cancelled_count(@user_id)
+
   end
 
   def pending_orders
