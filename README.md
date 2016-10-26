@@ -105,7 +105,8 @@ As a signed-in user, I **can**:
 - View an account page to edit/update my existing products
 - View an account page showing my order fulfillment
 This is an implied feature from requirement.
-=====customized=======
+---
+**[customized]**
 As a signed-in user, I can see:
 
 - User Account that contains basic User Information;
@@ -115,8 +116,9 @@ As a signed-in user, I can see:
    - Listing order's id#, creation time, total price, a CANCEL button;
 - In Buyer Management Panel, the order can be cancelled. After pushing CANCEL button, the order status changed to "cancel".
 - In Buyer Management Panel, filter orders displayed by status(pending, paid, completed, cancelled)
-======================
-
+---
+---
+**[refactored]**
 - On the order fulfillment page:
     - Total Revenue
     - Total Revenue by status
@@ -129,6 +131,7 @@ As a signed-in user, I can see:
         - DateTime the order was placed
         - Link to transition the order item to marked as shipped
         - The current status of the order ("pending", "paid", "complete", "cancelled")
+---
 - View an individual order to see the user's:
     - Name
     - Email address
