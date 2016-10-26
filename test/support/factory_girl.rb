@@ -7,7 +7,7 @@ FactoryGirl.define do
     price 10.00
     photo_url "Minions/Ghosts.png"
     inventory 1
-    category "fashion"
+    category "fashion" || "minions" || "personal care" || "home decor"
     user
 
     trait :no_inventory do
@@ -59,10 +59,12 @@ FactoryGirl.define do
     cvc 444
     product
     user
-#
+    
+# order without user
     trait :order_without_user do
       user nil
     end
+
 
   end
 end

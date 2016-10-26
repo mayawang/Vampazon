@@ -1,11 +1,12 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
-  # checklist
+# rake test TEST=test/models/order_item_test.rb
+
+# Testing Checklist:
   # start with validations
   # Check custom methods in the model (dont do private)
   # relatonships
-
 
 # let's pass an easy test!
   test "the truth" do
@@ -15,8 +16,9 @@ class ProductTest < ActiveSupport::TestCase
   test "valid product" do
     assert create(:product).valid?
   end
-# # ############## testing product validations #############
-  # test passes and added validations.
+##### testing product validations #####
+
+  # This test passes b/c of added validations.
   test "Products must have a name, otherwise invalid." do
     product = build(:product, name: nil)
     assert product.invalid?
@@ -64,23 +66,29 @@ class ProductTest < ActiveSupport::TestCase
   #   assert product.invalid?
   # end
 
-############## testing product associations #############
+##### testing product associations #####
+  test "Products with a valid category will be valid. Valid only if category one of the following: minions, home decor, fashion, & personal care." do
+    product = create(:product, category: "fashion")
+    assert_not product.invalid?
+  end
 
-  # test "Products must have category" do
-  #   product = create(:product, category: "")
-  #   assert product.invalid?
-  # end
+# not necessarily passing because we haven't written proper validations. We'd need to for it to pass. Partly this is logically taken care of because we only allow category to be determined via a drop down menu.
+  test "Products outside of valid category will be invalid." do
+    product = create(:product, category: "other")
+    assert product.invalid?
+  end
 
-  # test "A product must belong to a user. " do
-  #
-  # end
+  test "A product must belong to a user. " do
+    product = build(:product, user: nil)
+    product.invalid?
+  end
 
-  test "Products must have correct category" do
+  test "Products must have correct category, product is expected to be fashion." do
     # default category: fashion /from factory.
     product = build(:product)
     fashion = build(:product)
 
     assert_equal(product.category, fashion.category)
   end
-  
+
 end
