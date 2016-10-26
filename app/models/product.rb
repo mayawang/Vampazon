@@ -2,6 +2,14 @@ class Product < ActiveRecord::Base
   belongs_to :user
   has_many :orders
   has_many :order_items, through: :orders
+  
+  validates :name, :description, :category, presence: true
+  
+  validates :price, presence: true, numericality: {:greater_than => 0}
+  
+  validates :inventory, presence: true, numericality: {:greater_than_or_equal_to => 0}
+
+
 
   def average_rating
     reviews = Review.where(:product_id => self.id)
