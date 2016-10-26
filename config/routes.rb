@@ -55,7 +55,7 @@ Rails.application.routes.draw do
 
   get 'products/search' => 'products#search', as: 'search_products'
 
-
+  get 'products/review' => 'products#review', as: 'review_products'
 
 
   #============== Sessions ==================

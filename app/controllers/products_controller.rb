@@ -4,9 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-
-
-    @product = Product.find_by_id(params[:id].to_i) 
+    @product = Product.find_by_id(params[:id].to_i)
 
     if @product.user_id
       @seller = @product.user
@@ -28,9 +26,23 @@ class ProductsController < ApplicationController
      @products = Product.search(params[:query])
      # if product query matches a product(s)
      # render those image(s), if any match.
-     render :index 
+     render :index
   end
 
+
+### review controler methods ###
+  def new_review
+    @review = Review.new
+  end
+  def create_review
+    @review = Review.create(review_params)
+    @review.product_id = params[:product_id]
+    if @review.save
+      redirect_to root
+    else
+      render #"new"
+    end
+### review controller end ###
 
 
   def new
@@ -87,9 +99,16 @@ class ProductsController < ApplicationController
 
   def destroy
   	@product = Product.find(params[:id])
-  	@product.destroy 
+  	@product.destroy
 
     redirect_to root_path
   end
+
+  private
+    def review_params
+      params.require(:review).permit(:rating, :description)
+    end
+
+
 
 end
