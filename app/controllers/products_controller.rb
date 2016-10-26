@@ -30,21 +30,6 @@ class ProductsController < ApplicationController
   end
 
 
-### review controler methods ###
-  def new_review
-    @review = Review.new
-  end
-  def create_review
-    @review = Review.create(review_params)
-    @review.product_id = params[:product_id]
-    if @review.save
-      redirect_to root
-    else
-      render #"new"
-    end
-### review controller end ###
-
-
   def new
     @product = Product.new
     @post_method = :post
@@ -104,10 +89,6 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
-  private
-    def review_params
-      params.require(:review).permit(:rating, :description)
-    end
 
 
 

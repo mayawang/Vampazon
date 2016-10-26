@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'reviews/index' => 'reviews#index', as: 'index_reviews'
+
+  get 'reviews/show/:id' => 'reviews#show', as: 'show_reviews'
+
+  get 'products/:id/reviews/new/' => 'reviews#new', as: 'new_reviews'
+
+  post 'products/:id/reviews/create' => 'reviews#create', as: 'create_reviews'
+
+  get 'reviews/edit'
+
+  get 'reviews/update'
+
+  delete 'reviews/:id/destroy' => 'reviews#destroy', as: 'destroy_reviews'
+
 # we chose to make the convention of having the as: be action + plural.
 
   root to: 'homepages#index'
@@ -55,7 +69,7 @@ Rails.application.routes.draw do
 
   get 'products/search' => 'products#search', as: 'search_products'
 
-  get 'products/review' => 'products#review', as: 'review_products'
+
 
 
   #============== Sessions ==================

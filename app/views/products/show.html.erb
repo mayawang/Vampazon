@@ -23,7 +23,7 @@
 <!-- <div class="wrapper"> -->
 
 <!--THE TEXT  -->
-        
+
       <div class="column small-5 small-centered large-uncentered columns">
 
         <div class="row">
@@ -37,19 +37,19 @@
             <p><%= @product.description %></p>
            <!-- </div> -->
         </div>
-        
+
         <div class="row">
           <!-- <div class="small-12 columns"> -->
             <p>Price: $<%= @product.price %></p>
           <!-- </div> -->
         </div>
 
-        <div class="row">   
+        <div class="row">
           <!-- <div class="small-12 columns"> -->
             <p>In-stock: <%= @product.inventory %></p>
           <!-- </div> -->
         </div>
-        
+
         <div class="row">
           <!-- <div class="small-12 columns"> -->
             <p>Category: <%= @product.category %></p>
@@ -90,11 +90,23 @@
               <% end  %>
             </div>
           <!-- </div> -->
-        </div>       
-      
+        </div>
+
+<!-- Review BUTTON -->
+  <%= button_to("Review Product",new_reviews_path(@product.id), action: :new, method: :get)%>
+
+
+
 <!-- EDIT BUTTON -->
   <% if @product.user_id == session[:user_id] %>
   <%= button_to("Edit: #{@product.name}",edit_products_path(@product.id), action: :edit, method: :get)%>
+
+
+
+
+  <!-- DELETE BUTTON -->
+
+
 
 <!-- DELETE BUTTON -->
 
@@ -112,4 +124,4 @@
 <!-- BELOW IS WRAPPER END DIV -->
   </div>
 <!-- BELOW IS BASIC END DIV -->
-</div> 
+</div>
