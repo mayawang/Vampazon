@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @cancelled_revenue = OrderItem.cancelled_revenue(@user_id)
     @cancelled_count = OrderItem.cancelled_count(@user_id)
   end
-
+#===========User Account: seller Manage=============
   def seller_manage
     # status = params[:status]
     @user_id = session[:user_id]
@@ -45,8 +45,6 @@ class UsersController < ApplicationController
     # @order_items = OrderItem.by_status(@user_id, status)
     @order_items = OrderItem.joins(:product).where('products.user_id' => @user_id)
   end
-
-
 
   def show_orders_by_status
 
@@ -76,7 +74,10 @@ class UsersController < ApplicationController
     redirect_to action: 'seller_manage'
   end
 
-#============User Account: Seller Manage=============
+  def order_by_seller
+    order_item = OrderItem.find(params[:order_id])
+    @order = order_item.order
+  end
 
 #==============User Authenticate=============
 

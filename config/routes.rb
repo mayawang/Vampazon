@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   patch 'ship_order_item' => 'users#ship_order_item', as: 'ship_order_item'
 
+  get 'order_by_seller/:order_id' => 'users#order_by_seller', as: 'order_by_seller'
+
   #============== Products ==================
 
   get 'products/index' => 'products#index', as: 'index_products'

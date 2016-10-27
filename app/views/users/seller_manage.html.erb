@@ -37,7 +37,7 @@
     <% end %>
   <% end %>
 
-  <p>Order#: <%= link_to "#{order_item.order_id}" %></p>
+  <p>Order#: <%= link_to "#{order_item.order_id}", order_by_seller_path(order_item.order_id) %></p>
 
 
 <% end %>
