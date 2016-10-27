@@ -121,25 +121,25 @@ As a signed-in user, I can see:
 ---
 
 **[refactored]**
-- On the order fulfillment page:
-    - Total Revenue
-    - Total Revenue by status
-    - Total number of **order items**(added) 
-    - Total number of **order items**(customized) by status
-    - Filter **order item**(customized) displayed by status
-    - Link to each individual order(A list of orders including at least one of my products):
-        - Each order item sold by me with a quantity and line-item subtotal
-        - A link to the item description page
-        - DateTime the order was placed
-        - Link to transition the order item to marked as shipped
-        - The current status of the order ("pending", "paid", "complete", "cancelled")
-
-- View an individual order to see the user's:
-    - Name
-    - Email address
-    - Mailing address
-    - Last four digits of their credit card
-    - Credit card expiration date
+- Total Revenue of all order items
+- Total Revenue by status
+- Total number of order items
+- Total number of order items)by status
+- A list of **order items** sold by me:
+   - Filter **order items** displayed by status
+   - Link to each individual order:
+   - Each order item sold by me with a quantity and line-item subtotal
+   - A link to the item description page
+   - DateTime the order was placed
+   - The current status of the order item ("pending", "paid", "fulfilled", "cancelled")
+   - A button to transition the order item to marked as "ship", where order item status changed to "fulfilled"
+- The order# that associated with this order item:
+- View the individual order to see the user's:
+   - Name
+   - Email address
+   - Mailing address
+   - Last four digits of their credit card
+   - Credit card expiration date
 
 ---
  
