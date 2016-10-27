@@ -21,3 +21,47 @@
 
 /*require 'foundation'*/
 /*require 'app' */
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 2em;
+}
+.bag {
+  margin: auto;
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  height: 1.25em;
+  width: 1em;
+  text-decoration: none;
+  .handle-wrap {
+    height: 0.25em;
+    width: 0.5em;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 0.05em;
+  }
+  .handle {
+    height: 0.5em;
+    border-radius: 0.15em;
+    border: 0.085em solid #D4AC0D;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .outline {
+    height: 0.85em;
+    width: 0.75em;
+    border: 0.085em solid #D4AC0D;
+    box-sizing: border-box;
+    margin: 0 auto;
+    .count {
+      font-size: 0.4em;
+      color: #000;
+      width: 100%;
+      text-align: center;
+      height: 100%;
+      line-height: 1.75em;
+    }
+  }
+}
