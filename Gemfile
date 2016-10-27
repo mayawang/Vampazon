@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-#gem for authenticated user actions
-#gem 'devise', '~> 4.2'
+# Foundation Rails Gem
+gem 'foundation-rails'
+# Required due to an incompatibility between TurboLinks and Foundation.
+gem 'jquery-turbolinks'
 
 #gem for oAuth github Authentication
 gem 'omniauth'

@@ -9,9 +9,7 @@
 
   		    <ul class='product-info'>
 
-            <li class='headline'>
-            <%= link_to(image_tag(Product.random_photo(product_category), :class=>'product_photo'), image_path(show_category_path(product_category))) %>
-            </li >
+            <li class='headline'><%= link_to(image_tag(Product.random_photo(product_category), :class=>'product_photo'), image_path(show_category_path(product_category))) %></li >
             <li class='headline'> <%= link_to product_category, show_category_path(product_category) %> </li>
 
   				</ul>
