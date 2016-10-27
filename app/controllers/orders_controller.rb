@@ -12,10 +12,6 @@ class OrdersController < ApplicationController
     if !@order
       @order = Order.new
       @order.status = "pending"
-      @order.order_items.each do |order_item|
-        order_item.status = "pending"
-        order_item.save!
-      end
       @order.user_id = session[:user_id]
       # save! ensure @order is saved, if not, it will raise an exception and visibly break the program.
       @order.save!
@@ -40,6 +36,7 @@ class OrdersController < ApplicationController
       @order_item.quantity = params[:quantity].to_i
       @order_item.unit_price = @product.price
       @order_item.product_id = @product.id
+      @order_item.status = "pending"
       @order_item.save!
     end
     redirect_to action: 'show_cart'

@@ -3,8 +3,9 @@
 <p>User Name: <%= @user.name %></p>
 <p>Email: <%= @user.email %></p>
 
-<p>------</p>
 <h3>Seller Management</h3>
+
+<h4>Summary</h4>
 
 <p>Total Order Item Count (Paid and Fulfilled): <%= @total_count %></p>
 <p>Total Revenue: $<%= @total_revenue %></p>
@@ -14,3 +15,29 @@
 <p>Fulfilled Revenue: $<%= @fulfilled_revenue %></p>
 <p>Cancelled Order Item Count: <%= @cancelled_count %></p>
 <p>Cancelled Revenue: $<%= @cancelled_revenue %></p>
+
+<h5>Order Item listings:</h5>
+<%= link_to "all", seller_manage_path, :class => "button" %>
+<%= link_to "pending", get_order_by_status_path('pending'), :class => "button" %>
+<%= link_to "paid", get_order_by_status_path('paid'), :class => "button" %>
+<%= link_to "fulfilled", get_order_by_status_path('fulfilled'), :class => "button" %>
+<%= link_to "cancelled", get_order_by_status_path('cancelled'), :class => "button" %>
+
+<% @order_items.each do |order_item| %>
+  <p>Order Item#: <%= link_to "#{order_item.product.name}", show_products_path(order_item.product.id) %></p>
+  <p>Creation: <%= order_item.created_at %></p>
+  <p>$<%= order_item.total_price %></p>
+  <p><%= order_item.status %></p>
+
+
+  <% if order_item.status == "paid" %>
+    <%= form_tag(ship_order_item_path, method: :patch) do %>
+      <%= hidden_field_tag(:order_item_id, order_item.id) %>
+      <p><%= submit_tag "Ship", :class => "button" %></p>
+    <% end %>
+  <% end %>
+
+  <p>Order#: <%= link_to "#{order_item.order_id}" %></p>
+
+
+<% end %>
