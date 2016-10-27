@@ -12,7 +12,7 @@
 <!-- THE IMAGE -->
     <div class="row product_info">
 
-      <div class="column small-7 small-centered large-uncentered columns">
+      <div class="column small-7 small-centered large-uncentered">
 
         <%= image_tag(@product.photo_url, :class => 'product_detail') %>
 
@@ -24,7 +24,9 @@
 
 <!--THE TEXT  -->
 
-      <div class="column small-5 small-centered large-uncentered columns">
+        
+      <div class="column small-5 small-centered large-uncentered">
+
 
         <div class="row">
           <div class="small-12 columns">
@@ -58,7 +60,7 @@
 
         <div class="row">
           <!-- <div class="small-12 columns"> -->
-            <p>Seller: <%= link_to "#{@seller.name}", show_seller_products_path %></p>
+            <p>Seller: <%= link_to "Seller", show_seller_products_path %></p>
           <!-- </div> -->
         </div>
 

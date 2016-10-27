@@ -55,6 +55,7 @@ h3.welcome {
 
 .top-bar {
   padding: 3%;
+
 }
 
 .logo a {
@@ -63,7 +64,9 @@ h3.welcome {
 	/*font-size: 3rem;*/
 }
 
-
+nav.top-bar {
+	background: gray;
+}
 
   /**************************************/
 /**HERO SECTION **/
