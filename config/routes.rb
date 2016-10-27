@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'reviews/index' => 'reviews#index', as: 'index_reviews'
+
+  get 'reviews/show/:id' => 'reviews#show', as: 'show_reviews'
+
+  get 'products/:id/reviews/new/' => 'reviews#new', as: 'new_reviews'
+
+  post 'products/:id/reviews/create' => 'reviews#create', as: 'create_reviews'
+
+  get 'reviews/edit'
+
+  get 'reviews/update'
+
+  delete 'reviews/:id/destroy' => 'reviews#destroy', as: 'destroy_reviews'
+
 # we chose to make the convention of having the as: be action + plural.
 
   root to: 'homepages#index'
@@ -27,13 +41,13 @@ Rails.application.routes.draw do
 
   get 'seller_manage' => 'users#seller_manage', as: 'seller_manage'
 
-  get 'pending_orders' => 'users#pending_orders', as: 'pending_orders'
+  get 'orders_by_status/:status/' => 'users#show_orders_by_status', as: 'show_orders_by_status'
 
-  get 'paid_orders' => 'users#paid_orders', as: 'paid_orders'
+  get 'get_order_by_status/:status/' => 'users#get_order_by_status', as: 'get_order_by_status'
 
-  get 'completed_orders' => 'users#completed_orders', as: 'completed_orders'
+  patch 'ship_order_item' => 'users#ship_order_item', as: 'ship_order_item'
 
-  get 'cancelled_orders' => 'users#cancelled_orders', as: 'cancelled_orders'
+  get 'order_by_seller/:order_id' => 'users#order_by_seller', as: 'order_by_seller'
 
   #============== Products ==================
 

@@ -15,15 +15,18 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
+#NOT FOR OUR SITUATION
+  # test "should get new" do
+  #   get :new
+  #   assert_response :success
+  # end
 
-  test "should get create" do
-    get :create
-    assert_response :success
-  end
+
+#NOT FOR OUR SITUATION
+  # test "should get create" do
+  #   get :create
+  #   assert_response :success
+  # end
 
   test "should get edit" do
     get :edit, { id: users(:rbg).id }
@@ -31,14 +34,25 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should be able to update a user" do
-    get :update, { id: users(:ss).id }
+    patch :update, { id: users(:ss).id }
     assert_response :success
   end
 
   test "should be able to deactivate a user (i.e., destroy)" do
-    get :destroy
+    delete :destroy, { id: users(:rbg).id }
     assert_response :success
   end
+
+
+#NOT REALLY NEEDED BECAUSE OF OAUTH.  OAUTH WILL ENSURE OUR PERSON HAS ALL THESE
+  # test 'a user must have a name' do
+  # end
+
+  # test 'a user must have a provider ' do
+  # end
+
+  # test 'a user must have a uid' do
+  # end
 
 #FOR ALL OTHER CONTROLLERS
   # test "If a user is not logged in they cannot see their task." do

@@ -25,10 +25,10 @@ class OrderTest < ActiveSupport::TestCase
     assert_not_nil order.errors[:user], "orders must belong to a user!"
   end
 
+
   test "orders should have correct user" do
     order = create(:order)
     user = create(:user)
-
     assert_equal(order.name, user.name)
   end
 # ATTEMPTING to test this METHOD from ORDERS MODEL:
@@ -104,6 +104,7 @@ class OrderTest < ActiveSupport::TestCase
     order = create(:order, exp_month:12, exp_year:12)
     assert order.invalid?
   end
+
 
   test "Orders that have credit card number 12/20 expiration will be valid because its hasn't expired yet." do
     order = create(:order, exp_month:12, exp_year:20)

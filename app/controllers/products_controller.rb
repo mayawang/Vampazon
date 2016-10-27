@@ -4,9 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-
-
-    @product = Product.find_by_id(params[:id].to_i) 
+    @product = Product.find_by_id(params[:id].to_i)
 
     if @product.user_id
       @seller = @product.user
@@ -28,9 +26,8 @@ class ProductsController < ApplicationController
      @products = Product.search(params[:query])
      # if product query matches a product(s)
      # render those image(s), if any match.
-     render :index 
+     render :index
   end
-
 
 
   def new
@@ -87,9 +84,12 @@ class ProductsController < ApplicationController
 
   def destroy
   	@product = Product.find(params[:id])
-  	@product.destroy 
+  	@product.destroy
 
     redirect_to root_path
   end
+
+
+
 
 end

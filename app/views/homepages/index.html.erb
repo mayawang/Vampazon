@@ -17,7 +17,7 @@
 
             <li class='headline'>
             <%= link_to(image_tag(Product.random_photo(product_category), :class=>'product_photo'), image_path(show_category_path(product_category))) %>
-            </li >
+            </li>
             <li class='headline'> <%= link_to product_category, show_category_path(product_category) %> </li>
 
   				</ul>
@@ -40,9 +40,7 @@
         <%= submit_tag "Submit", :name => nil %>
     <% end %>
 
-    <% if current_user %>
-      <%= button_to "Create New Product", new_products_path, method: :get, :class => 'button' %>
-    <% end %>
+
   </div>
 </div>
 
