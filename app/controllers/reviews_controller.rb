@@ -1,9 +1,11 @@
 class ReviewsController < ApplicationController
+  before_action :find_review, only: [:show]
+
   def index
+  	@reviews = Review.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @review = Review.new
@@ -27,19 +29,15 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+  	# NO EDITING
   end
 
   def update
+  	# NO UPDATING
   end
 
   def destroy
-    @review = Review.find(params[:id])
-    @product = @review.product_id
-    @owner = @product.user_id
-    @review.destroy
-
-    redirect_to show_products_path(@product.id)
-
+#NO DELETING
   end
 
   private
@@ -47,6 +45,8 @@ class ReviewsController < ApplicationController
       params.require(:review).permit(:rating, :description)
     end
 
-
+    def find_review
+    	@review = Review.find(params[:id])
+    end
 
 end
