@@ -37,7 +37,9 @@
 
   <!-- tried to scoot M in between - it did not work -->
 
+<% if current_user %>  
   <p><%= link_to "User Account", user_account_path %></p>
+<% end %>
 
   <%= render 'layouts/messages' %>
 
