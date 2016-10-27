@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20161027212432) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.string   "alt_text"
+    t.string   "alt_id"
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"
