@@ -23,76 +23,51 @@
 */require 'app' */
 
 
-  @import url('app.css');
 
 
 /*Shopping Cart icon styling */
-  .cart-wrapper {
-  display: block;
-  height: 100px;
-  width: 100px;
-  margin: 0 auto;
-  position: relative;
-  top: 150px;
+
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 2em;
 }
-
-.cart-body {
-  display: block;
-  height: 100px;
-  width: 100px;
-  background-color: grey;
-  margin: 0 auto;
-  position: relative;
-  top: 30px;
-  right: 20px;
-
-  &:hover {
-    background-color: #20B2AA;
+.bag {
+  margin: auto;
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  height: 1.25em;
+  width: 1em;
+  text-decoration: none;
+  .handle-wrap {
+    height: 0.25em;
+    width: 0.5em;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 0.05em;
+  }
+  .handle {
+    height: 0.5em;
+    border-radius: 0.15em;
+    border: 0.085em solid #D4AC0D;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .outline {
+    height: 0.85em;
+    width: 0.75em;
+    border: 0.085em solid #D4AC0D;
+    box-sizing: border-box;
+    margin: 0 auto;
+    .count {
+      font-size: 0.4em;
+      color: #000;
+      width: 100%;
+      text-align: center;
+      height: 100%;
+      line-height: 1.75em;
+    }
   }
 }
-
-.cart-handle {
-  display: block;
-  height: 60px;
-  width: 60px;
-  background-color: #fff;
-  border: 6px solid grey;
-  position: relative;
-  bottom: 0px;
-  border-radius: 60px;
-  text-align: center;
-
-  &:hover {
-    border-color: #20B2AA;
-  }
-}
-
-.cart-hole1,
-.cart-hole2 {
-  top: 10px;
-  width: 6px;
-  height: 6px;
-  background-color: #fff;
-  border-radius: 30px;
-}
-
-.cart-hole1 {
-  position: absolute;
-  left: 14px;
-}
-
-.cart-hole2 {
-  position: absolute;
-  right: 14px;
-}
-
-.cart-items {
-  color: #fff;
-  position: relative;
-  top: 28px;
-  font-family: Helvetica;
-  font-weight: 600;
-  font-size: 30px;
-}
-
-/*end of shopping cart styling.*/

@@ -16,18 +16,7 @@
 
       <!-- attempt to see cart object render -->
 
-    <div class="cart-wrapper">
-      <div class="cart-handle">
-        <div class="cart-body">
-          <div class="cart-hole1"></div>
-          <div class="cart-hole2"></div>
-          <span class="cart-items">
-            <%=cart_count %>
 
-          </span>
-        </div>
-      </div>
-    </div>
     <!-- end of cart object -->
 
 
@@ -55,7 +44,7 @@
 
   <!-- tried to scoot M in between - it did not work -->
 
-<% if current_user %>  
+<% if current_user %>
   <p><%= link_to "User Account", user_account_path %></p>
 <% end %>
 

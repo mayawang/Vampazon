@@ -3,15 +3,25 @@
 
   <% get_product_categories.each  do |product_category| %>
       <li><%= link_to product_category, show_category_path(product_category) %></li>
-  <% end %> 
-  		<li><%= link_to "My Cart", show_cart_path  %></li>
-  		<li>  
+  <% end %>
+  		<li><%# link_to "My Cart", show_cart_path  %></li>
+
+    <li>
+      <a class="bag" href="#">
+        <div class="handle-wrap">
+          <div class="handle"></div>
+        </div>
+        <div class="outline">
+          <div class="count">1</div>
+        </div>
+      </a>
+    </li>
+
+  		<li>
   			<% if current_user %>
           <%= link_to 'Logout', logout_path %>
         <% else %>
           	<%= link_to 'Login', "/auth/github/" %>
         <% end %>
        </li>
-</ul> 
-
-
+</ul>
