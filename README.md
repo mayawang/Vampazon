@@ -4,10 +4,10 @@ Shop till you drop again, at Vampazon! We have a wide array of products to meet 
 
 
 ### Authors
-- [Elle Vargas][https://github.com/ellevargas]
-- [Maya Wang][https://github.com/mayawang]
-- [Sassa Kitka][https://github.com/RedSquirrelious]
-- [Trish Griego][https://github.com/Trishthedish]
+- [Elle Vargas](https://github.com/ellevargas)
+- [Maya Wang](https://github.com/mayawang)
+- [Sassa Kitka](https://github.com/RedSquirrelious)
+- [Trish Griego](https://github.com/Trishthedish)
 
 ### Contribution
  All authors are students at [Ada Developers Academy](http://adadevelopersacademy.org/)
