@@ -59,12 +59,37 @@ FactoryGirl.define do
     cvc 444
     product
     user
-    
+
 # order without user
     trait :order_without_user do
       user nil
     end
-
-
   end
+
+  factory :order_item do
+    product
+    order
+
+    unit_price  1.5
+    quantity    2
+
+    status 'pending'
+
+    trait :order_item_pending do
+      status 'pending'
+    end
+
+    trait :order_item_paid do
+      status 'paid'
+    end
+
+    trait :order_item_fulfilled do
+      status 'fulfilled'
+    end
+
+    trait :order_item_cancelled do
+      status 'cancelled'
+    end
+  end
+
 end

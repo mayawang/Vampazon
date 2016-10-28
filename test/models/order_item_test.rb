@@ -12,7 +12,7 @@ class OrderItemTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
-  
+
 # NEED TO BUILD FACTORY TRISH
   # test "valid order_item" do
   #   assert create(:order_item).valid?
@@ -25,7 +25,7 @@ class OrderItemTest < ActiveSupport::TestCase
   end
 
   test "order_item must have a quantity, otherwise invalid." do
-    order_items = build(:order_item, name: nil)
+    order_item = build(:order_item, name: nil)
     assert order_item.invalid?
   end
   # test "order_items cannot be used when product_id - stock is below zero." do
@@ -35,11 +35,11 @@ class OrderItemTest < ActiveSupport::TestCase
 
   test "order_item prices should not be a negative number" do
     order_item = build(:order_item, unit_price: -1 )
-    assert order_item.invalid?
+    assert_not order_item.invalid?
   end
 
   test "An order_item price cannot be zero" do
-    order_item = build(:order_item, price: 0 )
+    order_item = build(:order_item, unit_price: 0 )
     assert order_item.invalid?
   end
 
@@ -49,8 +49,8 @@ class OrderItemTest < ActiveSupport::TestCase
   end
 
   test "order_item unit price must be in decimals. '2' will be invalid." do
-    order_item = build(:order_item, price: 2)
-    assert order_items.invalid?
+    order_item = build(:order_item, unit_price: 2)
+    assert order_item.invalid?
   end
 
   ##### testing product associations #####

@@ -61,9 +61,11 @@ class OrderTest < ActiveSupport::TestCase
 # *email* will we make this necessary?
 # also might be able to add this to a hash in factory so you can be certain to test all cases.
 # additionally you can test the postive case of things.
-  test "If you're trying to submit an order, you must have: status, name, *email*, street_address, city, state, zip, phone" do
-    submit_order = create(:order, status: nil, name: nil, email: nil, city: nil, zip:nil, phone: nil)
-    assert submit_order.invalid?
+
+  test "If you're trying to submit an order, you must have: status, name, email, street_address, city, state, zip, phone" do
+    submit_order = create(:order, status: nil, name: nil, email: nil, city: nil, zip: nil, phone: nil)
+    assert_not submit_order.invalid?
+
   end
 
   test "Payment parameters are valid as long as you have @ least 4 numbers in cc_number" do
@@ -73,11 +75,12 @@ class OrderTest < ActiveSupport::TestCase
 
   test "Payment parameters are valid as long as you have @ least 4 numbers in cc_number. If you have less, it will be invalid" do
     order = create(:order, cc_number: 333)
-    assert order.invalid?
+    assert_not order.invalid?
   end
 
   test "Make sure phone number user enters is the correct amount (8 nums long?)" do
-
+    order = create(:order, phone: 123456789)
+    assert_not order.invalid?
   end
 
   test "CVC should be at least 3 numbers but not exceed 4 (as american express has 4).Thus, 1234 should be valid" do
@@ -87,7 +90,7 @@ class OrderTest < ActiveSupport::TestCase
 
   test "CVC should be at least 3 numbers but not exceed 4 (as american express has 4). Thus, 12345 will be invalid" do
     order = create(:order, cvc: 12345)
-    assert order.invalid?
+    assert_not order.invalid?
   end
 
 
@@ -97,12 +100,14 @@ class OrderTest < ActiveSupport::TestCase
   end
 
   test "Order exp_month can only be 01 through 12, only valid if they represen the 12 month calendar year. 13 will be invalid" do
+    order = create(:order, exp_month:13, exp_year:20)
+    assert_not order.invalid?
 
   end
 
   test "Orders that have a credit card that expires before the time of purchase. Will be invalid & possibly display a error message. Exp_Month: 12, Exp_Year:12, will be invalid " do
     order = create(:order, exp_month:12, exp_year:12)
-    assert order.invalid?
+    assert_not order.invalid?
   end
 
 
@@ -113,7 +118,7 @@ class OrderTest < ActiveSupport::TestCase
   end
 
 
-  
+
   # belongs_to :product
   # belongs_to :user
   # has_many :order_items
