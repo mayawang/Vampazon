@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 
-  description: MyText
-  rank: 1
+review1:
+  user_id: rbg
+  product_id: product4
+  description: This minion was wonderful. She really came through when the villagers last stormed my castle.
+  rank: 5
 
-two:
-  user_id: 
-  description: MyText
+review2:
+  user_id: ss
+  product_id: product2
+  description: This coffin was horrible.
   rank: 1
