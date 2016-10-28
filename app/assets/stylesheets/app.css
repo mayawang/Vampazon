@@ -127,7 +127,7 @@ img.product_photo {
 
 .review_box {
   border-top-style: double;
-  border-bottom-style: double;
+  /*border-bottom-style: double;*/
 
 }
 
@@ -135,9 +135,6 @@ img.product_photo {
   color: darkred;
 }
 
-.average_rating {
-  padding-bottom: 2rem;
-}
 
 /*.product-detail {
 	max-height: 9em;
