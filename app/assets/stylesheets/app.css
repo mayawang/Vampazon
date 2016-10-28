@@ -36,6 +36,11 @@ img.logo {
   max-height: 100%;
 }
 
+img.frontpage {
+  float: left;
+  display: inline-block;
+}
+
 /*.top-bar ul {
   background-color: black;
 }*/
