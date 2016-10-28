@@ -8,62 +8,30 @@
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
+
     <title>Vampazon</title>
     <%= stylesheet_link_tag "application.css"%>
   </head>
+
   <body>
+    <nav>
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <h1><a href="/"><%= image_tag("Homepage/Vampazon.png", alt: "Vampazon Home") %></a></h1>
 
-  <!-- DESKTOP NAVIATION -->
+        </div>
 
-  <nav class="top-bar">
+        <div class="top-bar-right">
+          <%= render partial: '/homepages/navigation_links' %>
 
-    <div class="top-bar-left">
+        </div>
+      </div>
+    </nav>
 
-     <h2 class="logo"><%= link_to 'Vampazon', root_path %></h2>
+    <%= render 'layouts/messages' %>
 
-    </div>
-
-    <div class="top-bar-right">
-
-      <%= render partial: '/homepages/navigation_links' %>
-
-    </div>
-
-  </nav>
-
-  <!-- <h1>Va</h1><a href="index.html" img src="../../assets/images/MLogo.png"><h1>pazon</h1> -->
-
- <!-- class="logo"><a tabindex="2" accesskey="1" href="/"><img src="/2008/site/images/logo-w3c-mobile-lg" width="90" height="53" alt="W3C" /></a> <span class="alt-logo">W3C</span></h1> -->
-
-  <!-- tried to scoot M in between - it did not work -->
-
-  <% if current_user %>
-    <p><%= link_to "User Account", user_account_path %></p>
-  <% end %>
-
-
-<%= render 'layouts/messages' %>
-
-<%= yield %>
-
-</body>
-
-
-  <!-- FOOTER -->
-
-
-  <footer>
-
-  </footer>
+    <%= yield %>
 
   </body>
-</html>
-
-
-
-
-
-
-
 
 </html>

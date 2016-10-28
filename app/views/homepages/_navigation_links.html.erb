@@ -1,17 +1,13 @@
-<ul class="menu centered">
-
-
+<ul>
   <% get_product_categories.each  do |product_category| %>
       <li><%= link_to product_category, show_category_path(product_category) %></li>
-  <% end %> 
-  		<li><%= link_to "My Cart", show_cart_path  %></li>
-  		<li>  
-  			<% if current_user %>
-          <%= link_to 'Logout', logout_path %>
-        <% else %>
-          	<%= link_to 'Login', "/auth/github/" %>
-        <% end %>
-       </li>
-</ul> 
+  <% end %>
 
-
+  <li><%= link_to "My Cart", show_cart_path  %></li>
+  <% if current_user %>
+    <%= link_to 'Logout', logout_path %>
+  <% else %>
+    <li><%= link_to "User Account", user_account_path %></li>
+    <li><%= link_to 'Login', "/auth/github/" %></li>
+  <% end %>
+</ul>
