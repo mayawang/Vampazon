@@ -1,6 +1,6 @@
 == README
 # Vampazon
-Shop till you drop again, at Vampazon! We have a wide array of products to meet all your bloody needs. Minions, Home Decor, dental care, and more! Commence shopping [here][ ____ herokuapp.com]. Vampazon is an e-commerce venue for Vampires and beyond.
+Shop till you drop again, at Vampazon! We have a wide array of products to meet all your bloody needs. Minions, Home Decor, dental care, and more! Commence shopping [here][https://vampazon.herokuapp.com/]. Vampazon is an e-commerce venue for Vampires and beyond.
 
 
 ### Authors
@@ -28,5 +28,5 @@ Shop till you drop again, at Vampazon! We have a wide array of products to meet 
 
 ## Assignment Details
 
-- Guidelines, Expectations, and learning goals can be found [here][https://github.com/Ada-C6/betsy].
+- Guidelines, Expectations, and learning goals can be found [here](https://github.com/Ada-C6/betsy).
 - Also found within this repo [here](project_guidelines.md)
