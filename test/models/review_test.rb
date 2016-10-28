@@ -9,7 +9,7 @@ class ReviewTest < ActiveSupport::TestCase
   test 'Review must include a rank value' do
   	review = Review.new
   	refute review.valid? "A review without a rank is invalid."
-  	# terrible.rank = 1
+  	review.rank = nil
   	assert terrible.valid?
   end
 
