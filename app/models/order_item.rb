@@ -2,8 +2,6 @@ class OrderItem < ActiveRecord::Base
   belongs_to :product
   belongs_to :order
 
-  validates :games_played, numericality: { :greater_than => 0 }
-
   def total_price
     return self.unit_price * self.quantity
   end
