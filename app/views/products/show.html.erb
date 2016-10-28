@@ -15,14 +15,10 @@
       <p>Seller: <%= link_to @seller.name, show_seller_products_path %></p>
       <%= button_to("Other Items by this Seller", show_seller_products_path(@product.id), method: :get, class: 'button') %>
 
+
       <p>Average rating:</p>
         <% @product.average_rating.to_i.times do %>
           <%= image_tag "http://www.clipartkid.com/images/24/bat-clipart-for-my-15month-old-alfie-i-vunZoo-clipart.png", alt: "bat rating", :class => "bat_rating"%>
-        <% end %>
-
-      <p>Review: </p>
-        <% @reviews.each do |review| %>
-          <p><%= review.description %></p>
         <% end %>
 
       <div class="quantity">
@@ -49,10 +45,19 @@
 
       <%=button_to "delete", destroy_products_path(@product.id), action: :destroy, method: :delete, class: 'button alert' %>
 
-
     <% end %>
 
-
+    <p> REVIEWS:</p>
+    <% @reviews.each do |review| %>
+      <article class="review_box">
+        <p class="review_title">Title: <%= review.title %></p>
+        <% review.rank.to_i.times do %>
+          <%= image_tag "http://www.clipartkid.com/images/24/bat-clipart-for-my-15month-old-alfie-i-vunZoo-clipart.png", alt: "bat rating", :class => "bat_rating_small"%>
+        <% end %>
+        <p><%= review.description %></p>
+        <p class="review_title">By: <%= review.user.name %></p>
+      </article>
+    <% end %>
     <!-- BELOW IS COLUMN END DIV -->
   </div>
 
