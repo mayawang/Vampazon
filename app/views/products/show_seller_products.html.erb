@@ -11,7 +11,7 @@
 
           <li><%= link_to product.name, show_products_path(product.id) %></li>
 
-          <li><%= product.price %></li>
+          <li><%= "$#{product.price}" %></li>
 
           <li><%= link_to image_tag(product.photo_url, :class => "product_photo"), show_products_path(product.id) %></li>
 
