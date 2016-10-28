@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     #   # do stuff to check if user is logged in
     # end
 
+#============User Account: Buyer Manage=============
   def user_account
     @user = User.find(session[:user_id])
   end
@@ -20,29 +21,65 @@ class UsersController < ApplicationController
     @orders = @user.orders
   end
 
+  def show_revenue_count
+    @total_revenue = OrderItem.total_revenue(@user_id)
+    @total_count = OrderItem.total_count(@user_id)
+
+    @paid_revenue = OrderItem.paid_revenue(@user_id)
+    @paid_count = OrderItem.paid_count(@user_id)
+
+    @fulfilled_revenue = OrderItem.fulfilled_revenue(@user_id)
+    @fulfilled_count = OrderItem.fulfilled_count(@user_id)
+
+    @cancelled_revenue = OrderItem.cancelled_revenue(@user_id)
+    @cancelled_count = OrderItem.cancelled_count(@user_id)
+  end
+#===========User Account: seller Manage=============
   def seller_manage
-    @user = User.find(session[:user_id])
+    # status = params[:status]
+    @user_id = session[:user_id]
+    @user = User.find(@user_id)
+
+    show_revenue_count
+
+    # @order_items = OrderItem.by_status(@user_id, status)
+    @order_items = OrderItem.joins(:product).where('products.user_id' => @user_id)
   end
 
-  def pending_orders
+  def show_orders_by_status
+
     @user = User.find(session[:user_id])
-    @orders = @user.orders.where(:status => "pending")
+    @orders = @user.orders.where(:status => status)
+    redirect_to buyer_manage_path
   end
 
-  def paid_orders
-    @user = User.find(session[:user_id])
-    @orders = @user.orders.where(:status => "paid")
+  def get_order_by_status
+    status = params[:status]
+    @user_id = session[:user_id]
+    @user = User.find(@user_id)
+    @order_items = OrderItem.by_status(@user_id, status)
+
+    show_revenue_count
+
+    render 'seller_manage'
   end
 
-  def cancelled_orders
-    @user = User.find(session[:user_id])
-    @orders = @user.orders.where(:status => "cancelled")
+  def ship_order_item
+
+    order_item = OrderItem.find(params[:order_item_id])
+    order_item.status = "fulfilled"
+
+    order_item.save!
+
+    redirect_to action: 'seller_manage'
   end
 
-  def completed_orders
-    @user = User.find(session[:user_id])
-    @orders = @user.orders.where(:status => "completed")
+  def order_by_seller
+    order_item = OrderItem.find(params[:order_id])
+    @order = order_item.order
   end
+
+#==============User Authenticate=============
 
   def index
     return User.all

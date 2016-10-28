@@ -71,3 +71,6 @@ group :test do
   gem 'minitest-reporters'
   gem 'simplecov'
 end
+
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production

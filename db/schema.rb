@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024234656) do
+ActiveRecord::Schema.define(version: 20161027231701) do
 
   create_table "order_items", force: :cascade do |t|
     t.decimal  "unit_price"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161024234656) do
     t.datetime "updated_at", null: false
     t.integer  "order_id"
     t.integer  "product_id"
+    t.string   "status"
   end
 
   add_index "order_items", ["order_id"], name: "index_order_items_on_order_id"
@@ -33,7 +34,7 @@ ActiveRecord::Schema.define(version: 20161024234656) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.integer  "phone",          limit: 10
+    t.string   "phone"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "user_id"
@@ -57,6 +58,8 @@ ActiveRecord::Schema.define(version: 20161024234656) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.string   "alt_id"
+    t.string   "alt_text"
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"
@@ -79,15 +82,15 @@ ActiveRecord::Schema.define(version: 20161024234656) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.integer  "phone",                 limit: 10
+    t.string   "phone"
     t.boolean  "merchant"
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
-    t.string   "provider",                         default: "false"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "provider",              default: "false"
     t.boolean  "status"
     t.string   "password_digest"
     t.string   "password_confirmation"
-    t.integer  "uid",                              default: 0
+    t.integer  "uid",                   default: 0
   end
 
 end
