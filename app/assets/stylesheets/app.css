@@ -115,6 +115,10 @@ img.product_photo {
   list-style: none;
 }
 
+.bat_rating {
+  width: 18%;
+  height: 18%;
+}
 /*.product-detail {
 	max-height: 9em;
 }*/
