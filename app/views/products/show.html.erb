@@ -15,7 +15,11 @@
       <p>Seller: <%= link_to @seller.name, show_seller_products_path %></p>
       <%= button_to("Other Items by this Seller", show_seller_products_path(@product.id), method: :get, class: 'button') %>
 
-      <p>Average rating: <%= @product.average_rating %></p>
+      <p>Average rating:</p>
+        <% @product.average_rating.to_i.times do %>
+          <%= image_tag "http://www.clipartkid.com/images/24/bat-clipart-for-my-15month-old-alfie-i-vunZoo-clipart.png", alt: "bat rating", :class => "bat_rating"%>
+        <% end %>
+
       <p>Review: </p>
         <% @reviews.each do |review| %>
           <p><%= review.description %></p>
