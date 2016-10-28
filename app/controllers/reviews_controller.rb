@@ -22,6 +22,8 @@ class ReviewsController < ApplicationController
 
     @review.product_id = @product.id
     @review.user_id = session[:user_id]
+    @review.name = User.find(session[:user_id]).name
+
 
     if @review.save
       redirect_to show_products_path(@product.id)
