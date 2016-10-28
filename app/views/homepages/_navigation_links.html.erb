@@ -1,5 +1,4 @@
 
-<ul>
   <li><%= link_to "My Cart", show_cart_path  %></li>
   <% if current_user != nil %>
     <li><%= link_to "User Account", user_account_path %></li>
@@ -7,4 +6,3 @@
   <% else %>
     <li><%= link_to 'Login', "/auth/github/" %></li>
   <% end %>
-</ul>

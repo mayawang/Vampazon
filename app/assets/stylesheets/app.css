@@ -1,5 +1,3 @@
-/************************* OVERALL *************************/
-
 body {
   min-width: 100%;
   font-size: 14pt;
@@ -21,59 +19,49 @@ body {
   font-weight: bold;
 }
 
-header {
-  background-color: black;
-  height: 17%;
-  margin-bottom: 2%;
-  padding: 3% 3% 3% 0;
-}
-
 img.logo {
-  margin: auto;
   height: auto;
   width: auto;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.top-bar {
+  background-color: black;
+  min-width: 100%;
+  padding: 2% 3%;
+}
+
+.top-bar ul {
+  background-color: black;
+}
+
+.top-bar-left {
+  max-width: 60%;
+}
+
+.top-bar-right {
+  background-color: black;
+  max-width: 40%;
+  width: 20% !important;
+  margin-right: 8%;
+}
+
+.top-bar-right li {
+  margin-left: 2%;
+  text-align: right;
+  font-weight: bold;
+}
+
+.top-bar-right li a {
+  color: white;
+  font-size: 1.25rem;
 }
 
 img.frontpage {
-  float: left;
+  float: center;
   display: inline-block;
-}
-
-/*.top-bar ul {
-  background-color: black;
-}*/
-
-/*.top-bar-left {
-  max-width: 50%;
-}*/
-
-/*.top-bar-left img {
-  height: auto;
-  width: auto;
-  max-width: 100%;
-  max-height: 100%;
-  float:center;
-}*/
-
-/*.top-bar-right a {
-  font-size: 1.75rem;
-}*/
-
-#product-navigation {
-  text-align: center;
-}
-
-nav li {
-  background-color: black;
-  display: inline-block;
-  padding-right: 5%;
-}
-
-nav li a {
-  background-color: black;
-  color: white;
+  margin-bottom: 3%;
 }
 
 h3 {
@@ -95,14 +83,17 @@ h3 {
 	font-size: 1.75rem;
   font-weight: bold;
 	text-align: center;
+  margin-top: 2%;
 }
 
 .headline a {
 	color: black;
+  margin: 3%;
 }
 
 .headline a:hover, .headline a:focus {
   color: #680604;
+  text-decoration: underline;
 }
 
 img.product_photo {
@@ -128,84 +119,8 @@ img.product_photo {
 .review_box {
   border-top-style: double;
   /*border-bottom-style: double;*/
-
 }
 
 .review_title{
   color: darkred;
 }
-
-
-/*.product-detail {
-	max-height: 9em;
-}*/
-
-  /**************************************/
-/**HERO SECTION **/
- /**************************************/
-/*
-.hero {
-  background-color: gray;
-  padding: 50px 30px;
-  height: 15%;
-}
-
-  /**************************************
-/**FOOTER **/
- /**************************************/
-
-
-/*#login-logout a {
-  color: white;
-  display: inline-block;
-  float: right;
-  min-width: 20%;
-}*/
-
-
-
-/*.row ul a {
-  color: black;
-}
-
-.row ul a:hover {
-  color: #680604;
-}*/
-
-
-/*.columns {
-  column-count: 3;
-  /*column-gap: 8vw;
-  }*/
-
-
-
-
-/*.card p {
-  float: center;
-}
-
-
-/*.product-info {
-  min-height: 6.5em;
-}*/
-
-/*.product-info ul {
-  list-style: none;
-  margin-left: 0;
-  margin-bottom: .25em;
-  font-size: 1rem;
-  text-align: center;
-}*/
-
-/*.product-info ul a {
-  color: black;
-}*/
-
-/*.product-info ul a:hover {
-  color: red;
-}*/
-
-/*.product-info li {
-  float: center;
-}*/

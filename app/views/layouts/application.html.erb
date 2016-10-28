@@ -7,19 +7,24 @@
 
     <%= favicon_link_tag 'vamp_favicon.ico' %>
     <title>Vampazon</title>
-    <%= stylesheet_link_tag "application.css"%>
+    <%= stylesheet_link_tag "application.css" %>
   </head>
 
   <body>
     <header>
-        <a href="/"><%= image_tag("Homepage/Vampazon.png", alt: "Vampazon Home", class: "logo") %></a>
+      <div class="top-bar">
 
-      <nav>
-        <%= render partial: '/homepages/navigation_links' %>
-        <% get_product_categories.each do |product_category| %>
-          <li><%= link_to product_category, show_category_path(product_category) %></li>
-        <% end %>
-      </nav>
+        <div class="top-bar-left">
+          <a href="/"><%= image_tag("Homepage/Vampazon.png", alt: "Vampazon Home", class: "logo") %></a>
+        </div>
+
+        <nav>
+          <div class="top-bar-right">
+            <%= render partial: '/homepages/navigation_links' %>
+          </div>
+
+        </nav>
+      </div>
     </header>
 
 
