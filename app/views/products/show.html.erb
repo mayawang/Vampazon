@@ -55,7 +55,9 @@
           <%= image_tag "http://www.clipartkid.com/images/24/bat-clipart-for-my-15month-old-alfie-i-vunZoo-clipart.png", alt: "bat rating", :class => "bat_rating_small"%>
         <% end %>
         <p><%= review.description %></p>
-        <p class="review_title">By: <%= review.user.name %></p>
+        <p class="review_title">
+            By: <%= review.name %>
+        </p>
       </article>
     <% end %>
     <!-- BELOW IS COLUMN END DIV -->
