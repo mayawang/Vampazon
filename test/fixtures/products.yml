@@ -28,7 +28,7 @@ product3:
   user_id: 3
 
 product4:
-  name:
+  name: minion
   description: I treat them as my family.
   price: 9.99
   photo_url: https://unsplash.it/200
