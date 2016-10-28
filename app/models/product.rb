@@ -5,10 +5,11 @@ class Product < ActiveRecord::Base
   has_many :reviews
   
   validates :name, :description, :category, presence: true
-  
+
   validates :price, presence: true, numericality: {:greater_than => 0}
-  
+
   validates :inventory, presence: true, numericality: {:greater_than_or_equal_to => 0}
+
 
 
 
