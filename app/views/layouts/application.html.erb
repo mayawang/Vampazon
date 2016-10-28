@@ -14,20 +14,17 @@
   </head>
 
   <body>
-    <nav>
-      <div class="top-bar">
-        <div class="top-bar-left">
-          <a href="/"><%= image_tag("Homepage/Vampazon.png", alt: "Vampazon Home") %></a>
-        </div>
+    <header>
+        <a href="/"><%= image_tag("Homepage/Vampazon.png", alt: "Vampazon Home", class: "logo") %></a>
 
-        <div class="top-bar-right">
-          <%= render partial: '/homepages/navigation_links' %>
-          <% get_product_categories.each do |product_category| %>
-            <li><%= link_to product_category, show_category_path(product_category) %></li>
-          <% end %>
-        </div>
-      </div>
-    </nav>
+      <nav>
+        <%# render partial: '/homepages/navigation_links' %>
+        <%# get_product_categories.each do |product_category| %>
+          <li><%# link_to product_category, show_category_path(product_category) %></li>
+        <%# end %>
+      </nav>
+    </header>
+
 
     <%= render 'layouts/messages' %>
 
