@@ -21,14 +21,16 @@
 
      <h2 class="logo"><%= link_to 'Vampazon', root_path %></h2>
 
-    </div>
+
 
     <div class="top-bar-right">
+
 
       <%= render partial: '/homepages/navigation_links' %>
 
     </div>
-
+         <%=cart_count %>
+    <%=image_tag("shopping-cart.png") %>
   </nav>
 
   <!-- <h1>Va</h1><a href="index.html" img src="../../assets/images/MLogo.png"><h1>pazon</h1> -->
