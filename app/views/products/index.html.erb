@@ -4,7 +4,9 @@
     <h3>All Collections</h3>
 
     <% if @products.empty? %>
+    <center>
       <%= image_tag "count_zero.jpg" %>
+    </center>
 
     <% else %>
       <% @products.each do |product| %>

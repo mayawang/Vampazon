@@ -44,7 +44,7 @@ img.logo {
   background-color: black;
   max-width: 40%;
   width: 20% !important;
-  margin-right: 5%;
+  margin-right: 8%;
 }
 
 .top-bar-right li {
@@ -60,7 +60,7 @@ img.logo {
 
 
 img.frontpage {
-  float: left;
+  float: center;
   display: inline-block;
   margin-bottom: 3%;
 }
