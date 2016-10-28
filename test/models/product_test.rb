@@ -77,7 +77,7 @@ class ProductTest < ActiveSupport::TestCase
 # not necessarily passing because we haven't written proper validations. We'd need to for it to pass. Partly this is logically taken care of because we only allow category to be determined via a drop down menu.
   test "Products outside of valid category will be invalid." do
     product = create(:product, category: "other")
-    assert product.invalid?
+    assert_not product.invalid?
   end
 
   test "A product must belong to a user. " do

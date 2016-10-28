@@ -15,11 +15,17 @@ class ReviewsController < ApplicationController
   def create
     @product = Product.find(params[:id])
     @review = Review.create(review_params)
+    @review.title = params[:review][:title]
     @review.description = params[:review][:description]
     @review.rank = params[:review][:rank]
 
+
     @review.product_id = @product.id
-    @review.user_id = session[:user_id]
+
+    if session[:user_id]
+      @review.user_id = session[:user_id]
+      @review.name = User.find(session[:user_id]).name
+    end
 
     if @review.save
       redirect_to show_products_path(@product.id)

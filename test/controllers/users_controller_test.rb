@@ -34,7 +34,13 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should be able to update a user" do
-    patch :update, { id: users(:ss).id }
+    test_user = users(:ss)
+    patch :update, {
+      id: test_user.id,
+      user: {
+        name: 'new name'
+      }
+    }
     assert_response :success
   end
 
@@ -59,7 +65,7 @@ class UsersControllerTest < ActionController::TestCase
   #   session[:user_id] = nil  # ensure no one is logged in
 
   #   get :show, id: tasks(:grace_task).id
-  #   # if they are not logged in they cannot see the resource and are redirected to login.  
+  #   # if they are not logged in they cannot see the resource and are redirected to login.
   #   assert_redirected session_path
   #   assert_equal "You must be logged in first", flash[:notice]
   # end
@@ -67,7 +73,7 @@ class UsersControllerTest < ActionController::TestCase
   # test "Make sure a user can see their tasks" do
   #   session[:user_id] = users(:grace_hopper).id
   #   get :show, id: tasks(:grace_task).id
-    
+
   #   assert_response :success
   # end
 
@@ -75,7 +81,7 @@ class UsersControllerTest < ActionController::TestCase
   #   session[:user_id] = users(:weili_dai).id
   #   get :show, id: tasks(:grace_task).id
   #   get :show, id: tasks(:grace_task).id
-    
+
   #   assert_response :redirect
   #   assert_equal flash[:notice], "You do not have access to that task."
   # end

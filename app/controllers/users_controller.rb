@@ -110,7 +110,7 @@ class UsersController < ApplicationController
   def update
     @my_user = User.find{ params[:id].to_i }
     @params = params
-    @my_user.fname = params[:user][:name]
+    @my_user.name = params[:user][:name]
     @my_user.email = params[:user][:email]
     @my_user.street_address = params[:user][:street_address]
     @my_user.city = params[:user][:city]

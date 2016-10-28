@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027231701) do
+ActiveRecord::Schema.define(version: 20161028195922) do
 
   create_table "order_items", force: :cascade do |t|
     t.decimal  "unit_price"
@@ -67,10 +67,12 @@ ActiveRecord::Schema.define(version: 20161027231701) do
   create_table "reviews", force: :cascade do |t|
     t.text     "description"
     t.integer  "rank"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "product_id"
     t.integer  "user_id"
+    t.string   "title"
+    t.string   "name",        default: "Guest User"
   end
 
   add_index "reviews", ["product_id"], name: "index_reviews_on_product_id"

@@ -12,6 +12,7 @@ require 'minitest/reporters'
 require 'support/factory_girl'
 
 
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
