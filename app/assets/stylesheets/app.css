@@ -58,10 +58,14 @@ img.logo {
   font-size: 1.25rem;
 }
 
-img.frontpage {
+li.frontpage {
   float: center;
   display: inline-block;
   margin-bottom: 3%;
+}
+
+article.column {
+  width: 50%;
 }
 
 h3 {
