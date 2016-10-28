@@ -6,40 +6,62 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.basic {
+  margin: 2% 12% 5% 12%;
+}
 
-header {
-  background-color: black;
-  height: 16%;
+.basic h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
   margin-bottom: 2%;
 }
 
-.top-bar {
-  padding: 3% 3% 3% 0;
-  background: black;
+.basic p {
+  padding: 1%;
+  margin-left: 3%;
 }
 
-.top-bar-right {
+.top-bar {
+  background-color: black;
+  height: 15%;
+  margin-bottom: 2%;
+  padding: 3% 3% 3% 0;
+}
 
+.top-bar ul {
+  background-color: black;
 }
 
 .top-bar-left {
-  float: center;
+  max-width: 50%;
 }
 
-h1 img {
+.top-bar-left img {
   height: auto;
   width: auto;
-  max-width: 70%;
-  max-height: 70%;
+  max-width: 100%;
+  max-height: 100%;
+  float:center;
 }
 
-/*header h1 a {
-  padding-top: 2.5%;
+.top-bar-right a {
+  font-size: 1.75rem;
 }
 
-header h1 a:visited {
-  color: white !important;
-}*/
+#product-navigation {
+  text-align: center;
+}
+
+
+nav li {
+  background-color: black;
+  display: inline-block;
+}
+
+nav li a {
+  background-color: black;
+  color: white;
+}
 
 .headline {
 	font-size: 1.5rem;
@@ -119,37 +141,9 @@ h3.welcome {
   min-width: 20%;
 }
 
-
-
-.basic {
-  margin: 2% 12% 5% 12%;
-}
-
-.basic h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 2%;
-}
-
-.basic p {
-  padding: 1%;
-  margin-left: 3%;
-}
-
-/*.column {
-  padding-left: 2%;
-  padding-right: 2%;
-}*/
-
-
-
 .row ul {
   list-style: none;
 }
-
-/*.row ul img {
-  max-height: 10em;
-}*/
 
 .row ul a {
   color: black;
@@ -207,7 +201,6 @@ img.product_photo {
 .product-info ul a:hover {
   color: red;
 }
-
 
 .product-info li {
   float: center;

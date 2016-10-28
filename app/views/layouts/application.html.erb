@@ -17,13 +17,14 @@
     <nav>
       <div class="top-bar">
         <div class="top-bar-left">
-          <h1><a href="/"><%= image_tag("Homepage/Vampazon.png", alt: "Vampazon Home") %></a></h1>
-
+          <a href="/"><%= image_tag("Homepage/Vampazon.png", alt: "Vampazon Home") %></a>
         </div>
 
         <div class="top-bar-right">
           <%= render partial: '/homepages/navigation_links' %>
-
+          <% get_product_categories.each do |product_category| %>
+            <li><%= link_to product_category, show_category_path(product_category) %></li>
+          <% end %>
         </div>
       </div>
     </nav>
