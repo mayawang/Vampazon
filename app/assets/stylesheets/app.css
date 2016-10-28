@@ -119,6 +119,26 @@ img.product_photo {
    width: 18%;
    height: 18%;
 }
+
+.bat_rating_small {
+   width: 10%;
+   height: 10%;
+}
+
+.review_box {
+  border-top-style: double;
+  border-bottom-style: double;
+
+}
+
+.review_title{
+  color: darkred;
+}
+
+.average_rating {
+  padding-bottom: 2rem;
+}
+
 /*.product-detail {
 	max-height: 9em;
 }*/
