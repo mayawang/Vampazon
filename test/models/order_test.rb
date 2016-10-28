@@ -62,7 +62,7 @@ class OrderTest < ActiveSupport::TestCase
 # also might be able to add this to a hash in factory so you can be certain to test all cases.
 # additionally you can test the postive case of things.
   test "If you're trying to submit an order, you must have: status, name, *email*, street_address, city, state, zip, phone" do
-    submit_order = (:order, status: nil, name:nil, *email: nil, city: nil, zip:nil, phone: nil)
+    submit_order = create(:order, status: nil, name: nil, email: nil, city: nil, zip:nil, phone: nil)
     assert submit_order.invalid?
   end
 
