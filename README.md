@@ -1,6 +1,6 @@
 == README
 # Vampazon
-Shop till you drop again, at Vampazon! We have a wide array of products to meet all your bloody needs. Minions, Home Decor, dental care, and more! Commence shopping [VAMPAZON](https://vampazon.herokuapp.com/). Vampazon is an e-commerce venue for Vampires and beyond.
+Shop till you drop again, at Vampazon! We have a wide array of products to meet all your bloody needs. Minions, Home Decor, dental care, and more! Commence shopping at Vampazon [here](https://vampazon.herokuapp.com/). Vampazon is an e-commerce venue for Vampires and beyond.
 
 
 ### Authors
