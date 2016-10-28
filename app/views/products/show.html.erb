@@ -13,7 +13,7 @@
       <p>Category: <%= @product.category %></p>
 
       <p>Seller: <%= link_to @seller.name, show_seller_products_path %></p>
-      <%= button_to("Other Items by this Seller", show_seller_products_path(@product.id), method: :get) %>
+      <%= button_to("Other Items by this Seller", show_seller_products_path(@product.id), method: :get, class: 'button') %>
 
       <p>Average rating: <%= @product.average_rating %></p>
       <p>Review: </p>
@@ -26,7 +26,7 @@
           <%= label_tag :quantity %>
           <%= select_tag :quantity, options_for_select((1..@product.inventory), 1) %>
           <%= hidden_field_tag(:product_id, @product.id) %>
-          <%= submit_tag "Add to Cart" %>
+          <%= submit_tag "Add to Cart", class: 'button' %>
         <% end %>
       </div>
     </div>
