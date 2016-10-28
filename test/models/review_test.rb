@@ -5,13 +5,6 @@ class ReviewTest < ActiveSupport::TestCase
     assert true
   end
 
-  test 'Review must belong to a product' do
-  	assert_equal reviews(:review1.product_id, :product4.id) 
-  	assert_valid(:review1) 
-  	:review1.product_id = nil 
-  	assert_invalid? :review1 
-  end
-
 
   test 'Review must include a rank value' do
   	review = Review.new
