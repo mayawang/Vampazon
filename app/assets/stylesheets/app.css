@@ -7,7 +7,7 @@ body {
 }
 
 .basic {
-  margin: 2% 12% 5% 12%;
+  margin: 2% 12% 3% 12%;
 }
 
 .basic h2 {
@@ -52,10 +52,10 @@ body {
   text-align: center;
 }
 
-
 nav li {
   background-color: black;
   display: inline-block;
+  padding-right: 5%;
 }
 
 nav li a {
@@ -63,26 +63,22 @@ nav li a {
   color: white;
 }
 
-.headline {
-	font-size: 1.5rem;
-	/*font-weight: bold;*/
-	text-align: center;
-}
-
-
-h4.headline {
+h3 {
+  font-size: 2.5rem;
 	font-weight: bold;
 	text-align: left;
+  margin: 2% 0 3% 0;
 }
 
-.headline img {
-	margin: auto;
 
+.column {
+  padding: 2% 5%;
 }
 
-.headline a {
-	color: black;
-}
+
+
+
+
 
 h3.welcome {
 	padding-top: 0;
@@ -101,23 +97,9 @@ h3.welcome {
 	/*font-size: rem;*/
 }
 
-.product-detail {
+/*.product-detail {
 	max-height: 9em;
-}
-
-  /**************************************/
-
-/** DESKTOP NAVIATION **/
- /**************************************/
-
-
-.logo a {
-	color: black;
-	font-weight: bold;
-	/*font-size: 3rem;*/
-}
-
-
+}*/
 
   /**************************************/
 /**HERO SECTION **/
@@ -145,19 +127,22 @@ h3.welcome {
   list-style: none;
 }
 
-.row ul a {
+/*.row ul a {
   color: black;
 }
 
 .row ul a:hover {
   color: #680604;
-}
+}*/
 
 
-.columns {
+/*.columns {
   column-count: 3;
-  /*column-gap: 8vw;*/
-}
+  /*column-gap: 8vw;
+  }*/
+
+
+
 
 .card p {
   float: center;
@@ -174,17 +159,9 @@ h3.welcome {
   min-height: 13em;
 }
 
-div.product-info {
+/*.product-info {
   min-height: 6.5em;
-  /*border: solid red;*/
-  /*padding: 0;*/
-}
-
-img.product_photo {
-  display: inline-block;
-  margin: 2% auto;
-  max-height: 7em;
-}
+}*/
 
 .product-info ul {
   list-style: none;
@@ -194,14 +171,41 @@ img.product_photo {
   text-align: center;
 }
 
-.product-info ul a {
+/*.product-info ul a {
   color: black;
-}
+}*/
 
-.product-info ul a:hover {
+/*.product-info ul a:hover {
   color: red;
+}*/
+
+/*.product-info li {
+  float: center;
+}*/
+
+.headline {
+	font-size: 1.75rem;
+	text-align: center;
 }
 
-.product-info li {
-  float: center;
+.headline li {
+  margin-top: 1%;
+}
+
+.headline img {
+	margin: auto;
+}
+
+.headline a {
+	color: black;
+}
+
+.headline a:hover, .headline a:focus {
+  color: #680604;
+}
+
+img.product_photo {
+  display: inline-block;
+  margin: 2% auto;
+  max-height: 9em;
 }
