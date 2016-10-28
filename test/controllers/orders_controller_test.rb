@@ -1,6 +1,40 @@
 require 'test_helper'
 
 class OrdersControllerTest < ActionController::TestCase
+  
+# add_to_cart
+
+# show_cart
+
+# change_quantity
+
+# destroy_order_item
+
+# checkout
+
+# create_order
+
+# confirmation
+
+# cancel_order
+# 'empty the cart'
+# 'redirect'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   # test "should get index" do
   #   get :index
   #   assert_response :success
