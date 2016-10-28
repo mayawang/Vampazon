@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :reviews, through: :products
+  has_many :reviews
   has_many :products
   has_many :orders
   # has_secure_password
