@@ -1,6 +1,9 @@
 Heroku live: https://vampazon.herokuapp.com/
+
 Trello: https://trello.com/b/J4ogujNT/lumberjanes
+
 ERD diagram: https://www.lucidchart.com/documents/edit/55c5fe2f-6916-4b42-9233-538039a9e2d9?shared=true&
+
 Reflection: https://github.com/Ada-C6/betsy/pull/35
 
 # Vampazon
